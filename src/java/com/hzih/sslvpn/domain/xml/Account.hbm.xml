@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+  <class table="account" name="com.hzih.sslvpn.domain.Account">
+    <id access="field" name="id" type="long" column="id" length="11">
+      <generator class="increment"/>
+    </id>
+    <property name="userName" length="20" column="user_name" access="field" type="string"/>
+    <!--<property name="lastMsg" length="100" column="last_msg" access="field" type="string"/>-->
+    <property name="password" length="100" column="password" access="field" type="string"/>
+    <property name="sex" length="10" column="sex" access="field" type="string"/>
+    <set cascade="save-update" access="field" inverse="false" lazy="false" table="account_role" name="roles">
+      <key column="account_id"/>
+      <many-to-many class="com.hzih.sslvpn.domain.Role" column="role_id"/>
+    </set>
+    <property name="phone" length="20" column="phone" access="field" type="string"/>
+    <property name="createdTime" column="created_time" access="field" type="java.util.Date"/>
+    <property name="modifiedTime" column="modified_time" access="field" type="java.util.Date"/>
+    <property name="modifiedPasswordTime" column="modifiedPasswordTime" access="field" type="java.util.Date"/>
+    <property name="status" length="20" column="status" access="field" type="string"/>
+    <property name="depart" length="20" column="depart" access="field" type="string"/>
+    <property name="title" length="20" column="title" access="field" type="string"/>
+    <property name="name" length="20" column="name" access="field" type="string"/>
+    <property name="email" length="30" column="email" access="field" type="string"/>
+    <property name="startIp" length="20" column="start_ip" access="field" type="string"/>
+    <property name="endIp" length="20" column="end_ip" access="field" type="string"/>
+    <property name="startHour" length="2" column="start_hour" access="field" type="int"/>
+    <property name="endHour" length="2" column="end_hour" access="field" type="int"/>
+    <property name="description" column="description" access="field" type="text"/>
+    <property name="remoteIp" column="remote_ip" access="field" type="string"/>
+    <property name="mac" column="mac" access="field" type="string"/>
+    <property name="ipType" column="ip_type" access="field" type="int"/>
+  </class>
+</hibernate-mapping>

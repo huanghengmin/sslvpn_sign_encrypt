@@ -1,0 +1,127 @@
+<!-- path for jakarta jar files -->
+<path id="jakarta.tomcat.classpath">
+    <fileset dir="${jakarta.tomcat.dir}/lib">
+        <include name="tomcat*.jar"/>
+        <include name="catalina*.jar"/>
+    </fileset>
+</path>
+
+        <!-- path for jakarta jar files -->
+<path id="jakarta.classpath">
+    <fileset dir="${jakarta.dir}">
+        <include name="*/*.jar"/>
+        <include name="*/*.zip"/>
+    </fileset>
+    <path refid="jakarta.tomcat.classpath"/>
+</path>
+
+        <!-- path for jdbc jar files -->
+<path id="jdbc.classpath">
+    <fileset dir="${jdbc.dir}">
+        <include name="*/*.jar"/>
+        <include name="*/*.zip"/>
+    </fileset>
+</path>
+
+        <!-- path for sun jar files -->
+<path id="sun.classpath">
+    <fileset dir="${sun.dir}">
+        <include name="*/*.jar"/>
+        <include name="*/*.zip"/>
+    </fileset>
+</path>
+
+        <!-- path for sun jar files -->
+<path id="exolab.classpath">
+    <fileset dir="${exolab.dir}">
+        <include name="*/*.jar"/>
+        <include name="*/*.zip"/>
+    </fileset>
+</path>
+
+        <!--json jars-->
+<path id="json.classpath">
+    <fileset dir="${json.dir}">
+        <include name="*.jar"/>
+        <include name="*.zip"/>
+    </fileset>
+</path>
+        <!--htmlparser jars-->
+<path id="htmlparser.classpath">
+    <fileset dir="${htmlparser.dir}">
+        <include name="*.jar"/>
+        <include name="*.zip"/>
+    </fileset>
+</path>
+        <!--htmlparser jars-->
+<path id="proxool.classpath">
+    <fileset dir="${proxool.dir}">
+        <include name="*.jar"/>
+        <include name="*.zip"/>
+    </fileset>
+</path>
+<path id="jdom.classpath">
+    <fileset dir="${jdom.dir}">
+        <include name="*.jar"/>
+        <include name="*.zip"/>
+    </fileset>
+</path>
+
+
+        <!-- path for sourceforge jar files -->
+<path id="sf.classpath">
+    <fileset dir="${sf.dir}">
+        <include name="*/*.jar"/>
+        <include name="*/*.zip"/>
+    </fileset>
+</path>
+<path id="dom4j.classpath">
+    <fileset dir="${dom4j.dir}">
+        <include name="*.jar"/>
+        <include name="*.zip"/>
+    </fileset>
+</path>
+
+<path id="jaxen.classpath">
+    <fileset dir="${jaxen.dir}">
+        <include name="*.jar"/>
+        <include name="*.zip"/>
+    </fileset>
+</path>
+
+<path id="retrologic.classpath">
+    <fileset dir="${retrologic.dir}">
+        <include name="*.jar"/>
+    </fileset>
+</path>
+
+<path id="hibernate3.classpath">
+    <fileset dir="${hibernate3.dir}">
+        <include name="*.jar"/>
+    </fileset>
+</path>
+
+<path id="sharelib.classpath">
+    <path refid="jakarta.classpath"/>
+    <path refid="jdbc.classpath"/>
+    <path refid="sun.classpath"/>
+    <path refid="exolab.classpath"/>
+    <path refid="jaxen.classpath"/>
+    <path refid="jdom.classpath"/>
+    <path refid="sf.classpath"/>
+    <path refid="dom4j.classpath"/>
+    <path refid="retrologic.classpath"/>
+    <path refid="json.classpath"/>
+    <path refid="htmlparser.classpath"/>
+    <path refid="proxool.classpath"/>
+    <path refid="hibernate3.classpath"/>
+</path>
+<path id="tools.classpath">
+    <fileset dir="${tools.dir}">
+        <include name="*/*.jar"/>
+        <include name="*/*.zip"/>
+    </fileset>
+</path>
+
+
+

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class table="server_certificate" name="com.hzih.sslvpn.domain.ServerCertificate">
+        <id access="field" name="id" type="int" column="id" length="10">
+            <generator class="increment"/>
+        </id>
+        <property name="certificate" length="50" column="certificate" access="field" type="string"/>
+        <property name="name" length="50" column="name" access="field" type="string"/>
+        <property name="status" length="50" column="status" access="field" type="int"/>
+        <property name="pwd" length="50" column="pwd" access="field" type="string"/>
+    </class>
+</hibernate-mapping>

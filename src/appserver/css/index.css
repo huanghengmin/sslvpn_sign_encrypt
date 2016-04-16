@@ -1,0 +1,40 @@
+HTML {
+	FONT-SIZE: 12px; MARGIN: 0px auto
+}
+BODY {
+	FONT-SIZE: 12px; MARGIN: 0px auto
+}
+#top-div {
+	BACKGROUND: #777 url(../img/topVPN_ZD.jpg) no-repeat; WIDTH: 100%; HEIGHT: 100%
+}
+#main-div {
+	WIDTH: 100%; COLOR: #0000ff; HEIGHT: 100%
+}
+
+#funmenu {
+	FLOAT: right; PADDING-TOP: 5px
+}
+#funmenu A {
+	FONT-WEIGHT: normal; FONT-SIZE: 12px; MARGIN-LEFT: 12px; COLOR: #f0f0f0; MARGIN-RIGHT: 12px; TEXT-ALIGN: right; TEXT-DECORATION: none
+}
+#funmenu A:hover {
+	COLOR: #00ff33
+}
+.x-tabs-item-body {
+	PADDING-RIGHT: 10px; DISPLAY: none; PADDING-LEFT: 10px; FONT-SIZE: 11px; PADDING-BOTTOM: 10px; PADDING-TOP: 10px
+}
+.loading-indicator {
+	BACKGROUND-POSITION: left 50%; PADDING-LEFT: 20px; FONT-SIZE: 8pt; BACKGROUND-IMAGE: url(../js/ext/resources/images/grid/loading.gif); BACKGROUND-REPEAT: no-repeat
+}
+UNKNOWN {
+	TEXT-DECORATION: none
+}
+A:visited {
+	TEXT-DECORATION: none
+}
+A:hover {
+	POSITION: relative; TOP: 1px; TEXT-DECORATION: none
+}
+A:active {
+	POSITION: relative; TOP: 1px; TEXT-DECORATION: none
+}

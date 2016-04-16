@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class table="user" name="com.hzih.sslvpn.domain.User">
+        <id access="field" name="id" type="int" column="id" length="11">
+            <generator class="increment"/>
+        </id>
+        <property name="cn" length="100" column="cn" access="field" type="string"/>
+        <property name="subject" length="200" column="subject" access="field" type="string"/>
+
+        <set cascade="save-update" access="field" table="user_group" name="groupsSet" inverse="true" lazy="false" >
+            <key column="user_id" not-null="true"/>
+            <many-to-many class="com.hzih.sslvpn.domain.Groups">
+                <column name="group_id" not-null="true"/>
+            </many-to-many>
+        </set>
+
+        <property name="dynamic_ip" length="4" column="dynamic_ip" access="field" type="int"/>
+        <property name="static_ip" length="30" column="static_ip" access="field" type="string"/>
+
+        <property name="allow_all_client" length="4" column="allow_all_client" access="field" type="int"/>
+        <property name="serial_number" length="50" column="serial_number" access="field" type="string"/>
+        <property name="enabled" length="4" column="enabled" access="field" type="int"/>
+        <property name="real_address" length="30" column="real_address" access="field" type="string"/>
+        <property name="byte_received" column="byte_received" access="field" type="long"/>
+        <property name="byte_send" column="byte_send" access="field" type="long"/>
+        <property name="connected_since" column="connected_since" access="field" type="java.util.Date"/>
+        <property name="virtual_address" length="50" column="virtual_address" access="field" type="string"/>
+        <property name="last_ref" column="last_ref" access="field" type="java.util.Date"/>
+        <property name="net_id" length="30" column="net_id" access="field" type="string"/>
+        <property name="terminal_id" length="30" column="terminal_id" access="field" type="string"/>
+        <property name="description" length="30" column="description" access="field" type="string"/>
+
+        <property name="view_flag" column="view_flag" access="field" type="int"/>
+        <property name="gps_flag" column="gps_flag" access="field" type="int"/>
+
+        <set cascade="save-update" name="sourceNets" table="user_source_nets" lazy="false" inverse="false">
+            <key>
+                <column name="user_id" not-null="true" />
+            </key>
+            <many-to-many entity-name="com.hzih.sslvpn.domain.SourceNet">
+                <column name="source_net_id"/>
+            </many-to-many>
+        </set>
+
+        <set cascade="save-update" name="userGpses" inverse="false" lazy="false">
+            <key column="user_id"></key>
+            <one-to-many class="com.hzih.sslvpn.domain.UserGps"/>
+        </set>
+
+    </class>
+</hibernate-mapping>

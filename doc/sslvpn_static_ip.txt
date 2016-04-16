@@ -1,0 +1,11 @@
+vi server.conf
+
+client-config-dir /usr/app/sslvpn/ccd
+
+mkdir /usr/app/sslvpn/ccd
+
+vi client-name
+
+ifconfig-push 192.168.0.5 192.168.0.6
+
+第一个IP结尾必须是4的倍数+1

@@ -1,0 +1,60 @@
+<component name="libraryTable">
+  <library name="sslvpn_sign_encrypt">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../sharelib/jakarta/struts2/struts2-spring-plugin.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../sharelib/jakarta/struts2/struts2-core.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../sharelib/jakarta/struts2/struts2-convention-plugin.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../sharelib/jakarta/struts2/antlr.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../sharelib/jakarta/log4j/log4j.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../sharelib/hibernate/v3/collin.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../sharelib/hibernate/v3/hibernate3.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../sharelib/spring/spring.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../sharelib/spring/xwork.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../sharelib/dom4j/dom4j.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../sharelib/jakarta/jaxen/jaxen.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../sharelib/jakarta/commons-collections/commons-collections.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../sharelib/jakarta/commons-dbcp/commons-dbcp1.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../sharelib/jakarta/commons-httpclient/commons-httpclient.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../sharelib/jakarta/commons-lang/commons-lang.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../sharelib/jakarta/commons-validator/commons-validator.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../sharelib/jakarta/commons-io/commons-io.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../sharelib/jakarta/commons-pool/commons-pool.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../sharelib/jakarta/commons-digester/commons-digester.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../sharelib/jakarta/commons-fileupload/commons-fileupload.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../sharelib/jakarta/commons-logging/commons-logging.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../sharelib/jakarta/commons-net/commons-net.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../sharelib/jakarta/commons-codec/commons-codec.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../sharelib/jakarta/commons-logging/commons-logging-api.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../sharelib/hibernate/v3/jstl.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../sharelib/hibernate/v3/jta.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../sharelib/sourceforge/slf4j-1.5.6/slf4j-api-1.5.6.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../sharelib/sourceforge/slf4j-1.5.6/slf4j-jdk14-1.5.6.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../sharelib/sourceforge/freemarker/freemarker.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../sharelib/sun/jaf/activation.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../sharelib/sun/javamail/mail.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../sharelib/sourceforge/cp3/c3p0-0.9.1.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../sharelib/hibernate/v3/cglib-nodep.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../sharelib/hibernate/v3/antlr-2.7.6.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../sharelib/hibernate/v3/asm-2.2.3.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../sharelib/hibernate/v3/jcommon.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../sharelib/hibernate/v3/jfreechart.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../sharelib/hibernate/v3/ognl-2.6.11.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../sharelib/json/ezmorph.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../sharelib/json/jsonplugin.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../sharelib/json/json.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../sharelib/json/json-taglib.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../sharelib/jdbc/mysql/mysql-connector-java-5.0.8-bin.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../sharelib/jakarta/commons-beanutils/commons-beanutils.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../sharelib/jakarta/struts/struts.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../sharelib/jakarta/struts/standard.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../sharelib/hibernate/v3/ezmorph.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../sharelib/hibernate/v3/jaas.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../sharelib/hibernate/v3/jdbc2_0-stdext.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../sharelib/jakarta/struts2/concurrent-1.3.4.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../sharelib/jakarta/poi/poi-3.8-beta4-20110826.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../sharelib/jakarta/poi/poi-scratchpad-3.8-beta4-20110826.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

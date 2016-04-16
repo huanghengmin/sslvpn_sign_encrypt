@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="shared">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/shared/common/lib/common.jar!/" />
+      <root url="jar://$PROJECT_DIR$/shared/common/lib/xyzbvc.jar!/" />
+      <root url="jar://$PROJECT_DIR$/shared/ukey/lib/ukey.jar!/" />
+      <root url="jar://$PROJECT_DIR$/shared/taskdef/lib/taskdef.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

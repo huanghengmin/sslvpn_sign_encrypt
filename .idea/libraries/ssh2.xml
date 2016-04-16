@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="ssh2">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../sharelib/ssh2/ganymed-ssh2-build210.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../sharelib/dom4j/dom4j.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../sharelib/jdom/jdom.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

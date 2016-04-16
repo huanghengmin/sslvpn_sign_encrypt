@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class table="log" name="com.hzih.sslvpn.domain.Log">
+        <id access="field" name="id" type="int" column="id" length="11">
+            <generator class="increment"/>
+        </id>
+        <property name="cn" length="100" column="cn" access="field" type="string" />
+        <property name="serial_number" length="100" column="serial_number" access="field" type="string"/>
+        <property name="subject_dn" length="200" column="subject_dn" access="field" type="string"/>
+        <property name="start_time"  column="start_time" access="field" type="java.util.Date"/>
+        <property name="end_time"  column="end_time" access="field" type="java.util.Date"/>
+        <property name="trusted_ip" length="50" column="trusted_ip" access="field" type="string"/>
+        <property name="trusted_port" length="11" column="trusted_port" access="field" type="int"/>
+        <property name="protocol" length="16" column="protocol" access="field" type="string"/>
+        <property name="remote_ip" length="50" column="remote_ip" access="field" type="string"/>
+        <property name="remote_netmask" length="50" column="remote_netmask" access="field" type="string"/>
+        <property name="bytes_received" length="20" column="bytes_received" access="field" type="long"/>
+        <property name="bytes_sent" length="20" column="bytes_sent" access="field" type="long"/>
+        <property name="status" length="4" column="status" access="field" type="int"/>
+        <property name="description" length="200" column="description" access="field" type="string"/>
+    </class>
+</hibernate-mapping>

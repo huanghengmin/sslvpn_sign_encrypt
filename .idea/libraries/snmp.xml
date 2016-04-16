@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="snmp">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../sharelib/sourceforge/snmp/org.opengoss.snmphibernate.mib_1.3.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../sharelib/sourceforge/snmp/org.opengoss.snmphibernate.impl.snmp4j_1.3.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../sharelib/sourceforge/snmp/org.opengoss.snmphibernate.api_1.3.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../sharelib/sourceforge/snmp/snmp4j-2.0.1.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

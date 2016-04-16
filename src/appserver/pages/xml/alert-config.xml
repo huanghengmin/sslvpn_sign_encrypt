@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+	<mailconfig>
+		<server>smtp.sina.com</server>
+		<port>25</port>
+		<email>andyhero168@sina.com</email>
+		<account>andyhero168@sina.com</account>
+		<password>8701271314520</password>
+		<title>SSLVPN 系统</title>
+		<mailfrequency>10</mailfrequency>
+        <emails>
+            <email>test@126.com</email>
+            <email>test2@126.com</email>
+        </emails>
+	</mailconfig>
+	<smsconfig>
+		<smsnumber>1006202102010</smsnumber>
+		<smstitle>互联网接入系统</smstitle>
+		<smsfrequency>10</smsfrequency>
+	</smsconfig>
+</config>

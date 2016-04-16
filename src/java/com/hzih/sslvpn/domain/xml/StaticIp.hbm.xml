@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class table="static_ip" name="com.hzih.sslvpn.domain.StaticIp">
+        <!-- 复合主键使用composite-id标签 -->
+        <id access="field" name="client_end" type="int" column="client_end" length="11">
+        </id>
+
+        <property name="server_end" length="11" column="sever_end" access="field" type="int"/>
+    </class>
+</hibernate-mapping>
+

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+  <class table="permission" name="com.hzih.sslvpn.domain.Permission">
+    <id access="field" name="id" type="long" column="id">
+      <generator class="increment"/>
+    </id>
+    <property name="code" length="50" column="code" access="field" type="string"/>
+    <property name="name" length="30" column="name" access="field" type="string"/>
+    <property name="description" column="description" access="field" type="string"/>
+    <property name="parentId" column="parent_id" access="field" type="long"/>
+    <property name="order" column="seq" access="field" type="int"/>
+    <set access="field" lazy="false" inverse="true" table="role_permission" name="roles">
+      <key column="permission_id"/>
+      <many-to-many class="com.hzih.sslvpn.domain.Role" column="role_id"/>
+    </set>
+  </class>
+</hibernate-mapping>

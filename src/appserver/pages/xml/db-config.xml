@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+	<maindb>
+		<dbip>127.0.0.1</dbip>
+		<dbport>3306</dbport>
+		<dbname>sslvpn</dbname>
+		<username>root</username>
+		<password>123456</password>
+        <dbused>80</dbused>
+	</maindb>
+
+	<backupdb>
+		<dbip>127.0.0.1</dbip>
+		<dbport>3306</dbport>
+		<dbname>sslvpn_backup</dbname>
+		<username>root</username>
+		<password>123456</password>
+	</backupdb>
+</config>

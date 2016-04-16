@@ -1,0 +1,607 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans 
+                           http://www.springframework.org/schema/beans/spring-beans-2.0.xsd
+                           http://www.springframework.org/schema/aop 
+                           http://www.springframework.org/schema/aop/spring-aop-2.0.xsd 
+                           http://www.springframework.org/schema/tx 
+                           http://www.springframework.org/schema/tx/spring-tx-2.0.xsd ">
+    <!-- load properties from file -->
+    <bean id="propertyConfigurer" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+        <property name="ignoreUnresolvablePlaceholders" value="true" />
+        <property name="location">
+            <value>classpath:/config.properties</value>
+        </property>
+    </bean>
+
+    <!-- ///////////////// 数据库持久层配置 /////////////////// -->
+    <!--<bean id="dataSource" class="org.springframework.jndi.JndiObjectFactoryBean">-->
+    <!--<property name="jndiName" value="java:comp/env/${jndiName}"></property>-->
+    <!--</bean>-->
+
+    <!-- ///////////////// 数据库持久层配置 /////////////////// -->
+    <!--<bean id="dataSource" class="org.springframework.jndi.JndiObjectFactoryBean">-->
+    <!--<property name="jndiName" value="java:comp/env/${jndiName}"></property>-->
+    <!--</bean>-->
+    <bean id="dataSource"
+          class="com.mchange.v2.c3p0.ComboPooledDataSource"
+          destroy-method="close">
+        <property name="driverClass">
+            <value>${jdbc.driverClass}</value>
+        </property>
+        <property name="jdbcUrl">
+            <value>${jdbc.url}</value>
+        </property>
+        <property name="user">
+            <value>${jdbc.user}</value>
+        </property>
+        <property name="password">
+            <value>${jdbc.password}</value>
+        </property>
+        <!--连接池中保留的最小连接数。-->
+        <property name="minPoolSize" value="10"/>
+        <!--连接池中保留的最大连接数。Default: 15 -->
+        <property name="maxPoolSize" value="30"/>
+        <!--最大空闲时间,1800秒内未使用则连接被丢弃。若为0则永不丢弃。Default: 0 -->
+        <property name="maxIdleTime" value="1800"/>
+        <!--当连接池中的连接耗尽的时候c3p0一次同时获取的连接数。Default: 3 -->
+        <property name="acquireIncrement" value="3"/>
+        <property name="maxStatements" value="0"/>
+        <property name="initialPoolSize" value="3"/>
+        <!--每60秒检查所有连接池中的空闲连接。Default: 0 -->
+        <property name="idleConnectionTestPeriod" value="60"/>
+        <!--定义在从数据库获取新连接失败后重复尝试的次数。Default: 30 -->
+        <property name="acquireRetryAttempts" value="30"/>
+        <property name="breakAfterAcquireFailure" value="true"/>
+        <property name="testConnectionOnCheckout" value="false"/>
+    </bean>
+
+
+    <!--Hibernate SessionFatory-->
+
+    <bean id="sessionFactory" class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
+        <property name="dataSource">
+            <ref  bean="dataSource"/>
+        </property>
+        <property name="configLocations">
+            <list>
+                <value>classpath:hibernate.cfg.xml</value>
+            </list>
+        </property>
+        <property name="hibernateProperties">
+            <props>
+                <prop key="hibernate.dialect">org.hibernate.dialect.MySQL5InnoDBDialect</prop>
+                <prop key="hibernate.show_sql">true</prop>
+                <prop key="hibernate.">true</prop>
+                <prop key="hibernate.generate_statistics">true</prop>
+                <prop key="hibernate.connection.release_mode">auto</prop>
+                <prop key="hibernate.autoReconnect">true</prop>
+                <prop key="hibernate.hbm2ddl.auto">update</prop>
+                <prop key="cache.use_query_cache">true</prop>
+            </props>
+        </property>
+    </bean>
+
+    <!--Hibernate TransactionManager--><!-- 事务管理器 -->
+    <bean id="transactionManager" class="org.springframework.orm.hibernate3.HibernateTransactionManager">
+        <property name="sessionFactory">
+            <ref local="sessionFactory"/>
+        </property>
+    </bean>
+
+
+    <!--   配置事务拦截器-->
+    <bean id="transactionalTemplate" abstract="true"
+          class="org.springframework.transaction.interceptor.TransactionInterceptor">
+        <property name="transactionManager">
+            <ref bean="transactionManager"/>
+        </property>
+        <property name="transactionAttributes">
+            <props>
+                <prop key="new*">PROPAGATION_REQUIRED</prop>
+                <prop key="add*">PROPAGATION_REQUIRED</prop>
+                <prop key="bind*">PROPAGATION_REQUIRED</prop>
+                <prop key="cancel*">PROPAGATION_REQUIRED</prop>
+                <prop key="change*">PROPAGATION_REQUIRED</prop>
+                <prop key="check*">PROPAGATION_REQUIRED</prop>
+                <prop key="del*">PROPAGATION_REQUIRED</prop>
+                <prop key="edit*">PROPAGATION_REQUIRED</prop>
+                <prop key="find*">PROPAGATION_REQUIRED,readOnly</prop>
+                <prop key="get*">PROPAGATION_REQUIRED,readOnly</prop>
+                <prop key="is*">PROPAGATION_REQUIRED,readOnly</prop>
+                <prop key="insert">PROPAGATION_REQUIRED</prop>
+                <prop key="list*">PROPAGATION_REQUIRED,readOnly</prop>
+                <prop key="merge*">PROPAGATION_REQUIRED,readOnly</prop>
+                <prop key="next*">PROPAGATION_REQUIRED</prop>
+                <prop key="upload*">PROPAGATION_REQUIRED</prop>
+                <prop key="upd*">PROPAGATION_REQUIRED</prop>
+                <prop key="unbind*">PROPAGATION_REQUIRED</prop>
+                <prop key="save*">PROPAGATION_REQUIRED</prop>
+                <prop key="build*">PROPAGATION_REQUIRED</prop>
+                <prop key="search*">PROPAGATION_REQUIRED,readOnly</prop>
+            </props>
+        </property>
+    </bean>
+
+
+    <bean id="autoBeanNameProxyCreator" class="org.springframework.aop.framework.autoproxy.BeanNameAutoProxyCreator">
+        <property name="beanNames">
+            <list>
+                <value>*DAO</value>
+                <value>gotoPage</value>
+                <value>find</value>
+            </list>
+        </property>
+        <property name="interceptorNames">
+            <list>
+                <idref local="transactionalTemplate"/>
+            </list>
+        </property>
+        <!-- 这里的配置是必须的，否则无法完成代理的类型转化 这是使用CGLIB来生成代理 -->
+        <property name="proxyTargetClass" value="true"/>
+    </bean>
+
+    <!--dao template-->
+    <bean id="daoTemplate" abstract="true" class="cn.collin.commons.dao.MyDaoSupport">
+        <property name="sessionFactory" ref="sessionFactory"/>
+    </bean>
+
+    <bean id="accountDao" class="com.hzih.sslvpn.dao.impl.AccountDaoImpl" parent="daoTemplate"/>
+    <bean id="roleDao" class="com.hzih.sslvpn.dao.impl.RoleDaoImpl" parent="daoTemplate"/>
+    <bean id="safePolicyDao" class="com.hzih.sslvpn.dao.impl.SafePolicyDaoImpl" parent="daoTemplate"/>
+    <!--<bean id="sysLogDao" class="com.hzih.sslvpn.dao.impl.SysLogDaoImpl" parent="daoTemplate"/>-->
+    <bean id="userOperLogDao" class="com.hzih.sslvpn.dao.impl.UserOperLogDaoImpl" parent="daoTemplate"/>
+    <bean id="permissionDao" class="com.hzih.sslvpn.dao.impl.PermissionDaoImpl" parent="daoTemplate"/>
+    <!--<bean id="businessLogDao" class="com.hzih.sslvpn.dao.impl.BusinessLogDaoImpl" parent="daoTemplate"/>-->
+
+    <bean id="serverCertificateDao" class="com.hzih.sslvpn.dao.impl.ServerCertificateDaoImpl" parent="daoTemplate"/>
+    <bean id="serverDao" class="com.hzih.sslvpn.dao.impl.ServerDaoImpl" parent="daoTemplate"/>
+    <bean id="staticIpDao" class="com.hzih.sslvpn.dao.impl.StaticIpDaoImpl" parent="daoTemplate"/>
+
+    <!--<bean id="groupNetDao" class="com.hzih.sslvpn.dao.impl.GroupNetDaoImpl" parent="daoTemplate"/>-->
+    <!--<bean id="privateNetDao" class="com.hzih.sslvpn.dao.impl.PrivateNetDaoImpl" parent="daoTemplate"/>-->
+    <!--<bean id="userPrivateNetsDao" class="com.hzih.sslvpn.dao.impl.UserPrivateNetsDaoImpl" parent="daoTemplate"/>-->
+
+    <bean id="userDao" class="com.hzih.sslvpn.dao.impl.UserDaoImpl" parent="daoTemplate"/>
+    <bean id="groupDao" class="com.hzih.sslvpn.dao.impl.GroupDaoImpl" parent="daoTemplate"/>
+
+    <bean id="userGroupDao" class="com.hzih.sslvpn.dao.impl.UserGroupDaoImpl" parent="daoTemplate"/>
+    <!--<bean id="groupPrivateNetsDao" class="com.hzih.sslvpn.dao.impl.GroupPrivateNetsDaoImpl" parent="daoTemplate"/>-->
+    <bean id="logDao" class="com.hzih.sslvpn.dao.impl.LogDaoImpl" parent="daoTemplate"/>
+
+
+    <bean id="trustCertificateDao" class="com.hzih.sslvpn.dao.impl.TrustCertificateDaoImpl" parent="daoTemplate"/>
+    <!--<bean id="serverManagerDao" class="com.hzih.sslvpn.dao.impl.ServerManagerDaoImpl" parent="daoTemplate"/>-->
+    <!--<bean id="keyManager" class="com.hzih.sslvpn.dao.impl.KeyManagerImpl" parent="daoTemplate"/>-->
+    <!--<bean id="fileSerialDao" class="com.hzih.sslvpn.dao.impl.FileSerialDaoImpl" parent="daoTemplate"/>-->
+
+    <bean id="userGpsDao" class="com.hzih.sslvpn.dao.impl.UserGpsDaoImpl" parent="daoTemplate"/>
+    <!--<bean id="terminalDao" class="com.hzih.sslvpn.dao.impl.TerminalDaoImpl" parent="daoTemplate"/>-->
+    <!--<bean id="routeUserDao" class="com.hzih.sslvpn.dao.impl.RouteUserDaoImpl" parent="daoTemplate"/>-->
+    <!--<bean id="userRouteUserDao" class="com.hzih.sslvpn.dao.impl.UserRouteUserDaoImpl" parent="daoTemplate"/>-->
+
+    <bean id="backUpDao" class="com.hzih.sslvpn.dao.impl.BackUpDaoImpl" parent="daoTemplate"/>
+    <!--<bean id="trustTerminalDao" class="com.hzih.sslvpn.dao.impl.TrustTerminalDaoImpl" parent="daoTemplate"/>-->
+    <bean id="sourceNetDao" class="com.hzih.sslvpn.dao.impl.SourceNetDaoImpl" parent="daoTemplate"/>
+    <bean id="equipmentLogDao" class="com.hzih.sslvpn.dao.impl.EquipmentLogDaoImpl" parent="daoTemplate"/>
+    <!--<bean id="natDao" class="com.hzih.sslvpn.dao.impl.NatDaoImpl" parent="daoTemplate"/>-->
+
+    <!-- services -->
+
+    <bean id="logService" class="com.hzih.sslvpn.service.impl.LogServiceImpl">
+        <!--<property name="sysLogDao" ref="sysLogDao"/>-->
+        <property name="userOperLogDao" ref="userOperLogDao"/>
+        <!--<property name="businessLogDao" ref="businessLogDao"/>-->
+    </bean>
+
+    <bean id="loginService" class="com.hzih.sslvpn.service.impl.LoginServiceImpl">
+        <property name="accountDao" ref="accountDao"/>
+    </bean>
+
+    <bean id="safePolicyService" class="com.hzih.sslvpn.service.impl.SafePolicyServiceImpl">
+        <property name="safePolicyDao" ref="safePolicyDao"/>
+    </bean>
+
+    <bean id="roleService" class="com.hzih.sslvpn.service.impl.RoleServiceImpl">
+        <property name="roleDao" ref="roleDao"/>
+        <property name="permissionDao" ref="permissionDao"/>
+    </bean>
+
+    <bean id="accountService" class="com.hzih.sslvpn.service.impl.AccountServiceImpl">
+        <property name="accountDao" ref="accountDao"/>
+        <property name="roleDao" ref="roleDao"/>
+    </bean>
+
+    <bean id="auditService" class="com.hzih.sslvpn.service.impl.AuditServiceImpl">
+        <!--<property name="businessLogDao" ref="businessLogDao"/>-->
+        <!--<property name="sysLogDao" ref="sysLogDao"/>-->
+        <property name="userOperLogDao" ref="userOperLogDao"/>
+    </bean>
+
+    <bean id="userGroupService" class="com.hzih.sslvpn.service.impl.UserGroupServiceImpl">
+        <property name="userGroupDao" ref="userGroupDao"/>
+        <property name="userDao" ref="userDao"/>
+    </bean>
+
+    <!--<bean id="groupPrivateNetsService" class="com.hzih.sslvpn.service.impl.GroupPrivateNetsServiceImpl">
+        <property name="groupPrivateNetsDao" ref="groupPrivateNetsDao"/>
+        <property name="privateNetDao" ref="privateNetDao"/>
+    </bean>-->
+
+
+    <bean id="backUpService" class="com.hzih.sslvpn.service.impl.BackUpServiceImpl">
+        <property name="backUpDao" ref="backUpDao"/>
+    </bean>
+
+    <!--<bean id="trustTerminalService" class="com.hzih.sslvpn.service.impl.TrustTerminalServiceImpl">-->
+        <!--<property name="trustTerminalDao" ref="trustTerminalDao"/>-->
+    <!--</bean>-->
+    <!-- action  -->
+    <!--user-->
+    <bean id="AccountAction" class="com.hzih.sslvpn.web.action.user.AccountAction">
+        <property name="logService" ref="logService"/>
+        <property name="accountService" ref="accountService"/>
+        <property name="safePolicyService" ref="safePolicyService"/>
+    </bean>
+
+    <bean id="loginAction" class="com.hzih.sslvpn.web.action.user.LoginAction">
+        <property name="loginService" ref="loginService"/>
+        <property name="logService" ref="logService"/>
+        <property name="auditService" ref="auditService"/>
+    </bean>
+
+    <bean id="logoutAction" class="com.hzih.sslvpn.web.action.user.LogoutAction">
+        <property name="logService" ref="logService"/>
+    </bean>
+
+    <bean id="RoleAction" class="com.hzih.sslvpn.web.action.user.RoleAction">
+        <property name="roleService" ref="roleService"/>
+        <property name="logService" ref="logService"/>
+    </bean>
+
+    <bean id="SafePolicyAction" class="com.hzih.sslvpn.web.action.user.SafePolicyAction">
+        <property name="logService" ref="logService"/>
+        <property name="safePolicyService" ref="safePolicyService"/>
+    </bean>
+    <!--net-->
+    <bean id="ConfigManagerAction" class="com.hzih.sslvpn.web.action.system.ConfigManagerAction">
+        <property name="logService" ref="logService"/>
+    </bean>
+
+    <bean id="InterfaceManagerAction" class="com.hzih.sslvpn.web.action.net.InterfaceManagerAction">
+        <property name="logService" ref="logService"/>
+    </bean>
+
+    <bean id="SecurityConfigAction" class="com.hzih.sslvpn.web.action.net.SecurityConfigAction">
+        <property name="logService" ref="logService"/>
+    </bean>
+
+    <!--<bean id="SaveInterfaceAction" class="com.hzih.ca.web.action.net.SaveInterfaceAction">
+    </bean>-->
+
+    <!--system-->
+
+    <bean id="PlatformAction" class="com.hzih.sslvpn.web.action.system.PlatformAction">
+        <property name="logService" ref="logService"/>
+    </bean>
+
+    <bean id="LicenseAction" class="com.hzih.sslvpn.web.action.system.LicenseAction">
+        <property name="logService" ref="logService"/>
+    </bean>
+
+    <bean id="DownLoadAction" class="com.hzih.sslvpn.web.action.system.DownLoadAction">
+        <property name="logService" ref="logService"/>
+        <property name="loginService" ref="loginService"/>
+    </bean>
+
+    <bean id="UpgradeAction" class="com.hzih.sslvpn.web.action.system.UpgradeAction">
+        <property name="logService" ref="logService"/>
+    </bean>
+
+
+    <bean id="checkTimeoutAction" class="com.hzih.sslvpn.web.action.CheckTimeoutAction">
+        <property name="logService" ref="logService"/>
+    </bean>
+
+    <bean id="AuditAction" class="com.hzih.sslvpn.web.action.audit.AuditAction">
+        <property name="logService" ref="logService"/>
+        <property name="auditService" ref="auditService"/>
+    </bean>
+
+    <!-- vpn  set-->
+  <!--  <bean id="NetConfigAction" class="com.hzih.sslvpn.web.action.sslvpn.set.NetConfigAction">
+        <property name="logService" ref="logService"/>
+        <property name="serverDao" ref="serverDao"/>
+        <property name="privateNetDao" ref="privateNetDao"/>
+    </bean>-->
+
+   <!-- <bean id="ServerSetAction" class="com.hzih.sslvpn.web.action.sslvpn.set.ServerSetAction">
+        <property name="logService" ref="logService"/>
+        <property name="serverDao" ref="serverDao"/>
+        <property name="privateNetDao" ref="privateNetDao"/>
+    </bean>-->
+
+
+    <!--<bean id="AdvancedAction" class="com.hzih.sslvpn.web.action.sslvpn.set.AdvancedAction">
+        <property name="logService" ref="logService"/>
+        <property name="serverDao" ref="serverDao"/>
+        <property name="privateNetDao" ref="privateNetDao"/>
+    </bean>-->
+
+   <!-- <bean id="CertificateAction" class="com.hzih.sslvpn.web.action.sslvpn.set.CertificateAction">
+        <property name="logService" ref="logService"/>
+        <property name="serverDao" ref="serverDao"/>
+        <property name="serverCertificateDao" ref="serverCertificateDao"/>
+        &lt;!&ndash;<property name="keyManagerDao" ref="keyManager"/>&ndash;&gt;
+        &lt;!&ndash;<property name="fileSerialDao" ref="fileSerialDao"/>&ndash;&gt;
+        &lt;!&ndash;<property name="pkcsServerDao" ref="pkcsServerDao"/>&ndash;&gt;
+    </bean>-->
+
+    <bean id="TrustCertificateAction" class="com.hzih.sslvpn.web.action.sslvpn.set.TrustCertificateAction">
+        <property name="logService" ref="logService"/>
+        <property name="serverDao" ref="serverDao"/>
+        <property name="trustCertificateDao" ref="trustCertificateDao"/>
+        <!--<property name="keyManagerDao" ref="keyManager"/>-->
+        <!--<property name="fileSerialDao" ref="fileSerialDao"/>-->
+        <!--<property name="pkcsServerDao" ref="pkcsServerDao"/>-->
+    </bean>
+
+   <!-- <bean id="GroupNetAction" class="com.hzih.sslvpn.web.action.sslvpn.set.GroupNetAction">
+        <property name="groupNetDao" ref="groupNetDao"/>
+    </bean>-->
+
+    <!--<bean id="PrivateNetAction" class="com.hzih.sslvpn.web.action.sslvpn.set.PrivateNetAction">
+        <property name="privateNetDao" ref="privateNetDao"/>
+        <property name="serverDao" ref="serverDao"/>
+    </bean>-->
+
+    <!--enable-->
+   <!-- <bean id="ControlAction" class="com.hzih.sslvpn.web.action.sslvpn.control.ControlAction">
+        <property name="userDao" ref="userDao"/>
+        <property name="logService" ref="logService"/>
+        &lt;!&ndash;<property name="privateNetDao" ref="privateNetDao"/>&ndash;&gt;
+        &lt;!&ndash;<property name="userPrivateNetsDao" ref="userPrivateNetsDao"/>&ndash;&gt;
+    </bean>-->
+
+    <!--server -->
+
+    <bean id="ClientControl" class="com.hzih.sslvpn.web.action.sslvpn.client.ClientControl">
+        <property name="userDao" ref="userDao"/>
+        <property name="logService" ref="logService"/>
+        <!--<property name="privateNetDao" ref="privateNetDao"/>-->
+    </bean>
+
+    <bean id="ServerStatusAction" class="com.hzih.sslvpn.web.action.sslvpn.service.ServerStatusAction">
+        <property name="logService" ref="logService"/>
+        <property name="serverDao" ref="serverDao"/>
+        <property name="equipmentLogDao" ref="equipmentLogDao"/>
+
+    </bean>
+
+    <bean id="OnlineUserAction" class="com.hzih.sslvpn.web.action.sslvpn.online.OnlineUserAction">
+    </bean>
+
+    <bean id="UserLogAction" class="com.hzih.sslvpn.web.action.sslvpn.log.UserLogAction">
+        <property name="logDao" ref="logDao"/>
+    </bean>
+
+    <!--<bean id="ClientAction" class="com.hzih.sslvpn.web.action.sslvpn.client.ClientAction">-->
+    <!--</bean>-->
+
+    <!--user manager-->
+    <bean id="IppAction" class="com.hzih.sslvpn.web.action.sslvpn.ccd.IppAction">
+    </bean>
+
+    <bean id="UserPermissionAction" class="com.hzih.sslvpn.web.action.sslvpn.ccd.UserPermissionAction">
+        <property name="userDao" ref="userDao"/>
+        <!--<property name="userPrivateNetsDao" ref="userPrivateNetsDao"/>-->
+        <!--<property name="privateNetDao" ref="privateNetDao"/>-->
+        <property name="serverDao" ref="serverDao"/>
+        <property name="staticIpDao" ref="staticIpDao"/>
+        <property name="logService" ref="logService"/>
+        <!--<property name="routeUserDao" ref="routeUserDao"/>-->
+    </bean>
+
+
+    <bean id="UserGroupAction" class="com.hzih.sslvpn.web.action.sslvpn.ccd.UserGroupAction">
+        <property name="userDao" ref="userDao"/>
+        <!--<property name="privateNetDao" ref="privateNetDao"/>-->
+        <property name="logService" ref="logService"/>
+        <property name="userGroupService" ref="userGroupService"/>
+    </bean>
+
+   <!-- <bean id="GroupPrivateNetsAction" class="com.hzih.sslvpn.web.action.sslvpn.ccdvateNetsAction">
+        &lt;!&ndash;<property name="privateNetDao" ref="privateNetDao"/>&ndash;&gt;
+        <property name="groupDao" ref="groupDao"/>
+        &lt;!&ndash;<property name="groupPrivateNetsService" ref="groupPrivateNetsService"/>&ndash;&gt;
+    </bean>-->
+
+
+    <bean id="GroupPermissionAction" class="com.hzih.sslvpn.web.action.sslvpn.ccd.GroupPermissionAction">
+        <property name="groupDao" ref="groupDao"/>
+        <property name="logService" ref="logService"/>
+    </bean>
+
+    <bean id="RevokeAction" class="com.hzih.sslvpn.web.action.sslvpn.crl.RevokeAction">
+        <!--<property name="userDao" ref="userDao"/>-->
+        <property name="logService" ref="logService"/>
+    </bean>
+
+    <bean id="RevokeFileAction" class="com.hzih.sslvpn.web.action.sslvpn.crl.RevokeFileAction">
+        <!--<property name="userDao" ref="userDao"/>-->
+        <property name="logService" ref="logService"/>
+    </bean>
+
+
+
+    <!--<bean id="ImPortUserAction" class="com.hzih.sslvpn.web.action.sslvpn.ccd.ImPortUserAction">-->
+        <!--<property name="userDao" ref="userDao"/>-->
+        <!--<property name="logService" ref="logService"/>-->
+    <!--</bean>-->
+
+    <bean id="SysLogConfigAction" class="com.hzih.sslvpn.web.action.sslvpn.syslog.SysLogConfigAction">
+        <property name="logService" ref="logService"/>
+    </bean>
+
+    <!--<bean id="LdapConfigAction" class="com.hzih.sslvpn.web.action.sslvpn.ldap.LdapConfigAction">-->
+        <!--<property name="logService" ref="logService"/>-->
+    <!--</bean>-->
+
+    <!--<bean id="CRLConfigAction" class="com.hzih.sslvpn.web.action.sslvpn.crl.CRLConfigAction">-->
+        <!--<property name="logService" ref="logService"/>-->
+    <!--</bean>-->
+
+    <!--<bean id="ACLAction" class="com.hzih.sslvpn.web.action.sslvpn.acl.ACLAction">-->
+        <!--<property name="logService" ref="logService"/>-->
+    <!--</bean>-->
+
+    <!--监测服务器配置-->
+    <!--<bean id="MonitorConfigAction" class="com.hzih.sslvpn.web.action.sslvpn.monitor.MonitorConfigAction">-->
+        <!--<property name="logService" ref="logService"/>-->
+    <!--</bean>-->
+
+    <bean id="ClientStrategyAction" class="com.hzih.sslvpn.web.action.sslvpn.client.strategy.ClientStrategyAction">
+        <property name="logService" ref="logService"/>
+    </bean>
+
+    <!--<bean id="ClientGpsUploadAction" class="com.hzih.sslvpn.web.action.sslvpn.client.upload.ClientGpsUploadAction">-->
+        <!--<property name="logService" ref="logService"/>-->
+        <!--<property name="userDao" ref="userDao"/>-->
+        <!--<property name="userGpsDao" ref="userGpsDao"/>-->
+    <!--</bean>-->
+
+    <!--<bean id="ClientUploadTerminalsAction" class="com.hzih.sslvpn.web.action.sslvpn.client.upload.ClientUploadTerminalsAction">-->
+        <!--<property name="logService" ref="logService"/>-->
+        <!--<property name="userDao" ref="userDao"/>-->
+        <!--<property name="terminalDao" ref="terminalDao"/>-->
+        <!--<property name="routeUserDao" ref="routeUserDao"/>-->
+        <!--<property name="userRouteUserDao" ref="userRouteUserDao"/>-->
+    <!--</bean>-->
+
+    <bean id="ClientVersionAction" class="com.hzih.sslvpn.web.action.sslvpn.client.ClientVersionAction">
+    </bean>
+
+    <!--<bean id="UpgradeVersionAction" class="com.hzih.sslvpn.web.action.sslvpn.client.UpgradeVersionAction">-->
+    <!--</bean>-->
+
+    <!--service-->
+    <bean id="SnmpStatusAction" class="com.hzih.sslvpn.web.action.sslvpn.service.SnmpStatusAction">
+        <property name="logService" ref="logService"/>
+    </bean>
+
+    <bean id="SshStatusAction" class="com.hzih.sslvpn.web.action.sslvpn.service.SshStatusAction">
+        <property name="logService" ref="logService"/>
+    </bean>
+
+    <bean id="WebminStatusAction" class="com.hzih.sslvpn.web.action.sslvpn.service.WebminStatusAction">
+        <property name="logService" ref="logService"/>
+    </bean>
+
+
+    <bean id="BackUpAction" class="com.hzih.sslvpn.web.action.sslvpn.backup.BackUpAction">
+        <property name="logService" ref="logService"/>
+        <property name="backUpService" ref="backUpService"/>
+        <property name="accountService" ref="accountService"/>
+    </bean>
+
+    <bean id="HotBackupAction" class="com.hzih.sslvpn.web.action.config.HotBackupAction">
+        <property name="logService" ref="logService"/>
+    </bean>
+
+    <!--config-->
+
+    <bean class="com.hzih.sslvpn.web.action.config.AlertAction" id="AlertAction">
+        <property name="logService" ref="logService"/>
+    </bean>
+
+    <bean class="com.hzih.sslvpn.web.action.config.AlertManagerAction" id="AlertManagerAction">
+        <property name="logService" ref="logService"/>
+    </bean>
+
+
+    <!--<bean class="com.hzih.sslvpn.web.action.config.TrustTerminalAction" id="TrustTerminalAction">-->
+        <!--<property name="logService" ref="logService"/>-->
+        <!--<property name="serverDao" ref="serverDao"/>-->
+        <!--<property name="trustTerminalService" ref="trustTerminalService"/>-->
+    <!--</bean>-->
+
+     <bean class="com.hzih.sslvpn.web.action.sslvpn.set.SourceNetsAction" id="SourceNetsAction">
+        <property name="logService" ref="logService"/>
+        <property name="sourceNetDao" ref="sourceNetDao"/>
+    </bean>
+
+
+    <bean class="com.hzih.sslvpn.web.action.sslvpn.set.ServerSourceNetsAction" id="ServerSourceNetsAction">
+        <property name="logService" ref="logService"/>
+        <property name="sourceNetDao" ref="sourceNetDao"/>
+        <property name="serverDao" ref="serverDao"/>
+    </bean>
+
+    <bean class="com.hzih.sslvpn.web.action.sslvpn.set.UserSourceNetsAction" id="UserSourceNetsAction">
+        <property name="logService" ref="logService"/>
+        <property name="sourceNetDao" ref="sourceNetDao"/>
+        <property name="userDao" ref="userDao"/>
+    </bean>
+    <!--<bean class="com.hzih.sslvpn.web.action.sslvpn.set.UserNatsAction" id="UserNatsAction">-->
+        <!--<property name="logService" ref="logService"/>-->
+        <!--<property name="natDao" ref="natDao"/>-->
+        <!--<property name="userDao" ref="userDao"/>-->
+    <!--</bean>-->
+
+    <!--<bean class="com.hzih.sslvpn.web.action.sslvpn.set.NatAction" id="NatAction">-->
+        <!--<property name="logService" ref="logService"/>-->
+        <!--<property name="natDao" ref="natDao"/>-->
+    <!--</bean>-->
+
+    <bean class="com.hzih.sslvpn.web.action.sslvpn.set.GroupSourceNetsAction" id="GroupSourceNetsAction">
+        <property name="logService" ref="logService"/>
+        <property name="sourceNetDao" ref="sourceNetDao"/>
+        <property name="groupDao" ref="groupDao"/>
+    </bean>
+
+    <!--<bean class="com.hzih.sslvpn.web.action.sslvpn.set.RuleAction" id="RuleAction">-->
+        <!--<property name="logService" ref="logService"/>-->
+    <!--</bean>-->
+
+    <!--<bean class="com.hzih.sslvpn.web.action.sslvpn.set.DataMakerAction" id="DataMakerAction">-->
+        <!--<property name="logService" ref="logService"/>-->
+    <!--</bean>-->
+
+    <bean class="com.hzih.sslvpn.web.action.alert.SystemAlertAction" id="SystemAlertAction">
+        <property name="logService" ref="logService"/>
+        <property name="equipmentLogDao" ref="equipmentLogDao"/>
+    </bean>
+
+
+    <bean class="com.hzih.sslvpn.web.action.log.EquipmentLogAction" id="EquipmentLogAction">
+        <property name="logService" ref="logService"/>
+        <property name="equipmentLogDao" ref="equipmentLogDao"/>
+    </bean>
+
+    <bean class="com.hzih.sslvpn.web.action.sslvpn.recovery.RecoveryAction" id="RecoveryAction">
+        <property name="logService" ref="logService"/>
+    </bean>
+
+    <bean class="com.hzih.sslvpn.web.action.audit.AuditFlagAction" id="AuditFlagAction">
+        <property name="logService" ref="logService"/>
+    </bean>
+
+    <bean class="com.hzih.sslvpn.web.action.monitor.MonitorAction" id="MonitorAction">
+        <property name="logService" ref="logService"/>
+    </bean>
+
+    <bean class="com.hzih.sslvpn.web.action.sslvpn.datetime.DateTimeAction" id="DateTimeAction">
+        <property name="logService" ref="logService"/>
+    </bean>
+
+    <bean class="com.hzih.sslvpn.web.action.check.CheckAction" id="CheckAction">
+        <property name="logService" ref="logService"/>
+    </bean>
+
+    <!--<bean class="com.hzih.sslvpn.web.action.digest.DigestAction" id="DigestAction">-->
+    <!--</bean>-->
+
+</beans>

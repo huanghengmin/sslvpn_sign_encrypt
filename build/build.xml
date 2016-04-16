@@ -1,0 +1,334 @@
+<!DOCTYPE project SYSTEM "build.dtd" [
+        <!ENTITY classpaths     SYSTEM "classpaths.xml">
+        <!ENTITY targets         SYSTEM "targets.xml">
+        ]>
+<project name="ROOT" default="all" basedir="..">
+    <property file="build/build.properties"/>
+    &classpaths;
+    &targets;
+    <target name="all" depends="jars"/>
+    <target name="clean" depends="clean_common"/>
+    <target name="publib" depends="mypublib"/>
+    <target name="war" depends="jars,wars"/>
+    <!-- initialization target -->
+    <target name="my_init">
+        <!-- output jar file name for this project -->
+        <property name="project.name" value="ROOT"/>
+        <property name="project.jar" value="${target.dir}/${project.name}.jar"/>
+        <!--obfuscator-->
+        <property name="obproject.jar" value="${obfuscate.dir}/${project.name}.jar"/>
+
+        <property name="obproject.war" value="${obfuscate.dir}/${project.name}.war"/>
+
+        <property name="project.war" value="${target.dir}/${project.name}.war"/>
+
+        <property name="deploy.name" value="common"/>
+        <property name="deploy.file" value="${project.war}"/>
+        <!-- shared classpath for this project -->
+        <path id="shared.classpath">
+            <pathelement location="${shared.dir}/common/lib/common.jar"/>
+            <pathelement location="${shared.dir}/common/lib/xyzbvc.jar"/>
+            <pathelement location="${shared.dir}/dbchange/lib/dbchange.jar"/>
+            <pathelement location="${shared.dir}/ukey/lib/ukey.jar"/>
+            <pathelement location="${sharelib.dir}/resources.jar"/>
+        </path>
+        <!-- build classpath for this project -->
+        <path id="build.classpath">
+            <path refid="shared.classpath"/>
+            <pathelement location="${sharelib.dir}/jakarta/commons-pool/commons-pool.jar"/>
+            <pathelement location="${sharelib.dir}/jakarta/commons-digester/commons-digester.jar"/>
+            <pathelement location="${sharelib.dir}/jakarta/commons-collections/commons-collections.jar"/>
+            <pathelement location="${sharelib.dir}/jakarta/commons-logging/commons-logging.jar"/>
+            <pathelement location="${sharelib.dir}/jakarta/commons-beanutils/commons-beanutils.jar"/>
+            <pathelement location="${sharelib.dir}/jakarta/commons-httpclient/commons-httpclient.jar"/>
+            <pathelement location="${sharelib.dir}/jakarta/commons-codec/commons-codec.jar"/>
+            <pathelement location="${sharelib.dir}/sourceforge/slf4j-1.5.6/slf4j-api-1.5.6.jar"/>
+            <pathelement location="${sharelib.dir}/sourceforge/ehcache/ehcache-1.1.jar"/>
+            <pathelement location="${sharelib.dir}/sourceforge/slf4j-1.5.6/slf4j-jdk14-1.5.6.jar"/>
+            <pathelement location="${sharelib.dir}/sourceforge/freemarker/freemarker.jar"/>
+            <pathelement location="${sharelib.dir}/spring/spring.jar"/>
+
+            <pathelement location="${sun.dir}/jaf/activation.jar"/>
+            <pathelement location="${sharelib.dir}/sun/servlet/servlet-api.jar"/>
+            <pathelement location="${sharelib.dir}/sun/servlet/jsp-api.jar"/>
+            <pathelement location="${sharelib.dir}/sun/javamail/mail.jar"/>
+            <!--<pathelement location="${sharelib.dir}/apache/mina/mina-core.jar"/>-->
+            <pathelement location="${sharelib.dir}/apache-mina-2.0.7/dist/mina-core-2.0.7.jar"/>
+            <pathelement location="${sharelib.dir}/sourceforge/cp3/c3p0-0.9.1.2.jar"/>
+            <pathelement location="${sharelib.dir}/sourceforge/syslog/syslog4j-0.9.46.jar"/>
+            <pathelement location="${sharelib.dir}/hibernate/v3/antlr-2.7.6rc1.jar"/>
+            <!--<pathelement location="${sharelib.dir}/hibernate/v3/asm-attrs.jar"/>-->
+            <pathelement location="${sharelib.dir}/hibernate/v3/asm-2.2.3.jar"/>
+            <pathelement location="${sharelib.dir}/hibernate/v3/cglib-2.1.3.jar"/>
+            <pathelement location="${sharelib.dir}/hibernate/v3/cglib-nodep.jar"/>
+            <pathelement location="${sharelib.dir}/hibernate/v3/collin.jar"/>
+            <pathelement location="${sharelib.dir}/hibernate/v3/ehcache.jar"/>
+            <pathelement location="${sharelib.dir}/hibernate/v3/hibernate3.jar"/>
+            <pathelement location="${sharelib.dir}/hibernate/v3/jaas.jar"/>
+            <pathelement location="${sharelib.dir}/hibernate/v3/jcommon.jar"/>
+            <pathelement location="${sharelib.dir}/hibernate/v3/jdbc2_0-stdext.jar"/>
+            <pathelement location="${sharelib.dir}/hibernate/v3/jfreechart.jar"/>
+            <pathelement location="${sharelib.dir}/hibernate/v3/jstl.jar"/>
+            <pathelement location="${sharelib.dir}/hibernate/v3/jta.jar"/>
+
+            <pathelement location="${sharelib.dir}/jakarta/struts2/antlr.jar"/>
+            <!--<pathelement location="${sharelib.dir}/jakarta/struts2/asm.jar"/>-->
+
+            <!--<pathelement location="${sharelib.dir}/jakarta/struts2/struts2-core.jar"/>-->
+            <!--<pathelement location="${sharelib.dir}/jakarta/struts2/struts2-spring-plugin.jar"/>-->
+            <!--<pathelement location="${sharelib.dir}/jakarta/struts2/struts2-convention-plugin.jar"/>-->
+            <!--<pathelement location="${sharelib.dir}/spring/xwork.jar"/>-->
+            <!--<pathelement location="${sharelib.dir}/hibernate/v3/ognl-2.6.11.jar"/>-->
+            <pathelement location="${sharelib.dir}/jakarta/commons-lang/commons-lang.jar"/>
+
+            <pathelement location="${sharelib.dir}/jakarta/struts2/2.3.20.1/commons-lang3-3.2.jar"/>
+            <pathelement location="${sharelib.dir}/jakarta/struts2/2.3.20.1/javassist-3.11.0.GA.jar"/>
+            <pathelement location="${sharelib.dir}/jakarta/struts2/2.3.20.1/ognl-3.0.6.jar"/>
+            <pathelement location="${sharelib.dir}/jakarta/struts2/2.3.20.1/struts2-core-2.3.20.1.jar"/>
+            <pathelement location="${sharelib.dir}/jakarta/struts2/2.3.20.1/xwork-core-2.3.20.1.jar"/>
+            <pathelement location="${sharelib.dir}/jakarta/struts2/2.3.20.1/struts2-spring-plugin-2.3.20.1.jar"/>
+
+            <pathelement location="${sharelib.dir}/jakarta/commons-logging/commons-logging-api.jar"/>
+            <!--<pathelement location="${sharelib.dir}/microsoft/msutil.jar"/>-->
+
+            <pathelement location="${sharelib.dir}/jakarta/log4j/log4j.jar"/>
+            <pathelement location="${sharelib.dir}/dom4j/dom4j.jar"/>
+            <pathelement location="${sharelib.dir}/jakarta/commons-fileupload/commons-fileupload.jar"/>
+            <pathelement location="${sharelib.dir}/jakarta/commons-discovery/commons-discovery.jar"/>
+            <pathelement location="${sharelib.dir}/jakarta/commons-io/commons-io.jar"/>
+            <pathelement location="${sharelib.dir}/jakarta/commons-net/commons-net.jar"/>
+            <pathelement location="${sharelib.dir}/jakarta/commons-validator/commons-validator.jar"/>
+            <pathelement location="${sharelib.dir}/jakarta/poi/poi-3.8-beta4-20110826.jar"/>
+            <pathelement location="${sharelib.dir}/jakarta/poi/poi-scratchpad-3.8-beta4-20110826.jar"/>
+            <pathelement location="${sharelib.dir}/sourceforge/snmp/org.opengoss.snmphibernate.api_1.3.0.jar"/>
+            <pathelement location="${sharelib.dir}/sourceforge/snmp/org.opengoss.snmphibernate.impl.snmp4j_1.3.0.jar"/>
+            <pathelement location="${sharelib.dir}/sourceforge/snmp/org.opengoss.snmphibernate.mib_1.3.0.jar"/>
+            <pathelement location="${sharelib.dir}/sourceforge/snmp/snmp4j-2.0.1.jar"/>
+
+            <!--<pathelement location="${sharelib.dir}/dom4j/dom4j.jar"/>-->
+            <pathelement location="${sharelib.dir}/jdom/jdom.jar"/>
+            <pathelement location="${sharelib.dir}/ssh2/ganymed-ssh2-build210.jar"/>
+
+            <pathelement location="${sharelib.dir}/commons-exec.jar"/>
+
+            <!--<pathelement location="${sharelib.dir}/jakarta/struts/struts-el.jar"/>-->
+            <pathelement location="${sharelib.dir}/jakarta/struts/struts.jar"/>
+            <pathelement location="${sharelib.dir}/json/json-lib.jar"/>
+            <pathelement location="${sharelib.dir}/json/json-taglib.jar"/>
+            <pathelement location="${sharelib.dir}/json/json.jar"/>
+            <pathelement location="${sharelib.dir}/json/jsonplugin.jar"/>
+            <pathelement location="${sharelib.dir}/json/ezmorph.jar"/>
+
+            <pathelement location="${sharelib.dir}/apache/ant/ant.jar"/>
+            <pathelement location="${sharelib.dir}/apache/commons-compress-1.8.1-bin/commons-compress-1.8.1/commons-compress-1.8.1.jar"/>
+            <!--email-->
+            <pathelement location="${sharelib.dir}/apache/commons-email-1.3.3/commons-email-1.3.3.jar"/>
+            <!--jsonrpc-->
+            <pathelement location="${sharelib.dir}/jsonrpc/2.0/json-smart-1.2.jar"/>
+
+
+            <pathelement location="${sharelib.dir}/bouncycastle/bcprov-jdk16-146.jar"/>
+
+
+
+        </path>
+        <!--uset classpath for this project -->
+        <path id="utest.classpath">
+            <pathelement location="${target.resources.dir}"/>
+            <pathelement location="${target.classes.dir}"/>
+            <pathelement location="${target.utest.resources.dir}"/>
+            <pathelement location="${target.utest.classes.dir}"/>
+            <pathelement location="${target.dir}/coll.jar"/>
+            <path refid="build.classpath"/>
+            <path refid="tools.classpath"/>
+            <path refid="shared.classpath"/>
+            <path refid="sharelib.classpath"/>
+        </path>
+    </target>
+
+    <!--fxdb jgp-->
+    <target name="fxdb">
+        <copy preservelastmodified="yes" todir="${src.dir}/appserver/img" overwrite="true">
+            <fileset dir="${src.dir}/custom/fx-db/">
+                <include name="*.jpg"/>
+            </fileset>
+        </copy>
+        <copy preservelastmodified="yes" todir="${src.dir}/appserver/" overwrite="true">
+            <fileset dir="${src.dir}/custom/fx-db/">
+                <include name="*.jsp"/>
+                <include name="*.doc"/>
+            </fileset>
+        </copy>
+    </target>
+
+
+    <target name="wars" depends="jars">
+        <delete file="${project.war}"/>
+        <war warfile="${project.war}" webxml="${src.dir}/appserver/WEB-INF/web.xml">
+            <lib file="${project.jar}"/>
+            <lib file="${shared.dir}/common/lib/common.jar"/>
+            <lib file="${shared.dir}/common/lib/xyzbvc.jar"/>
+            <lib file="${shared.dir}/ukey/lib/ukey.jar"/>
+
+            <lib file="${sharelib.dir}/resources.jar"/>
+
+            <lib file="${sharelib.dir}/jakarta/commons-pool/commons-pool.jar"/>
+            <lib file="${sharelib.dir}/jakarta/commons-digester/commons-digester.jar"/>
+            <lib file="${sharelib.dir}/jakarta/commons-collections/commons-collections.jar"/>
+            <lib file="${sharelib.dir}/jakarta/commons-logging/commons-logging.jar"/>
+            <lib file="${sharelib.dir}/jakarta/commons-beanutils/commons-beanutils.jar"/>
+            <lib file="${sharelib.dir}/jakarta/commons-httpclient/commons-httpclient.jar"/>
+            <lib file="${sharelib.dir}/jakarta/commons-codec/commons-codec.jar"/>
+            <!--<lib file="${sharelib.dir}/sun/servlet/servlet-api.jar"/>
+            <lib file="${sharelib.dir}/sun/servlet/jsp-api.jar"/>-->
+            <lib file="${sharelib.dir}/sourceforge/slf4j-1.5.6/slf4j-api-1.5.6.jar"/>
+            <lib file="${sharelib.dir}/sourceforge/ehcache/ehcache-1.1.jar"/>
+            <lib file="${sharelib.dir}/sourceforge/slf4j-1.5.6/slf4j-jdk14-1.5.6.jar"/>
+            <lib file="${sharelib.dir}/sourceforge/freemarker/freemarker.jar"/>
+            <lib file="${sharelib.dir}/spring/spring.jar"/>
+
+            <lib file="${sharelib.dir}/sun/jaf/activation.jar"/>
+            <lib file="${sharelib.dir}/sun/javamail/mail.jar"/>
+            <!--<lib file="${sharelib.dir}/apache/mina/mina-core.jar"/>-->
+            <lib file="${sharelib.dir}/apache-mina-2.0.7/dist/mina-core-2.0.7.jar"/>
+            <lib file="${sharelib.dir}/sourceforge/cp3/c3p0-0.9.1.2.jar"/>
+            <lib file="${sharelib.dir}/hibernate/v3/antlr-2.7.6.jar"/>
+            <lib file="${sharelib.dir}/hibernate/v3/asm-2.2.3.jar"/>
+            <!--<lib file="${sharelib.dir}/hibernate/v3/asm-attrs.jar"/>-->
+            <!--<lib file="${sharelib.dir}/hibernate/v3/cglib-2.1.3.jar"/>-->
+            <lib file="${sharelib.dir}/hibernate/v3/cglib-nodep.jar"/>
+            <lib file="${sharelib.dir}/hibernate/v3/collin.jar"/>
+            <lib file="${sharelib.dir}/hibernate/v3/ehcache.jar"/>
+            <lib file="${sharelib.dir}/hibernate/v3/ezmorph.jar"/>
+            <lib file="${sharelib.dir}/hibernate/v3/hibernate3.jar"/>
+            <lib file="${sharelib.dir}/hibernate/v3/jaas.jar"/>
+            <lib file="${sharelib.dir}/hibernate/v3/jcommon.jar"/>
+            <lib file="${sharelib.dir}/hibernate/v3/jdbc2_0-stdext.jar"/>
+            <lib file="${sharelib.dir}/hibernate/v3/jfreechart.jar"/>
+            <lib file="${sharelib.dir}/hibernate/v3/jstl.jar"/>
+            <lib file="${sharelib.dir}/hibernate/v3/jta.jar"/>
+
+            <lib file="${sharelib.dir}/jakarta/struts2/antlr.jar"/>
+            <!--<lib file="${sharelib.dir}/jakarta/struts2/asm.jar"/>-->
+            <!--<lib file="${sharelib.dir}/jakarta/struts2/concurrent-1.3.4.jar"/>-->
+
+            <!--<lib file="${sharelib.dir}/jakarta/struts2/struts2-core.jar"/>-->
+            <!--<lib file="${sharelib.dir}/jakarta/struts2/struts2-spring-plugin.jar"/>-->
+            <!--<lib file="${sharelib.dir}/jakarta/struts2/struts2-convention-plugin.jar"/>-->
+            <!--<lib file="${sharelib.dir}/spring/xwork.jar"/>-->
+            <!--<lib file="${sharelib.dir}/hibernate/v3/ognl-2.6.11.jar"/>-->
+            <lib file="${sharelib.dir}/jakarta/commons-lang/commons-lang.jar"/>
+
+            <lib file="${sharelib.dir}/jakarta/struts2/2.3.20.1/commons-lang3-3.2.jar"/>
+            <lib file="${sharelib.dir}/jakarta/struts2/2.3.20.1/javassist-3.11.0.GA.jar"/>
+            <lib file="${sharelib.dir}/jakarta/struts2/2.3.20.1/ognl-3.0.6.jar"/>
+            <lib file="${sharelib.dir}/jakarta/struts2/2.3.20.1/struts2-core-2.3.20.1.jar"/>
+            <lib file="${sharelib.dir}/jakarta/struts2/2.3.20.1/xwork-core-2.3.20.1.jar"/>
+            <lib file="${sharelib.dir}/jakarta/struts2/2.3.20.1/struts2-spring-plugin-2.3.20.1.jar"/>
+
+            <lib file="${sharelib.dir}/jakarta/commons-logging/commons-logging-api.jar"/>
+            <!--<lib file="${sharelib.dir}/microsoft/msutil.jar"/>-->
+
+            <lib file="${sharelib.dir}/jakarta/log4j/log4j.jar"/>
+            <lib file="${sharelib.dir}/dom4j/dom4j.jar"/>
+            <lib file="${sharelib.dir}/jaxen/jaxen.jar"/>
+            <lib file="${sharelib.dir}/jakarta/commons-fileupload/commons-fileupload.jar"/>
+            <lib file="${sharelib.dir}/jakarta/commons-discovery/commons-discovery.jar"/>
+            <lib file="${sharelib.dir}/jakarta/commons-io/commons-io.jar"/>
+            <lib file="${sharelib.dir}/jakarta/commons-net/commons-net.jar"/>
+            <lib file="${sharelib.dir}/jakarta/commons-validator/commons-validator.jar"/>
+            <lib file="${sharelib.dir}/jakarta/poi/poi-3.8-beta4-20110826.jar"/>
+            <lib file="${sharelib.dir}/jakarta/poi/poi-scratchpad-3.8-beta4-20110826.jar"/>
+
+            <lib file="${sharelib.dir}/sourceforge/snmp/org.opengoss.snmphibernate.api_1.3.0.jar"/>
+            <lib file="${sharelib.dir}/sourceforge/snmp/org.opengoss.snmphibernate.impl.snmp4j_1.3.0.jar"/>
+            <lib file="${sharelib.dir}/sourceforge/snmp/org.opengoss.snmphibernate.mib_1.3.0.jar"/>
+            <lib file="${sharelib.dir}/sourceforge/snmp/snmp4j-2.0.1.jar"/>
+
+            <!--<lib file="${sharelib.dir}/dom4j/dom4j.jar"/>-->
+            <lib file="${sharelib.dir}/jdom/jdom.jar"/>
+            <lib file="${sharelib.dir}/ssh2/ganymed-ssh2-build210.jar"/>
+
+            <lib file="${sharelib.dir}/sourceforge/syslog/syslog4j-0.9.46.jar"/>
+
+            <lib file="${sharelib.dir}/commons-exec.jar"/>
+
+            <lib file="${sharelib.dir}/apache/ant/ant.jar"/>
+            <lib file="${sharelib.dir}/apache/commons-compress-1.8.1-bin/commons-compress-1.8.1/commons-compress-1.8.1.jar"/>
+            <!--email-->
+            <lib file="${sharelib.dir}/apache/commons-email-1.3.3/commons-email-1.3.3.jar"/>
+            <!--jsonrpc-->
+            <lib file="${sharelib.dir}/jsonrpc/2.0/json-smart-1.2.jar"/>
+
+
+            <lib file="${sharelib.dir}/bouncycastle/bcprov-jdk16-146.jar"/>
+            <!--<lib file="${sharelib.dir}/sourceforge/syslog/syslog4j-0.9.46.jar"/>-->
+
+            <!--<lib file="${sharelib.dir}/jakarta/struts/struts-el.jar"/>-->
+            <lib file="${sharelib.dir}/jakarta/struts/struts.jar"/>
+            <lib file="${sharelib.dir}/jakarta/struts/standard.jar"/>
+            <lib file="${sharelib.dir}/json/json-lib.jar"/>
+            <lib file="${sharelib.dir}/json/json-taglib.jar"/>
+            <lib file="${sharelib.dir}/json/json.jar"/>
+            <lib file="${sharelib.dir}/json/jsonplugin.jar"/>
+            <lib file="${sharelib.dir}/json/ezmorph.jar"/>
+            <lib file="${sharelib.dir}/jdbc/jtds/jtds-1.2.jar"/>
+            <!--<lib file="${sharelib.dir}/rsa/*.jar"/>-->
+            <fileset dir="${src.appserver.dir}/">
+                <include name="**/*.*"/>
+            </fileset>
+            <webinf dir="${src.resources.dir}" includes="*.*"/>
+            <metainf dir="${src.version.dir}" includes="*.properties"/>
+        </war>
+    </target>
+
+    <!--<target name="obwars" depends="RetroGuardTask">
+        <delete file="${obproject.war}"/>
+        <war warfile="${obproject.war}" webxml="${src.dir}/appserver/WEB-INF/web.xml">
+            <lib file="${obproject.jar}"/>
+            <lib file="${shared.dir}/common/lib/common.jar"/>
+            <lib file="${shared.dir}/common/lib/xyzbvc.jar"/>
+            <lib file="${sharelib.dir}/dom4j/dom4j.jar"/>
+            <lib file="${sharelib.dir}/jdbc/oracle/ojdbc14.jar"/>
+            <lib file="${sharelib.dir}/jdbc/jtds/jtds-1.1.jar"/>
+            <lib file="${sharelib.dir}/jakarta/log4j/log4j.jar"/>
+            <lib file="${sharelib.dir}/jakarta/commons-digester/commons-digester.jar"/>
+            <lib file="${sharelib.dir}/jakarta/commons-codec/commons-codec.jar"/>
+            <lib file="${sharelib.dir}/jakarta/commons-beanutils/commons-beanutils.jar"/>
+            <lib file="${sharelib.dir}/jakarta/commons-collections/commons-collections.jar"/>
+            <lib file="${sharelib.dir}/jakarta/commons-httpclient/commons-httpclient.jar"/>
+            <lib file="${sharelib.dir}/jakarta/commons-pool/commons-pool.jar"/>
+            <lib file="${sharelib.dir}/jakarta/commons-logging/commons-logging.jar"/>
+            <lib file="${sharelib.dir}/jakarta/commons-dbcp/commons-dbcp.jar"/>
+            <lib file="${sharelib.dir}/apache/xerces/xercesImpl.jar"/>
+            <lib file="${sharelib.dir}/jakarta/commons-lang/commons-lang.jar"/>
+            <lib file="${sharelib.dir}/sourceforge/ehcache/ehcache-1.1.jar"/>
+            <lib file="${sharelib.dir}/com.hzih.audit.json/com.hzih.audit.json-lib-1.1-jdk13.jar"/>
+            <lib file="${sharelib.dir}/com.hzih.audit.json/ezmorph-1.0.2.jar"/>
+            <fileset dir="${target.dir}/pages">
+                <include name="**/*.*"/>
+            </fileset>
+            <fileset dir="${obfuscate.dir}">
+                <include name="tree.jar"/>
+            </fileset>
+            <webinf dir="${src.resources.dir}" includes="log4j.properties"/>
+        </war>
+    </target>-->
+
+    <target name="mypublib" depends="wars">
+        <mkdir dir="${publib.dir}"/>
+        <mkdir dir="${publib.dir}/conf"/>
+        <mkdir dir="${publib.dir}/lib"/>
+        <mkdir dir="${publib.dir}/etc"/>
+        <mkdir dir="${publib.dir}/ref"/>
+        <copy preservelastmodified="yes" file="${project.jar}" todir="${publib.dir}/lib"/>
+        <copy preservelastmodified="yes" file="${project.war}" todir="${publib.dir}/lib"/>
+        <!-- Selectively copy bin files -->
+        <copy preservelastmodified="yes" todir="${publib.dir}">
+            <fileset dir="${basedir}">
+                <include name="etc/*.*"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="myundeploy"/>
+</project>

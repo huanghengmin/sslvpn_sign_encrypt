@@ -1,0 +1,32 @@
+<component name="libraryTable">
+  <library name="persistence4j-common-1.6.1">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../sharelib/sourceforge/snmp/snmp4j-1.11.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../sharelib/sourceforge/jace/jace.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../sharelib/sourceforge/slf4j-1.5.6/slf4j-migrator-1.5.6.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../sharelib/sourceforge/slf4j-1.5.6/slf4j-api-1.5.6.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../sharelib/sourceforge/slf4j-1.5.6/slf4j-log4j12-1.5.6.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../sharelib/sourceforge/ehcache/ehcache-1.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../sharelib/sourceforge/freemarker/freemarker.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../sharelib/sourceforge/cp3/c3p0-0.9.1.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../sharelib/sourceforge/persistence4j/transactions-jta-3.6.5.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../sharelib/sourceforge/persistence4j/transactions-jdbc-3.6.5.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../sharelib/sourceforge/persistence4j/transactions-api-3.6.5.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../sharelib/sourceforge/persistence4j/transactions-3.6.5.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../sharelib/sourceforge/persistence4j/transaction-api-1.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../sharelib/sourceforge/jftp/jftp.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../sharelib/sourceforge/snmp/org.opengoss.snmphibernate.api_1.3.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../sharelib/sourceforge/snmp/org.opengoss.snmphibernate.impl.snmp4j_1.3.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../sharelib/sourceforge/snmp/org.opengoss.snmphibernate.mib_1.3.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../sharelib/sourceforge/persistence4j/persistence4j-common-1.5.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../sharelib/sourceforge/persistence4j/persistence4j-jdbc-1.5.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../sharelib/sourceforge/persistence4j/spiderdb-1.5.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../sharelib/sourceforge/persistence4j/google-collections-1.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../sharelib/sourceforge/persistence4j/geronimo-jta_1.0.1B_spec-1.0.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../sharelib/sourceforge/persistence4j/geronimo-spec-activation-1.0.2-rc4.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../sharelib/sourceforge/syslog/syslog4j-0.9.46.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

@@ -1,0 +1,190 @@
+<target name="init" depends="my_init"/>
+<target name="all_java" depends="jars"/>
+<target name="code" depends="javacode"/>
+<target name="clean_common" depends="init">
+    <delete dir="${target.dir}"/>
+    <delete dir="${publib.dir}"/>
+</target>
+<target name="clean_utest" depends="my_init">
+    <delete dir="${utest.target.dir}"/>
+</target>
+        <!-- todo: javadoc -->
+<target name="javadoc">
+    <mkdir dir="${docs.dir}"/>
+</target>
+<target name="clean_javadoc">
+    <delete dir="${docs.dir}"/>
+</target>
+        <!-- ===================== CODE TARGETS ===================== -->
+<target name="javacode" depends="init">
+    <!-- output directories -->
+    <mkdir dir="${target.dir}"/>
+    <mkdir dir="${target.classes.dir}"/>
+    <javac srcdir="${src.java.dir}" destdir="${target.classes.dir}" debug="${javac_debug}"
+           deprecation="${javac_deprecation}" encoding="utf-8" optimize="${javac_optimize}" verbose="${javac_verbose}">
+        <classpath refid="build.classpath"/>
+        <include name="**/*.java"/>
+    </javac>
+    <copy preservelastmodified="yes" todir="${target.resources.dir}" overwrite="true">
+        <fileset dir="${src.resources.dir}/">
+            <include name="**/*.xml"/>
+            <include name="**/*.properties"/>
+            <include name="**/*.sql"/>
+            <include name="**/ichange"/>
+        </fileset>
+    </copy>
+
+
+    <copy preservelastmodified="yes" todir="${target.classes.dir}" overwrite="true">
+        <fileset dir="${src.java.dir}/">
+            <include name="**/*.xml"/>
+            <include name="**/*.properties"/>
+            <include name="**/*.sql"/>
+        </fileset>
+    </copy>
+</target>
+        <!-- ===================== JAR TARGETS ===================== -->
+<target name="jars" depends="javacode">
+    <copy preservelastmodified="yes" todir="${target.classes.dir}" overwrite="true">
+        <fileset dir="${src.resources.dir}">
+            <include name="**/*.xml"/>
+            <include name="**/*.properties"/>
+            <include name="**/*.sql"/>
+            <include name="**/*.config"/>
+            <include name="**/ichange"/>
+        </fileset>
+    </copy>
+    <jar jarfile="${project.jar}" basedir="${target.classes.dir}">
+        <include name="**/*.class"/>
+        <include name="**/*.properties"/>
+        <include name="**/*.xml"/>
+        <include name="**/*.sql"/>
+        <include name="**/*.config"/>
+        <include name="**/log4j.properties"/>
+        <include name="**/ichange"/>
+    </jar>
+</target>
+
+        <!-- ===================== TESTING TARGETS ===================== -->
+<target name="utestcheck" depends="init">
+    <available file="${testsuite.properties.file}" property="utestcheckOK"/>
+</target>
+<target name="utestinit" depends="init">
+    <mkdir dir="${target.utest.dir}"/>
+    <mkdir dir="${target.utest.logs.dir}"/>
+    <mkdir dir="${target.utest.classes.dir}"/>
+    <mkdir dir="${target.utest.resources.dir}"/>
+    <mkdir dir="${target.utest.results.dir}"/>
+</target>
+
+
+
+
+        <!-- ===================== publib TARGETS ===================== -->
+<target name="publib_common" depends="init">
+    <mkdir dir="${publib.dir}"/>
+    <mkdir dir="${publib.lib.dir}"/>
+    <!--for continue build: create these dir-->
+    <mkdir dir="${target.dir}"/>
+    <mkdir dir="${src.resources.dir}"/>
+    <mkdir dir="${utest.resources.dir}"/>
+</target>
+
+
+<target name="publib_copy" depends="publib_common"/>
+
+
+
+
+
+        <!-- application server targets -->
+
+        <!-- Configure properties to access the Manager application -->
+<property name="tomcat_url" value="http://localhost:8080/manager"/>
+<property name="tomcat_manager_user" value="system"/>
+<property name="tomcat_manager_password" value="password"/>
+
+        <!-- Configure the custom Ant tasks for the Manager application -->
+<target name="startup_tomcat" depends="init">
+    <exec executable="${jakarta.tomcat.dir}/bin/startup.bat">
+        <env key="CATALINA_HOME" value="${jakarta.tomcat.dir}"/>
+        <env key="JAVA_HOME" value="${sun.jdk.dir}"/>
+    </exec>
+</target>
+<target name="shutdown_tomcat" depends="init">
+    <exec executable="${jakarta.tomcat.dir}/bin/shutdown.bat">
+        <env key="CATALINA_HOME" value="${jakarta.tomcat.dir}"/>
+        <env key="JAVA_HOME" value="${sun.jdk.dir}"/>
+    </exec>
+</target>
+
+<target name="deploy_tomcat" depends="init">
+
+    <taskdef name="deploy_tomcat" classname="org.apache.catalina.ant.DeployTask" classpathref="utest.classpath"/>
+    <taskdef name="install_tomcat" classname="org.apache.catalina.ant.InstallTask" classpathref="utest.classpath"/>
+    <taskdef name="list_tomcat" classname="org.apache.catalina.ant.ListTask" classpathref="utest.classpath"/>
+    <taskdef name="reload_tomcat" classname="org.apache.catalina.ant.ReloadTask" classpathref="utest.classpath"/>
+    <taskdef name="remove_tomcat" classname="org.apache.catalina.ant.RemoveTask" classpathref="utest.classpath"/>
+    <taskdef name="resources_tomcat" classname="org.apache.catalina.ant.ResourcesTask" classpathref="utest.classpath"/>
+    <taskdef name="roles_tomcat" classname="org.apache.catalina.ant.RolesTask" classpathref="utest.classpath"/>
+    <taskdef name="start_tomcat" classname="org.apache.catalina.ant.StartTask" classpathref="utest.classpath"/>
+    <taskdef name="stop_tomcat" classname="org.apache.catalina.ant.StopTask" classpathref="utest.classpath"/>
+    <taskdef name="undeploy_tomcat" classname="org.apache.catalina.ant.UndeployTask" classpathref="utest.classpath"/>
+
+    <deploy_tomcat url="${tomcat_url}"
+                   username="${tomcat_manager_user}"
+                   password="${tomcat_manager_password}"
+                   path="/${deploy.name}"
+                   war="file:${deploy.file}"/>
+
+</target>
+
+<target name="undeploy_tomcat" depends="init">
+    <taskdef name="deploy_tomcat" classname="org.apache.catalina.ant.DeployTask" classpathref="utest.classpath"/>
+    <taskdef name="install_tomcat" classname="org.apache.catalina.ant.InstallTask" classpathref="utest.classpath"/>
+    <taskdef name="list_tomcat" classname="org.apache.catalina.ant.ListTask" classpathref="utest.classpath"/>
+    <taskdef name="reload_tomcat" classname="org.apache.catalina.ant.ReloadTask" classpathref="utest.classpath"/>
+    <taskdef name="remove_tomcat" classname="org.apache.catalina.ant.RemoveTask" classpathref="utest.classpath"/>
+    <taskdef name="resources_tomcat" classname="org.apache.catalina.ant.ResourcesTask" classpathref="utest.classpath"/>
+    <taskdef name="roles_tomcat" classname="org.apache.catalina.ant.RolesTask" classpathref="utest.classpath"/>
+    <taskdef name="start_tomcat" classname="org.apache.catalina.ant.StartTask" classpathref="utest.classpath"/>
+    <taskdef name="stop_tomcat" classname="org.apache.catalina.ant.StopTask" classpathref="utest.classpath"/>
+    <taskdef name="undeploy_tomcat" classname="org.apache.catalina.ant.UndeployTask" classpathref="utest.classpath"/>
+
+
+    <remove_tomcat url="${tomcat_url}"
+                   username="${tomcat_manager_user}"
+                   password="${tomcat_manager_password}"
+                   path="/${deploy.name}"/>
+</target>
+
+
+<target name="remove_tomcat" depends="init">
+    <delete dir="${jakarta.tomcat.dir}/webapps/${deploy.name}"/>
+    <delete dir="${jakarta.tomcat.dir}/work/Standalone/localhost/${deploy.name}"/>
+</target>
+
+
+        <!-- database targets -->
+<target name="refresh_db" depends="init">
+    <sql driver="${db.driver.class}" url="${db.url}" userid="${db.user}" password="${db.password}" src="${db.src}"
+         onerror="continue">
+        <classpath location="${sharelib.dir}/jdbc/${db.driver.file}"/>
+    </sql>
+</target>
+
+
+<target name="jalopy-format" depends="init">
+    <taskdef name="jalopy" classname="de.hunsicker.jalopy.plugin.ant.AntPlugin">
+        <classpath>
+            <fileset dir="${jalopy.dir}">
+                <include name="*.jar"/>
+            </fileset>
+        </classpath>
+    </taskdef>
+    <!--<jalopy backup="flase" style="${basedir}/build/jalopy.xml">-->
+    <jalopy backup="flase" convention="${basedir}/build/jalopy.xml">
+        <fileset dir="${src.dir}/java" includes="**/*.java"/>
+        <fileset dir="${utest.dir}/java" includes="**/*.java"/>
+    </jalopy>
+</target>

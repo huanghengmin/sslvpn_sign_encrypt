@@ -44,6 +44,8 @@ public class ClientVersionAction extends ActionSupport {
             toSrc = StringContext.systemPath + "/client/windows/x86" + "/" + uploadFileFileName;
         }else if (os.equals("x64")) {
             toSrc = StringContext.systemPath + "/client/windows/x64" + "/" + uploadFileFileName;
+        }else if (os.equals("linuxMobile")) {
+            toSrc = StringContext.systemPath + "/client/linux/linuxMobile" + "/" + uploadFileFileName;
         }
         File toFile = new File(toSrc);
         if (!toFile.exists()) {
@@ -128,6 +130,21 @@ public class ClientVersionAction extends ActionSupport {
                 sb.append("}");
             }
         }
+
+        String linuxMobile_version = StringContext.systemPath +"/client/linux/linuxMobile" + "/version.xml";
+        File linuxMobile_info = new File(windows64_version);
+        if (linuxMobile_info.exists()) {
+            windows = VersionUtils.readInfo(linuxMobile_info);
+            if (windows != null) {
+                if (av != null)
+                    sb.append(",");
+                sb.append("{");
+                sb.append("version:'" + windows.getVersion() + "',");
+                sb.append("name:'" + windows.getName() + "',");
+                sb.append("os:'linuxMobile'");
+                sb.append("}");
+            }
+        }
         json.append(sb.toString());
         json.append("]}");
         try {
@@ -159,6 +176,8 @@ public class ClientVersionAction extends ActionSupport {
                 path = StringContext.systemPath +"/client/windows/x86" + "/" + name;
             } else if (os.equals("x64")) {
                 path = StringContext.systemPath +"/client/windows/x64" + "/" + name;
+            } else if (os.equals("linuxMobile")) {
+                path = StringContext.systemPath +"/client/linux/linuxMobile" + "/" + name;
             }
             File source = new File(path);
             if (source.exists()) {

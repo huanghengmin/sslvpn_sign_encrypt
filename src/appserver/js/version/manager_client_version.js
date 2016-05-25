@@ -122,6 +122,8 @@ function upgradeZipRow(internal_store) {
     var find_data = [
         {'id': 'android', 'name': 'android'},
         {'id': 'x64', 'name': 'x64'},
+        {'id': 'linuxCz', 'name': 'linuxCz'},
+        {'id': 'linuxMobile', 'name': 'linuxMobile'},
         {'id': 'x86', 'name': 'x86'}
     ];
 

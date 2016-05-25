@@ -46,6 +46,8 @@ public class ClientVersionAction extends ActionSupport {
             toSrc = StringContext.systemPath + "/client/windows/x64" + "/" + uploadFileFileName;
         }else if (os.equals("linuxMobile")) {
             toSrc = StringContext.systemPath + "/client/linux/linuxMobile" + "/" + uploadFileFileName;
+        }else if (os.equals("linuxCz")) {
+            toSrc = StringContext.systemPath + "/client/linux/linuxCz" + "/" + uploadFileFileName;
         }
         File toFile = new File(toSrc);
         if (!toFile.exists()) {
@@ -131,17 +133,33 @@ public class ClientVersionAction extends ActionSupport {
             }
         }
 
+
         String linuxMobile_version = StringContext.systemPath +"/client/linux/linuxMobile" + "/version.xml";
-        File linuxMobile_info = new File(windows64_version);
+        File linuxMobile_info = new File(linuxMobile_version);
         if (linuxMobile_info.exists()) {
             windows = VersionUtils.readInfo(linuxMobile_info);
+            if (windows != null) {
+                if (av != null) {
+                    sb.append(",");
+                }
+                sb.append("{");
+                sb.append("version:'" + windows.getVersion() + "',");
+                sb.append("name:'" + windows.getName() + "',");
+                sb.append("os:'linuxMobile'");
+                sb.append("}");
+            }
+        }
+        String linuxCz_version = StringContext.systemPath +"/client/linux/linuxCz" + "/version.xml";
+        File linuxCz_info = new File(linuxCz_version);
+        if (linuxCz_info.exists()) {
+            windows = VersionUtils.readInfo(linuxCz_info);
             if (windows != null) {
                 if (av != null)
                     sb.append(",");
                 sb.append("{");
                 sb.append("version:'" + windows.getVersion() + "',");
                 sb.append("name:'" + windows.getName() + "',");
-                sb.append("os:'linuxMobile'");
+                sb.append("os:'linuxCz'");
                 sb.append("}");
             }
         }
@@ -178,6 +196,8 @@ public class ClientVersionAction extends ActionSupport {
                 path = StringContext.systemPath +"/client/windows/x64" + "/" + name;
             } else if (os.equals("linuxMobile")) {
                 path = StringContext.systemPath +"/client/linux/linuxMobile" + "/" + name;
+            } else if (os.equals("linuxCz")) {
+                path = StringContext.systemPath +"/client/linux/linuxCz" + "/" + name;
             }
             File source = new File(path);
             if (source.exists()) {

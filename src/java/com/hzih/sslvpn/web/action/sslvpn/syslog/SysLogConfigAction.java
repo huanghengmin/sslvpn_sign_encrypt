@@ -107,7 +107,7 @@ public class SysLogConfigAction extends ActionSupport {
         SyslogConfigXML sysLogConfigXML = new SyslogConfigXML();
         StatusMsg statusMsg = sysLogConfigXML.delete(StringContext.syslog_xml, new SysLogServer(host, Integer.parseInt(port)));
         if (statusMsg.isFlag()) {
-            msg = statusMsg.getMsg() + ",服务器主机:" + sysLogServer.getHost() + ",服务器端口:" + sysLogServer.getPort();
+            msg = statusMsg.getMsg() + ",服务器主机:" + host + ",服务器端口:" + port;
             json = "{success:true,msg:'" + msg + "'}";
             if(AuditFlagAction.getAuditFlag()) {
                 logger.info("管理员" + SessionUtils.getAccount(request).getUserName() + ",操作时间:" + new Date() + ",操作信息:" + msg);
@@ -118,7 +118,7 @@ public class SysLogConfigAction extends ActionSupport {
             }
             SiteContextLoaderServlet.restartSyslogSender();
         } else {
-            msg = statusMsg.getMsg() + ",服务器主机:" + sysLogServer.getHost() + ",服务器端口:" + sysLogServer.getPort();
+            msg = statusMsg.getMsg() + ",服务器主机:" + host + ",服务器端口:" + port;
             json = "{success:false,msg:'" + msg + "'}";
             if(AuditFlagAction.getAuditFlag()) {
                 logger.info("管理员" + SessionUtils.getAccount(request).getUserName() + ",操作时间:" + new Date() + ",操作信息:" + msg);
@@ -148,7 +148,7 @@ public class SysLogConfigAction extends ActionSupport {
         SyslogConfigXML sysLogConfigXML = new SyslogConfigXML();
         StatusMsg statusMsg = sysLogConfigXML.update(StringContext.syslog_xml, new SysLogServer(host, Integer.parseInt(port)), this.sysLogServer);
         if (statusMsg.isFlag()) {
-            msg = statusMsg.getMsg() + ",服务器主机:" + sysLogServer.getHost() + ",服务器端口:" + sysLogServer.getPort();
+            msg = statusMsg.getMsg() + ",服务器主机:" + host + ",服务器端口:" + port;
             json = "{success:true,msg:'" + msg + "'}";
             if(AuditFlagAction.getAuditFlag()) {
                 logger.info("管理员" + SessionUtils.getAccount(request).getUserName() + ",操作时间:" + new Date() + ",操作信息:" + msg);
@@ -158,7 +158,7 @@ public class SysLogConfigAction extends ActionSupport {
             }
             SiteContextLoaderServlet.restartSyslogSender();
         } else {
-            msg = statusMsg.getMsg() + ",服务器主机:" + sysLogServer.getHost() + ",服务器端口:" + sysLogServer.getPort();
+            msg = statusMsg.getMsg() + ",服务器主机:" + host + ",服务器端口:" + port;
             json = "{success:false,msg:'" + msg + "'}";
             if(AuditFlagAction.getAuditFlag()) {
                 logger.info("管理员" + SessionUtils.getAccount(request).getUserName() + ",操作时间:" + new Date() + ",操作信息:" + msg);

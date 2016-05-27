@@ -44,7 +44,8 @@ public class WebminStatusAction extends ActionSupport {
             Thread.sleep(1000 * 2);
             proc.exec("service webmin status");
             String msg_on = proc.getOutput();
-            if (msg_on.contains("is running")) {
+//            if (msg_on.contains("is running")) {
+            if (msg_on.contains("running")) {
 //            if (msg_on.contains("active")) {
                 msg = "开启成功";
 //                ShellUtils.start_webmin();
@@ -72,7 +73,8 @@ public class WebminStatusAction extends ActionSupport {
             Thread.sleep(1000 * 2);
             proc.exec("service webmin status");
             String msg_on = proc.getOutput();
-            if (!msg_on.contains("is running")) {
+//            if (!msg_on.contains("is running")) {
+            if (!msg_on.contains("running")) {
 //            if (msg_on.contains("active")) {
                 msg = "关闭成功";
 //                ShellUtils.stop_webmin();
@@ -98,7 +100,8 @@ public class WebminStatusAction extends ActionSupport {
             Proc proc = new Proc();
             proc.exec("service webmin status");
             String msg_on = proc.getOutput();
-            if (msg_on.contains("is running")) {
+//            if (msg_on.contains("is running")) {
+            if (msg_on.contains("running")) {
 //            if (msg_on.contains("active")) {
                 msg = "1";
             } else {
@@ -131,7 +134,8 @@ public class WebminStatusAction extends ActionSupport {
             try {
                 proc.exec("service webmin status");
                 String msg_on = proc.getOutput();
-                if (msg_on.contains("is running")) {
+//                if (msg_on.contains("is running")) {
+                if (msg_on.contains("running")) {
 //                if (msg_on.contains("active")) {
                     msg = "重启成功";
                 } else {

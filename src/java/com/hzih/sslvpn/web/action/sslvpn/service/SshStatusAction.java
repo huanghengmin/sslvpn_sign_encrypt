@@ -44,7 +44,8 @@ public class SshStatusAction extends ActionSupport {
             Thread.sleep(1000 * 2);
             proc.exec("service ssh status");
             String msg_on = proc.getOutput();
-            if (msg_on.contains("is running")) {
+//            if (msg_on.contains("is running")) {
+            if (msg_on.contains("running")) {
 //            if (msg_on.contains("active")) {
                 msg = "开启成功";
 //                ShellUtils.start_ssh();
@@ -72,7 +73,8 @@ public class SshStatusAction extends ActionSupport {
             Thread.sleep(1000 * 2);
             proc.exec("service ssh status");
             String msg_on = proc.getOutput();
-            if (!msg_on.contains("is running")) {
+//            if (!msg_on.contains("is running")) {
+            if (!msg_on.contains("running")) {
 //            if (msg_on.contains("active")) {
                 msg = "关闭成功";
 //                ShellUtils.stop_ssh();
@@ -98,7 +100,8 @@ public class SshStatusAction extends ActionSupport {
             Proc proc = new Proc();
             proc.exec("service ssh status");
             String msg_on = proc.getOutput();
-            if (msg_on.contains("is running")) {
+//            if (msg_on.contains("is running")) {
+            if (msg_on.contains("running")) {
 //            if (msg_on.contains("active")) {
                 msg = "1";
             } else {
@@ -131,7 +134,8 @@ public class SshStatusAction extends ActionSupport {
             try {
                 proc.exec("service ssh status");
                 String msg_on = proc.getOutput();
-                if (msg_on.contains("is running")) {
+//                if (msg_on.contains("is running")) {
+                if (msg_on.contains("running")) {
 //                if (msg_on.contains("active")) {
                     msg = "重启成功";
                 } else {

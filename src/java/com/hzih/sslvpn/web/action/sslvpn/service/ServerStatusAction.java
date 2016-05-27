@@ -100,7 +100,8 @@ public class ServerStatusAction extends ActionSupport {
             Thread.sleep(1000 * 2);
             proc.exec("service openvpn status");
             String msg_on = proc.getOutput();
-            if (msg_on.contains("is running")) {
+//            if (msg_on.contains("is running")) {
+                if (msg_on.contains("running")) {
 //            if (msg_on.contains("active")) {
                 msg = "1";
                 String dys_net = null;
@@ -137,7 +138,8 @@ public class ServerStatusAction extends ActionSupport {
             Thread.sleep(1000 * 2);
             proc.exec("service openvpn status");
             String msg_on = proc.getOutput();
-            if (msg_on.contains("is running")) {
+//            if (msg_on.contains("is running")) {
+                if (msg_on.contains("running")) {
 //            if (msg_on.contains("active")) {
                 msg = "1";
             } else {
@@ -172,7 +174,8 @@ public class ServerStatusAction extends ActionSupport {
             Proc proc = new Proc();
             proc.exec("service openvpn status");
             String msg_on = proc.getOutput();
-            if (msg_on.contains("is running")) {
+//            if (msg_on.contains("is running")) {
+            if (msg_on.contains("running")) {
 //            if (msg_on.contains("active")) {
                 msg = "1";
             } else {

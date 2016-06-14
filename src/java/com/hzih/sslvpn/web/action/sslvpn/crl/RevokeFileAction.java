@@ -128,9 +128,8 @@ public class RevokeFileAction extends ActionSupport {
         HttpServletResponse response = ServletActionContext.getResponse();
         ActionBase actionBase = new ActionBase();
         String result = actionBase.actionBegin(request);
-        String json = null;
-        String msg = null;
-
+        String msg = "更新黑名单校验配置失败";
+        String json = "{success:false,msg:'" + msg + "'}";
         String[] names = request.getParameterValues("names");
         if (null != names && !"".equals(names) && names.length > 0) {
             for (int i = 0; i < names.length; i++) {
@@ -159,7 +158,7 @@ public class RevokeFileAction extends ActionSupport {
             }
 
             msg = "更新黑名单校验配置成功";
-            json = "{success:false,msg:'" + msg + "'}";
+            json = "{success:true,msg:'" + msg + "'}";
         }
         actionBase.actionEnd(response, json, result);
         return null;

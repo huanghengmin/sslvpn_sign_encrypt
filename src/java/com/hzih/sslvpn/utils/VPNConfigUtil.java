@@ -135,12 +135,12 @@ public class VPNConfigUtil {
         sb.append("cert " + X509Context.encrypt_server_file).append("\n");
         sb.append("key " + X509Context.encrypt_key_file).append("\n");
         //crl 检查
-        /*if (server.getCheck_crl() == 1) {
+        if (server.getCheck_crl() == 1) {
             File crl = new File(StringContext.crl_file);
             if (crl.exists() && crl.length() > 0) {
                 sb.append("crl-verify " + StringContext.crl_file).append("\n");
             }
-        }*/
+        }
         sb.append("dh " + StringContext.dh_file).append("\n");
         //动态ip分配地址
         sb.append("server " + server.getServer_net() + " " + server.getServer_mask()).append("\n");

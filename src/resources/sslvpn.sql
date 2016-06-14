@@ -46,7 +46,7 @@ CREATE TABLE IF NOT EXISTS `account` (
 -- 正在导出表  sslvpn.account 的数据：~4 rows (大约)
 /*!40000 ALTER TABLE `account` DISABLE KEYS */;
 INSERT INTO `account` (`id`, `user_name`, `password`, `sex`, `phone`, `created_time`, `modified_time`, `modifiedPasswordTime`, `status`, `depart`, `title`, `name`, `email`, `start_ip`, `end_ip`, `start_hour`, `end_hour`, `description`, `remote_ip`, `mac`, `ip_type`) VALUES
-	(1, 'admin', 'S8W2gMnH8VWiT9pXRMPQxA==', '男', '0571-88888888', '2010-07-04 13:52:36', '2015-04-30 11:30:42', NULL, '有效', '信息中心', '主任', '初始化管理员', 'xiaom@hzih.net', '0.0.0.0', '192.168.254.254', 9, 18, '这是一个默认的超级用户信息', '192.168.2.176', '5C-63-BF-1D-72-07', 1),
+	(1, 'admin', 'S8W2gMnH8VWiT9pXRMPQxA==', '男', '0571-88888888', '2010-07-04 13:52:36', '2016-05-11 10:49:11', NULL, '有效', '信息中心', '主任', '初始化管理员', 'xiaom@hzih.net', '0.0.0.0', '192.168.254.254', 0, 24, '这是一个默认的超级用户信息', '192.168.2.176', '5C-63-BF-1D-72-07', 1),
 	(2, 'authadmin', 'S8W2gMnH8VWiT9pXRMPQxA==', '男', '0571-88888888', '2012-04-12 14:22:35', '2013-05-07 18:27:30', NULL, '有效', '信息中心', '主任', '授权管理员', 'xiaom@hzih.net', '0.0.0.0', '192.168.200.254', 1, 22, '这是一个默认的授权用户信息', '', NULL, 1),
 	(3, 'configadmin', 'S8W2gMnH8VWiT9pXRMPQxA==', '男', '0571-88888888', '2012-06-12 18:04:01', '2013-05-07 18:27:45', NULL, '有效', '信息中心', '主任', '配置管理员', 'xiaom@hzih.net', '0.0.0.0', '192.168.200.254', 9, 23, '这是一个默认的配置用户信息', '', NULL, 1),
 	(4, 'auditadmin', 'S8W2gMnH8VWiT9pXRMPQxA==', '男', '0571-88888888', '2012-07-03 10:19:57', '2014-08-26 13:01:36', NULL, '有效', '信息中心', '主任', '审计管理员', 'xiaom@hzih.net', '0.0.0.0', '192.168.200.254', 7, 18, '这是一个默认的审计用户信息', NULL, NULL, 1);
@@ -110,7 +110,7 @@ CREATE TABLE IF NOT EXISTS `equipment_log` (
   `equipment_name` varchar(255) DEFAULT NULL,
   `log_info` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=113 DEFAULT CHARSET=utf8;
 
 -- 正在导出表  sslvpn.equipment_log 的数据：~0 rows (大约)
 /*!40000 ALTER TABLE `equipment_log` DISABLE KEYS */;
@@ -252,12 +252,12 @@ CREATE TABLE IF NOT EXISTS `role` (
   `createdTime` datetime DEFAULT NULL,
   `modifiedTime` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 
 -- 正在导出表  sslvpn.role 的数据：~4 rows (大约)
 /*!40000 ALTER TABLE `role` DISABLE KEYS */;
 INSERT INTO `role` (`id`, `name`, `description`, `createdTime`, `modifiedTime`) VALUES
-	(1, '初始化管理员', '初始化管理员', '2010-07-04 15:07:08', '2015-06-15 13:59:12'),
+	(1, '初始化管理员', '初始化管理员', '2010-07-04 15:07:08', '2016-04-26 17:36:28'),
 	(2, '授权管理员', '授权管理员', '2012-07-03 10:06:20', '2015-12-31 13:09:06'),
 	(3, '配置管理员', '配置管理员', '2012-03-14 12:33:05', '2015-12-31 13:10:43'),
 	(4, '审计管理员', '审计管理员', '2012-06-12 18:37:24', '2015-12-31 13:09:46');
@@ -280,13 +280,55 @@ CREATE TABLE IF NOT EXISTS `role_permission` (
   CONSTRAINT `FKBD40D538A472BB1A` FOREIGN KEY (`role_id`) REFERENCES `role` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
--- 正在导出表  sslvpn.role_permission 的数据：~49 rows (大约)
+-- 正在导出表  sslvpn.role_permission 的数据：~91 rows (大约)
 /*!40000 ALTER TABLE `role_permission` DISABLE KEYS */;
 INSERT INTO `role_permission` (`permission_id`, `role_id`) VALUES
 	(100, 1),
 	(101, 1),
 	(102, 1),
 	(103, 1),
+	(110, 1),
+	(111, 1),
+	(112, 1),
+	(113, 1),
+	(114, 1),
+	(120, 1),
+	(121, 1),
+	(122, 1),
+	(123, 1),
+	(124, 1),
+	(130, 1),
+	(131, 1),
+	(132, 1),
+	(133, 1),
+	(140, 1),
+	(141, 1),
+	(150, 1),
+	(151, 1),
+	(160, 1),
+	(161, 1),
+	(162, 1),
+	(163, 1),
+	(170, 1),
+	(171, 1),
+	(172, 1),
+	(173, 1),
+	(174, 1),
+	(175, 1),
+	(180, 1),
+	(181, 1),
+	(182, 1),
+	(190, 1),
+	(191, 1),
+	(192, 1),
+	(193, 1),
+	(200, 1),
+	(201, 1),
+	(202, 1),
+	(210, 1),
+	(211, 1),
+	(212, 1),
+	(213, 1),
 	(170, 2),
 	(171, 2),
 	(172, 2),
@@ -346,13 +388,14 @@ CREATE TABLE IF NOT EXISTS `safe_policy` (
   `macDisabled` tinyint(1) DEFAULT NULL,
   `passwordRules` varchar(255) DEFAULT NULL,
   `lockTime` int(10) NOT NULL DEFAULT '24' COMMENT '锁定时间(小时)',
+  `maxSession` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='安全策略表';
 
 -- 正在导出表  sslvpn.safe_policy 的数据：~1 rows (大约)
 /*!40000 ALTER TABLE `safe_policy` DISABLE KEYS */;
-INSERT INTO `safe_policy` (`id`, `timeout`, `passwordLength`, `errorLimit`, `remoteDisabled`, `macDisabled`, `passwordRules`, `lockTime`) VALUES
-	(1, 600, 0, 3, 0, 0, '^[0-9a-zA-Z!$#%@^&amp;amp;amp;amp;amp;amp;amp;*()~_+]{8,20}$', 1);
+INSERT INTO `safe_policy` (`id`, `timeout`, `passwordLength`, `errorLimit`, `remoteDisabled`, `macDisabled`, `passwordRules`, `lockTime`, `maxSession`) VALUES
+	(1, 1800, 0, 3, 0, 0, '^[0-9a-zA-Z!$#%@^&amp;amp;amp;amp;amp;amp;amp;*()~_+]{8,20}$', 1, NULL);
 /*!40000 ALTER TABLE `safe_policy` ENABLE KEYS */;
 
 
@@ -399,7 +442,7 @@ CREATE TABLE IF NOT EXISTS `server` (
 -- 正在导出表  sslvpn.server 的数据：~1 rows (大约)
 /*!40000 ALTER TABLE `server` DISABLE KEYS */;
 INSERT INTO `server` (`id`, `listen`, `port`, `protocol`, `server_net`, `server_mask`, `check_crl`, `traffic_server`, `client_to_client`, `duplicate_cn`, `keep_alive`, `keep_alive_interval`, `cipher`, `comp_lzo`, `max_clients`, `log_append`, `log_flag`, `verb`, `mute`, `client_dns_type`, `client_first_dns`, `client_second_dns`, `default_domain_suffix`, `use_connect_script`, `use_disconnect_script`, `use_learn_address_script`, `local`, `server`, `dynamic_net`, `static_net`, `group_default_net`, `private_net`, `allow_ping_server`, `allow_private_net`) VALUES
-	(1, '0.0.0.0', 1194, 'tcp', '10.8.0.0', '255.255.255.0', 1, 0, 1, 0, 3600, 1800, 'DES-EDE3-CBC', 1, 300, 1, 1, 3, 5, 2, '', '', 'sslvpn.com', 1, 1, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+	(1, '192.168.3.120', 1194, 'udp', '11.8.0.0', '255.255.255.0', 1, 0, 1, 0, 60, 10, 'DES-EDE3-CBC', 1, 300, 1, 1, 3, 5, 0, '', '', 'sslvpn.com', 1, 1, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
 /*!40000 ALTER TABLE `server` ENABLE KEYS */;
 
 
@@ -446,13 +489,15 @@ CREATE TABLE IF NOT EXISTS `source_nets` (
   `id` int(11) NOT NULL,
   `net` varchar(30) DEFAULT NULL,
   `net_mask` varchar(30) DEFAULT NULL,
+  `level` int(11) DEFAULT '0',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
--- 正在导出表  sslvpn.source_nets 的数据：~1 rows (大约)
+-- 正在导出表  sslvpn.source_nets 的数据：~2 rows (大约)
 /*!40000 ALTER TABLE `source_nets` DISABLE KEYS */;
-INSERT INTO `source_nets` (`id`, `net`, `net_mask`) VALUES
-	(1, '192.168.1.0', '255.0.0.0');
+INSERT INTO `source_nets` (`id`, `net`, `net_mask`, `level`) VALUES
+	(1, '192.168.3.0', '255.255.255.0', NULL),
+	(2, '172.16.1.0', '255.255.255.0', NULL);
 /*!40000 ALTER TABLE `source_nets` ENABLE KEYS */;
 
 
@@ -603,11 +648,11 @@ CREATE TABLE IF NOT EXISTS `user` (
   `revoke_status` varchar(30) DEFAULT NULL,
   `download_speed` varchar(255) DEFAULT NULL,
   `upload_speed` varchar(255) DEFAULT NULL,
-  `level` int(11) DEFAULT NULL,
+  `level` int(11) DEFAULT '0',
   PRIMARY KEY (`id`),
   UNIQUE KEY `cn` (`cn`),
   UNIQUE KEY `serial_number` (`serial_number`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8;
 
 -- 正在导出表  sslvpn.user 的数据：~0 rows (大约)
 /*!40000 ALTER TABLE `user` DISABLE KEYS */;
@@ -660,7 +705,7 @@ CREATE TABLE IF NOT EXISTS `user_oper_log` (
   `audit_module` varchar(255) DEFAULT NULL,
   `audit_info` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`Id`)
-) ENGINE=InnoDB AUTO_INCREMENT=157 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- 正在导出表  sslvpn.user_oper_log 的数据：~0 rows (大约)
 /*!40000 ALTER TABLE `user_oper_log` DISABLE KEYS */;

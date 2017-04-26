@@ -122,16 +122,16 @@ Ext.onReady(function () {
     var tbar = new Ext.Toolbar({
         autoWidth :true,
         autoHeight:true,
-        items:[  /*{
-            id:'import_resource.info',
+        items:[  {
+            id:'batchImportUser.info',
             xtype:'button',
-            text:'导入终端信息',
+            text:'导入终端用户',
             iconCls:'add',
             handler:function () {
-                importUser(grid_panel,store);
+                batchImportUser(grid_panel,store);
 //                    addUser(grid_panel, store);
             }
-        },*/
+        },
             '终端名称',
             new Ext.form.TextField({
                 name : 'cn',
@@ -259,7 +259,6 @@ function show_enabled(value, p, r){
         return String.format('三级');
     }
 }*/
-
 
 /*var revokeUser = function(){
     var grid = Ext.getCmp('grid.info');
@@ -1702,6 +1701,174 @@ function remove_net(){
     }
 
 }
+
+function downloadModel() {
+    if (!Ext.fly('test')) {
+        var frm = document.createElement('form');
+        frm.id = 'test';
+        frm.style.display = 'none';
+        document.body.appendChild(frm);
+    }
+    ;
+    Ext.Ajax.request({
+        url: '../../UserBatchImport_downloadModel.action',
+        timeout: 20 * 60 * 1000,
+        form: Ext.fly('test'),
+        method: 'POST',
+        isUpload: true
+    });
+};
+
+function batchImportUser(store) {
+    var grid_panel = Ext.getCmp("grid.info");
+    var formPanel = new Ext.form.FormPanel({
+        frame: true,
+        autoScroll: true,
+        labelWidth: 150,
+        labelAlign: 'right',
+        defaultWidth: 300,
+        autoWidth: true,
+        fileUpload: true,
+        layout: 'form',
+        border: false,
+        defaults: {
+            width: 250,
+            allowBlank: false,
+            blankText: '该项不能为空！'
+        },
+        items: [
+            {
+                id: 'downloadModel.info',
+                fieldLabel: '下载',
+                xtype: 'button',
+                text: '批量导入模板',
+                iconCls: 'download',
+                handler: function () {
+                    downloadModel();
+                }
+            }, {
+                id: 'uploadFile',
+                fieldLabel: '批量文件',
+                xtype: 'textfield',
+                inputType: 'file',
+                editable: false,
+                allowBlank: true
+            }
+        ]
+    });
+    var win = new Ext.Window({
+        title: "批量导入终端",
+        width: 500,
+        layout: 'fit',
+        height: 200,
+        modal: true,
+        items: formPanel,
+        bbar: [
+            '->',
+            {
+                id: 'insert_win.info',
+                text: '导入',
+                handler: function () {
+                    var myMask = new Ext.LoadMask(Ext.getBody(), {
+                        msg: '正在查询,请稍后...',
+                        removeMask: true
+                    });
+                    myMask.show();
+                    if (formPanel.form.isValid()) {
+                        formPanel.getForm().submit({
+                            url: '../../UserBatchImport_batchFlag.action',
+                            timeout: 20 * 60 * 1000,
+                            method: 'POST',
+                            success: function (form, action) {
+                                var msg = action.result.msg;
+                                myMask.hide();
+                                Ext.Msg.confirm("提示", msg, function (sid) {
+                                    if (sid == "yes") {
+                                        var myMask_execute = new Ext.LoadMask(Ext.getBody(), {
+                                            msg: '正在导入,请稍后...',
+                                            removeMask: true
+                                        });
+                                        myMask_execute.show();
+                                        formPanel.getForm().submit({
+                                            url: '../../UserBatchImport_batchImportUser.action',
+                                            timeout: 20 * 60 * 1000,
+                                            method: "POST",
+                                            params: {flag: 'true'},
+                                            success: function (form, action) {
+                                                myMask_execute.hide();
+                                                var msg = action.result.msg;
+                                                grid_panel.getStore().reload();
+                                                Ext.Msg.alert("提示", msg);
+                                                win.close();
+                                            },
+                                            failure: function (form, action) {
+                                                myMask_execute.hide();
+                                                var msg = action.result.msg;
+                                                Ext.Msg.alert("提示", msg);
+                                            }
+                                        });
+                                    } else {
+                                        var myMask_execute = new Ext.LoadMask(Ext.getBody(), {
+                                            msg: '正在导入,请稍后...',
+                                            removeMask: true
+                                        });
+                                        myMask_execute.show();
+                                        formPanel.getForm().submit({
+                                            url: '../../UserBatchImport_batchImportUser.action',
+                                            timeout: 20 * 60 * 1000,
+                                            method: "POST",
+                                            params: {flag: 'false'},
+                                            success: function (form, action) {
+                                                myMask_execute.hide();
+                                                var msg = action.result.msg;
+                                                grid_panel.getStore().reload();
+                                                Ext.Msg.alert("提示", msg);
+                                                win.close();
+                                            },
+                                            failure: function (form, action) {
+                                                myMask_execute.hide();
+                                                var msg = action.result.msg;
+                                                Ext.Msg.alert("提示", msg);
+                                            }
+                                        });
+                                    }
+                                });
+                            },
+                            failure: function (form, action) {
+                                var msg = action.result.msg;
+                                myMask.hide();
+                                Ext.MessageBox.show({
+                                    title: '信息',
+                                    width: 500,
+                                    msg: msg,
+                                    buttons: Ext.MessageBox.OK,
+                                    buttons: {'ok': '确定'},
+                                    icon: Ext.MessageBox.ERROR,
+                                    closable: false
+                                });
+                            }
+                        });
+                    } else {
+                        Ext.MessageBox.show({
+                            title: '信息',
+                            width: 250,
+                            msg: '请填写完成再提交!',
+                            buttons: Ext.MessageBox.OK,
+                            buttons: {'ok': '确定'},
+                            icon: Ext.MessageBox.ERROR,
+                            closable: false
+                        });
+                    }
+                }
+            }, {
+                text: '重置',
+                handler: function () {
+                    formPanel.getForm().reset();
+                }
+            }
+        ]
+    }).show();
+};
 
 function importUser(){
     var grid = Ext.getCmp('grid.info');

@@ -317,6 +317,7 @@ public class VPNConfigUtil {
                 }
                 Set<SourceNet> sourceNets = new HashSet<>();
                 Set<SourceNet> sourceNets_u = user.getSourceNets();
+
                 if (sourceNets_u != null && sourceNets_u.size() > 0) {
                     for (SourceNet net : sourceNets_u) {
                         if (!sourceNets.contains(net)) {
@@ -324,6 +325,16 @@ public class VPNConfigUtil {
                         }
                     }
                 }
+                Set<Groups> groupses = user.getGroupsSet();
+                for (Groups groups:groupses){
+                    Set<SourceNet> sourceNets_g = groups.getSourceNets();
+                    for (SourceNet net : sourceNets_g) {
+                        if (!sourceNets.contains(net)) {
+                            sourceNets.add(net);
+                        }
+                    }
+                }
+
                 if (null != sourceNets && sourceNets.size() > 0) {
                     for (SourceNet net : sourceNets) {
                         sb.append("push ").append("\"route " + net.getNet() + " " + net.getNet_mask() + "\"").append("\n");

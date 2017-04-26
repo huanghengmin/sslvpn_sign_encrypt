@@ -227,7 +227,7 @@ function show_flag(value, p, r) {
             '<a id="disable.info" href="javascript:void(0);" onclick="disable();return false;" style="color: green;">禁用</a>&nbsp;&nbsp;&nbsp;'+
             '<a id="updateGroup.info" href="javascript:void(0);" onclick="updateGroup();return false;" style="color: green;">更新</a>&nbsp;&nbsp;&nbsp;' +
             '<a id="deleteGroup.info" href="javascript:void(0);" onclick="deleteGroup();return false;" style="color: green;">删除</a>&nbsp;&nbsp;&nbsp;' +
-             //'<a id="group_nets.info" href="javascript:void(0);" onclick="group_nets();return false;" style="color: green;">资源</a>&nbsp;&nbsp;&nbsp;' +
+             '<a id="group_nets.info" href="javascript:void(0);" onclick="group_nets();return false;" style="color: green;">资源</a>&nbsp;&nbsp;&nbsp;' +
             '<a id="group_users.info" href="javascript:void(0);" onclick="group_users();return false;" style="color: green;">成员</a>&nbsp;&nbsp;&nbsp;'
     );
     } else if (r.get("deny_access") == "1") {
@@ -235,7 +235,7 @@ function show_flag(value, p, r) {
             '<a id="enable.info" href="javascript:void(0);" onclick="enable();return false;" style="color: green;">启用</a>&nbsp;&nbsp;&nbsp;'+
             '<a id="updateGroup.info" href="javascript:void(0);" onclick="updateGroup();return false;" style="color: green;">更新</a>&nbsp;&nbsp;&nbsp;' +
             '<a id="deleteGroup.info" href="javascript:void(0);" onclick="deleteGroup();return false;" style="color: green;">删除</a>&nbsp;&nbsp;&nbsp;' +
-            //'<a id="group_nets.info" href="javascript:void(0);" onclick="group_nets();return false;" style="color: green;">资源</a>&nbsp;&nbsp;&nbsp;' +
+            '<a id="group_nets.info" href="javascript:void(0);" onclick="group_nets();return false;" style="color: green;">资源</a>&nbsp;&nbsp;&nbsp;' +
             '<a id="group_users.info" href="javascript:void(0);" onclick="group_users();return false;" style="color: green;">成员</a>&nbsp;&nbsp;&nbsp;'
         );
     }

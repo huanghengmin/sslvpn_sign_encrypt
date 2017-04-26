@@ -601,6 +601,14 @@
         <property name="logService" ref="logService"/>
     </bean>
 
+    <bean class="com.hzih.sslvpn.web.action.sslvpn.ccd.UserBatchImport" id="UserBatchImport">
+        <property name="logService" ref="logService"/>
+        <property name="userDao" ref="userDao"/>
+        <property name="groupDao" ref="groupDao"/>
+        <property name="userGroupService" ref="userGroupService"/>
+    </bean>
+
+
     <!--<bean class="com.hzih.sslvpn.web.action.digest.DigestAction" id="DigestAction">-->
     <!--</bean>-->
 

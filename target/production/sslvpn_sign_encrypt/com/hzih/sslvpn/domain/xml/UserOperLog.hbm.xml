@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class table="user_oper_log" name="com.hzih.sslvpn.domain.UserOperLog">
+        <id access="field" name="id" type="java.lang.Long" column="Id">
+            <generator class="identity"/>
+        </id>
+        <property name="logTime" column="log_time" access="field" type="java.util.Date"/>
+        <property name="level" column="level" access="field" type="java.lang.String"/>
+        <property name="userName" column="username" access="field" type="java.lang.String"/>
+        <property name="auditModule" column="audit_module" access="field" type="java.lang.String"/>
+        <property name="auditInfo" column="audit_info" access="field" type="java.lang.String"/>
+    </class>
+</hibernate-mapping>

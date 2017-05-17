@@ -1,0 +1,51 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+    <session-factory>
+        <!--<property name="c3p0.min_size">5</property>-->
+        <!--<property name="c3p0.max_size">100</property>-->
+        <!--<property name="c3p0.timeout">1800</property>-->
+        <!--<property name="c3p0.max_statements">100</property>-->
+        <!--<property name="c3p0.poolPreparedStatements">true</property>-->
+        <mapping resource="com/hzih/sslvpn/domain/xml/Account.hbm.xml"/>
+        <mapping resource="com/hzih/sslvpn/domain/xml/Role.hbm.xml"/>
+        <!--<mapping resource="com/hzih/sslvpn/domain/xml/BusinessLog.hbm.xml_"/>-->
+        <mapping resource="com/hzih/sslvpn/domain/xml/Permission.hbm.xml"/>
+        <mapping resource="com/hzih/sslvpn/domain/xml/SafePolicy.hbm.xml"/>
+        <!--<mapping resource="com/hzih/sslvpn/domain/xml/SysLog.hbm.xml_"/>-->
+        <mapping resource="com/hzih/sslvpn/domain/xml/UserOperLog.hbm.xml"/>
+
+        <mapping resource="com/hzih/sslvpn/domain/xml/User.hbm.xml"/>
+        <mapping resource="com/hzih/sslvpn/domain/xml/Log.hbm.xml"/>
+
+        <mapping resource="com/hzih/sslvpn/domain/xml/SourceNet.hbm.xml"/>
+        <mapping resource="com/hzih/sslvpn/domain/xml/Groups.hbm.xml"/>
+
+        <mapping resource="com/hzih/sslvpn/domain/xml/UserGroup.hbm.xml"/>
+        <!--<mapping resource="com/hzih/sslvpn/domain/xml/GroupPrivateNets.hbm.xml_"/>-->
+
+        <mapping resource="com/hzih/sslvpn/domain/xml/Server.hbm.xml"/>
+        <!--<mapping resource="com/hzih/sslvpn/domain/xml/PrivateNet.hbm.xml_"/>-->
+        <!--<mapping resource="com/hzih/sslvpn/domain/xml/UserPrivateNets.hbm.xml_"/>-->
+        <!--<mapping resource="com/hzih/sslvpn/domain/xml/GroupNet.hbm.xml_"/>-->
+        <mapping resource="com/hzih/sslvpn/domain/xml/StaticIp.hbm.xml"/>
+
+        <mapping resource="com/hzih/sslvpn/domain/xml/TrustCertificate.hbm.xml"/>
+        <!--<mapping resource="com/hzih/sslvpn/domain/xml/ServerManager.hbm.xml_"/>-->
+        <!--<mapping resource="com/hzih/sslvpn/domain/xml/KeyManager.hbm.xml_"/>-->
+        <!--<mapping resource="com/hzih/sslvpn/domain/xml/FileSerial.hbm.xml_"/>-->
+        <mapping resource="com/hzih/sslvpn/domain/xml/ServerCertificate.hbm.xml"/>
+
+        <!--<mapping resource="com/hzih/sslvpn/domain/xml/RouteUser.hbm.xml"/>-->
+        <mapping resource="com/hzih/sslvpn/domain/xml/UserGps.hbm.xml"/>
+        <!--<mapping resource="com/hzih/sslvpn/domain/xml/Terminal.hbm.xml"/>-->
+        <!--<mapping resource="com/hzih/sslvpn/domain/xml/UserRouteUser.hbm.xml"/>-->
+        <mapping resource="com/hzih/sslvpn/domain/xml/BackUp.hbm.xml"/>
+        <!--<mapping resource="com/hzih/sslvpn/domain/xml/TrustTerminal.hbm.xml"/>-->
+        <mapping resource="com/hzih/sslvpn/domain/xml/EquipmentLog.hbm.xml"/>
+        <!--<mapping resource="com/hzih/sslvpn/domain/xml/Nat.hbm.xml"/>-->
+    </session-factory>
+</hibernate-configuration>

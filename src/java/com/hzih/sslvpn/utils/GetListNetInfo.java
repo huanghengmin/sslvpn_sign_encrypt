@@ -588,7 +588,7 @@ public class GetListNetInfo{
 		List<NetInfo> list = new ArrayList<NetInfo>();
         if(osInfo.isLinux()){
             Proc proc = new Proc();
-           	String command = "route -v";
+           	String command = "route -n";
            	proc.exec(command);
            	String result = proc.getOutput();
            	StringTokenizer tokenizer = new StringTokenizer(result, "\n");

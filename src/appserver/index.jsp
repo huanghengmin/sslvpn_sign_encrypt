@@ -175,7 +175,7 @@
                 id: 'mrn_3_4',
                 text: '双机热备',
                 leaf: true,
-                url: 'pages/config/manager_equipment_backup.jsp'
+                url: 'pages/config/manager_keepalived_backup.jsp'
             });
             <lbs:access code="SECOND_XTGL">
             menu_root_node_3.appendChild(mrn_3_1);

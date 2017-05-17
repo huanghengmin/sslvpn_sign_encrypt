@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class table="source_nets" name="com.hzih.sslvpn.domain.SourceNet">
+        <id access="field" name="id" type="int" column="id" length="11">
+            <generator class="increment"/>
+        </id>
+
+        <!--inverse="true" 对集合的改动不会修改对应的关系表关系-->
+        <set cascade="save-update" table="user_source_nets" name="users" inverse="true" lazy="false">
+            <key column="source_net_id" />
+            <many-to-many class="com.hzih.sslvpn.domain.User">
+                <column name="user_id" />
+            </many-to-many>
+        </set>
+
+        <set cascade="save-update" table="group_source_nets" name="groupsSet" inverse="true" lazy="false">
+            <key column="source_net_id"/>
+            <many-to-many class="com.hzih.sslvpn.domain.Groups">
+                <column name="group_id"/>
+            </many-to-many>
+        </set>
+
+        <set cascade="save-update" table="server_source_nets" name="serverSet" inverse="true" lazy="false">
+            <key column="source_net_id"/>
+            <many-to-many class="com.hzih.sslvpn.domain.Server">
+                <column name="server_id"/>
+            </many-to-many>
+        </set>
+
+        <property name="net" length="30" column="net" access="field" type="string"/>
+        <property name="net_mask" length="30" column="net_mask" access="field" type="string"/>
+    </class>
+</hibernate-mapping>

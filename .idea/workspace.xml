@@ -19,542 +19,20 @@
     <option name="historyRevisionsNumber" value="4" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e7886a50-f3f0-4343-ba5b-160cdb03b937" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/kotlinc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/ant.xml" afterPath="$PROJECT_DIR$/.idea/ant.xml" />
+    <list default="true" id="e7886a50-f3f0-4343-ba5b-160cdb03b937" name="Default" comment="加入双机热备相关配置界面">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/appserver/js/config/manager_keepalived_backup.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/appserver/pages/config/manager_keepalived_backup.jsp" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/utils/KeepAlivedConfigUtil.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/web/action/config/HotBackupKeepAlivedAction.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/web/action/sslvpn/service/KeepAlivedServerStatusAction.java" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/artifacts/sslvpn_war_exploded.xml" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/artifacts/ROOT.xml" afterPath="$PROJECT_DIR$/.idea/artifacts/ROOT.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/artifacts/sslvpn_war_exploded.xml" afterPath="$PROJECT_DIR$/.idea/artifacts/sslvpn_war_exploded.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/compiler.xml" afterPath="$PROJECT_DIR$/.idea/compiler.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/copyright/profiles_settings.xml" afterPath="$PROJECT_DIR$/.idea/copyright/profiles_settings.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dictionaries/Administrator.xml" afterPath="$PROJECT_DIR$/.idea/dictionaries/Administrator.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/encodings.xml" afterPath="$PROJECT_DIR$/.idea/encodings.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/ant.xml" afterPath="$PROJECT_DIR$/.idea/libraries/ant.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/bcprov_jdk16_146.xml" afterPath="$PROJECT_DIR$/.idea/libraries/bcprov_jdk16_146.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/commons_compress_1_8_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/commons_compress_1_8_1.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/commons_email_1_3_3.xml" afterPath="$PROJECT_DIR$/.idea/libraries/commons_email_1_3_3.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/commons_exec.xml" afterPath="$PROJECT_DIR$/.idea/libraries/commons_exec.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/json_smart_1_2.xml" afterPath="$PROJECT_DIR$/.idea/libraries/json_smart_1_2.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/junit_4_10.xml" afterPath="$PROJECT_DIR$/.idea/libraries/junit_4_10.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/mina_core_2_0_7.xml" afterPath="$PROJECT_DIR$/.idea/libraries/mina_core_2_0_7.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/persistence4j_common_1_6_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/persistence4j_common_1_6_1.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/servlet.xml" afterPath="$PROJECT_DIR$/.idea/libraries/servlet.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/shared.xml" afterPath="$PROJECT_DIR$/.idea/libraries/shared.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/snmp.xml" afterPath="$PROJECT_DIR$/.idea/libraries/snmp.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/ssh2.xml" afterPath="$PROJECT_DIR$/.idea/libraries/ssh2.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/sslvpn_sign_encrypt.xml" afterPath="$PROJECT_DIR$/.idea/libraries/sslvpn_sign_encrypt.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/syslog4j_0_9_46.xml" afterPath="$PROJECT_DIR$/.idea/libraries/syslog4j_0_9_46.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/scopes/scope_settings.xml" afterPath="$PROJECT_DIR$/.idea/scopes/scope_settings.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/META-INF/MANIFEST.MF" afterPath="$PROJECT_DIR$/META-INF/MANIFEST.MF" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/build.dtd" afterPath="$PROJECT_DIR$/build/build.dtd" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/build.properties" afterPath="$PROJECT_DIR$/build/build.properties" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/build.sh" afterPath="$PROJECT_DIR$/build/build.sh" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/build.xml" afterPath="$PROJECT_DIR$/build/build.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classpaths.xml" afterPath="$PROJECT_DIR$/build/classpaths.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/targets.xml" afterPath="$PROJECT_DIR$/build/targets.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/android.ovpn" afterPath="$PROJECT_DIR$/doc/android.ovpn" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/ichange" afterPath="$PROJECT_DIR$/doc/ichange" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/install.sh" afterPath="$PROJECT_DIR$/doc/install.sh" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/openvpn" afterPath="$PROJECT_DIR$/doc/openvpn" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/sslvpn" afterPath="$PROJECT_DIR$/doc/sslvpn" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/sslvpn_client.txt" afterPath="$PROJECT_DIR$/doc/sslvpn_client.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/sslvpn_console command.txt" afterPath="$PROJECT_DIR$/doc/sslvpn_console command.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/sslvpn_server.txt" afterPath="$PROJECT_DIR$/doc/sslvpn_server.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/sslvpn_static_ip.txt" afterPath="$PROJECT_DIR$/doc/sslvpn_static_ip.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/watchDog.sh" afterPath="$PROJECT_DIR$/doc/watchDog.sh" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/windows.ovpn" afterPath="$PROJECT_DIR$/doc/windows.ovpn" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/appserver/META-INF/MANIFEST.MF" afterPath="$PROJECT_DIR$/src/appserver/META-INF/MANIFEST.MF" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/appserver/WEB-INF/c-1_0-rt.tld" afterPath="$PROJECT_DIR$/src/appserver/WEB-INF/c-1_0-rt.tld" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/appserver/WEB-INF/lbs.tld" afterPath="$PROJECT_DIR$/src/appserver/WEB-INF/lbs.tld" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/appserver/WEB-INF/web.xml" afterPath="$PROJECT_DIR$/src/appserver/WEB-INF/web.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/appserver/css/ext-patch.css" afterPath="$PROJECT_DIR$/src/appserver/css/ext-patch.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/appserver/css/icon.css" afterPath="$PROJECT_DIR$/src/appserver/css/icon.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/appserver/css/index.css" afterPath="$PROJECT_DIR$/src/appserver/css/index.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/appserver/include/common.jsp" afterPath="$PROJECT_DIR$/src/appserver/include/common.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/appserver/index.jsp" afterPath="$PROJECT_DIR$/src/appserver/index.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/appserver/js/My97DatePicker/My97DatePicker.htm" afterPath="$PROJECT_DIR$/src/appserver/js/My97DatePicker/My97DatePicker.htm" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/appserver/js/My97DatePicker/WdatePicker.js" afterPath="$PROJECT_DIR$/src/appserver/js/My97DatePicker/WdatePicker.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/appserver/js/My97DatePicker/calendar.js" afterPath="$PROJECT_DIR$/src/appserver/js/My97DatePicker/calendar.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/appserver/js/My97DatePicker/config.js" afterPath="$PROJECT_DIR$/src/appserver/js/My97DatePicker/config.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/appserver/js/My97DatePicker/lang/en.js" afterPath="$PROJECT_DIR$/src/appserver/js/My97DatePicker/lang/en.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/appserver/js/My97DatePicker/lang/zh-cn.js" afterPath="$PROJECT_DIR$/src/appserver/js/My97DatePicker/lang/zh-cn.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/appserver/js/My97DatePicker/lang/zh-tw.js" afterPath="$PROJECT_DIR$/src/appserver/js/My97DatePicker/lang/zh-tw.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/appserver/js/My97DatePicker/skin/WdatePicker.css" afterPath="$PROJECT_DIR$/src/appserver/js/My97DatePicker/skin/WdatePicker.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/appserver/js/My97DatePicker/skin/default/datepicker.css" afterPath="$PROJECT_DIR$/src/appserver/js/My97DatePicker/skin/default/datepicker.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/appserver/js/My97DatePicker/skin/whyGreen/datepicker.css" afterPath="$PROJECT_DIR$/src/appserver/js/My97DatePicker/skin/whyGreen/datepicker.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/appserver/js/alert/alert_device.js" afterPath="$PROJECT_DIR$/src/appserver/js/alert/alert_device.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/appserver/js/audit/audit_user.js" afterPath="$PROJECT_DIR$/src/appserver/js/audit/audit_user.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/appserver/js/audit/manager-downloadLog.js" afterPath="$PROJECT_DIR$/src/appserver/js/audit/manager-downloadLog.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/appserver/js/ccd/group_permissions.js" afterPath="$PROJECT_DIR$/src/appserver/js/ccd/group_permissions.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/appserver/js/ccd/ipp.js" afterPath="$PROJECT_DIR$/src/appserver/js/ccd/ipp.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/appserver/js/ccd/user_permissions.js" afterPath="$PROJECT_DIR$/src/appserver/js/ccd/user_permissions.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/appserver/js/config/date_time.js" afterPath="$PROJECT_DIR$/src/appserver/js/config/date_time.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/appserver/js/config/manager_equipment_backup.js" afterPath="$PROJECT_DIR$/src/appserver/js/config/manager_equipment_backup.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/appserver/js/crl/revoke_auto_list.js" afterPath="$PROJECT_DIR$/src/appserver/js/crl/revoke_auto_list.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/appserver/js/crl/revoke_certificates_list.js" afterPath="$PROJECT_DIR$/src/appserver/js/crl/revoke_certificates_list.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/appserver/js/crl/revoke_file_list.js" afterPath="$PROJECT_DIR$/src/appserver/js/crl/revoke_file_list.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/appserver/js/ext/DateTime/DateTimeField.js" afterPath="$PROJECT_DIR$/src/appserver/js/ext/DateTime/DateTimeField.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/appserver/js/ext/DateTime/Spinner.css" afterPath="$PROJECT_DIR$/src/appserver/js/ext/DateTime/Spinner.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/appserver/js/ext/DateTime/Spinner.js" afterPath="$PROJECT_DIR$/src/appserver/js/ext/DateTime/Spinner.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/appserver/js/ext/DateTime/SpinnerField.js" afterPath="$PROJECT_DIR$/src/appserver/js/ext/DateTime/SpinnerField.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/appserver/js/ext/adapter/ext/ext-base-debug-w-comments.js" afterPath="$PROJECT_DIR$/src/appserver/js/ext/adapter/ext/ext-base-debug-w-comments.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/appserver/js/ext/adapter/ext/ext-base-debug.js" afterPath="$PROJECT_DIR$/src/appserver/js/ext/adapter/ext/ext-base-debug.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/appserver/js/ext/adapter/ext/ext-base.js" afterPath="$PROJECT_DIR$/src/appserver/js/ext/adapter/ext/ext-base.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/appserver/js/ext/adapter/jquery/ext-jquery-adapter-debug.js" afterPath="$PROJECT_DIR$/src/appserver/js/ext/adapter/jquery/ext-jquery-adapter-debug.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/appserver/js/ext/adapter/jquery/ext-jquery-adapter.js" afterPath="$PROJECT_DIR$/src/appserver/js/ext/adapter/jquery/ext-jquery-adapter.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/appserver/js/ext/adapter/prototype/ext-prototype-adapter-debug.js" afterPath="$PROJECT_DIR$/src/appserver/js/ext/adapter/prototype/ext-prototype-adapter-debug.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/appserver/js/ext/adapter/prototype/ext-prototype-adapter.js" afterPath="$PROJECT_DIR$/src/appserver/js/ext/adapter/prototype/ext-prototype-adapter.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/appserver/js/ext/adapter/yui/ext-yui-adapter-debug.js" afterPath="$PROJECT_DIR$/src/appserver/js/ext/adapter/yui/ext-yui-adapter-debug.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/appserver/js/ext/adapter/yui/ext-yui-adapter.js" afterPath="$PROJECT_DIR$/src/appserver/js/ext/adapter/yui/ext-yui-adapter.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/appserver/js/ext/ext-all-debug-w-comments.js" afterPath="$PROJECT_DIR$/src/appserver/js/ext/ext-all-debug-w-comments.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/appserver/js/ext/ext-all-debug.js" afterPath="$PROJECT_DIR$/src/appserver/js/ext/ext-all-debug.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/appserver/js/ext/ext-all.js" afterPath="$PROJECT_DIR$/src/appserver/js/ext/ext-all.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/appserver/js/ext/ext-lang-zh_CN.js" afterPath="$PROJECT_DIR$/src/appserver/js/ext/ext-lang-zh_CN.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/appserver/js/ext/qq.js" afterPath="$PROJECT_DIR$/src/appserver/js/ext/qq.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/appserver/js/ext/resources/css/README.txt" afterPath="$PROJECT_DIR$/src/appserver/js/ext/resources/css/README.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/appserver/js/ext/resources/css/debug.css" afterPath="$PROJECT_DIR$/src/appserver/js/ext/resources/css/debug.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/appserver/js/ext/resources/css/ext-all-notheme.css" afterPath="$PROJECT_DIR$/src/appserver/js/ext/resources/css/ext-all-notheme.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/appserver/js/ext/resources/css/ext-all.css" afterPath="$PROJECT_DIR$/src/appserver/js/ext/resources/css/ext-all.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/appserver/js/ext/resources/css/reset-min.css" afterPath="$PROJECT_DIR$/src/appserver/js/ext/resources/css/reset-min.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/appserver/js/ext/resources/css/structure/borders.css" afterPath="$PROJECT_DIR$/src/appserver/js/ext/resources/css/structure/borders.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/appserver/js/ext/resources/css/structure/box.css" afterPath="$PROJECT_DIR$/src/appserver/js/ext/resources/css/structure/box.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/appserver/js/ext/resources/css/structure/button.css" afterPath="$PROJECT_DIR$/src/appserver/js/ext/resources/css/structure/button.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/appserver/js/ext/resources/css/structure/combo.css" afterPath="$PROJECT_DIR$/src/appserver/js/ext/resources/css/structure/combo.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/appserver/js/ext/resources/css/structure/core.css" afterPath="$PROJECT_DIR$/src/appserver/js/ext/resources/css/structure/core.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/appserver/js/ext/resources/css/structure/date-picker.css" afterPath="$PROJECT_DIR$/src/appserver/js/ext/resources/css/structure/date-picker.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/appserver/js/ext/resources/css/structure/dd.css" afterPath="$PROJECT_DIR$/src/appserver/js/ext/resources/css/structure/dd.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/appserver/js/ext/resources/css/structure/debug.css" afterPath="$PROJECT_DIR$/src/appserver/js/ext/resources/css/structure/debug.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/appserver/js/ext/resources/css/structure/dialog.css" afterPath="$PROJECT_DIR$/src/appserver/js/ext/resources/css/structure/dialog.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/appserver/js/ext/resources/css/structure/editor.css" afterPath="$PROJECT_DIR$/src/appserver/js/ext/resources/css/structure/editor.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/appserver/js/ext/resources/css/structure/form.css" afterPath="$PROJECT_DIR$/src/appserver/js/ext/resources/css/structure/form.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/appserver/js/ext/resources/css/structure/grid.css" afterPath="$PROJECT_DIR$/src/appserver/js/ext/resources/css/structure/grid.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/appserver/js/ext/resources/css/structure/layout.css" afterPath="$PROJECT_DIR$/src/appserver/js/ext/resources/css/structure/layout.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/appserver/js/ext/resources/css/structure/list-view.css" afterPath="$PROJECT_DIR$/src/appserver/js/ext/resources/css/structure/list-view.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/appserver/js/ext/resources/css/structure/menu.css" afterPath="$PROJECT_DIR$/src/appserver/js/ext/resources/css/structure/menu.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/appserver/js/ext/resources/css/structure/panel-reset.css" afterPath="$PROJECT_DIR$/src/appserver/js/ext/resources/css/structure/panel-reset.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/appserver/js/ext/resources/css/structure/panel.css" afterPath="$PROJECT_DIR$/src/appserver/js/ext/resources/css/structure/panel.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/appserver/js/ext/resources/css/structure/progress.css" afterPath="$PROJECT_DIR$/src/appserver/js/ext/resources/css/structure/progress.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/appserver/js/ext/resources/css/structure/qtips.css" afterPath="$PROJECT_DIR$/src/appserver/js/ext/resources/css/structure/qtips.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/appserver/js/ext/resources/css/structure/reset.css" afterPath="$PROJECT_DIR$/src/appserver/js/ext/resources/css/structure/reset.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/appserver/js/ext/resources/css/structure/resizable.css" afterPath="$PROJECT_DIR$/src/appserver/js/ext/resources/css/structure/resizable.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/appserver/js/ext/resources/css/structure/slider.css" afterPath="$PROJECT_DIR$/src/appserver/js/ext/resources/css/structure/slider.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/appserver/js/ext/resources/css/structure/tabs.css" afterPath="$PROJECT_DIR$/src/appserver/js/ext/resources/css/structure/tabs.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/appserver/js/ext/resources/css/structure/toolbar.css" afterPath="$PROJECT_DIR$/src/appserver/js/ext/resources/css/structure/toolbar.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/appserver/js/ext/resources/css/structure/tree.css" afterPath="$PROJECT_DIR$/src/appserver/js/ext/resources/css/structure/tree.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/appserver/js/ext/resources/css/structure/window.css" afterPath="$PROJECT_DIR$/src/appserver/js/ext/resources/css/structure/window.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/appserver/js/ext/resources/css/theme-access/borders.css" afterPath="$PROJECT_DIR$/src/appserver/js/ext/resources/css/theme-access/borders.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/appserver/js/ext/resources/css/theme-access/box.css" afterPath="$PROJECT_DIR$/src/appserver/js/ext/resources/css/theme-access/box.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/appserver/js/ext/resources/css/theme-access/button.css" afterPath="$PROJECT_DIR$/src/appserver/js/ext/resources/css/theme-access/button.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/appserver/js/ext/resources/css/theme-access/combo.css" afterPath="$PROJECT_DIR$/src/appserver/js/ext/resources/css/theme-access/combo.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/appserver/js/ext/resources/css/theme-access/core.css" afterPath="$PROJECT_DIR$/src/appserver/js/ext/resources/css/theme-access/core.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/appserver/js/ext/resources/css/theme-access/date-picker.css" afterPath="$PROJECT_DIR$/src/appserver/js/ext/resources/css/theme-access/date-picker.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/appserver/js/ext/resources/css/theme-access/dd.css" afterPath="$PROJECT_DIR$/src/appserver/js/ext/resources/css/theme-access/dd.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/appserver/js/ext/resources/css/theme-access/debug.css" afterPath="$PROJECT_DIR$/src/appserver/js/ext/resources/css/theme-access/debug.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/appserver/js/ext/resources/css/theme-access/dialog.css" afterPath="$PROJECT_DIR$/src/appserver/js/ext/resources/css/theme-access/dialog.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/appserver/js/ext/resources/css/theme-access/editor.css" afterPath="$PROJECT_DIR$/src/appserver/js/ext/resources/css/theme-access/editor.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/appserver/js/ext/resources/css/theme-access/form.css" afterPath="$PROJECT_DIR$/src/appserver/js/ext/resources/css/theme-access/form.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/appserver/js/ext/resources/css/theme-access/grid.css" afterPath="$PROJECT_DIR$/src/appserver/js/ext/resources/css/theme-access/grid.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/appserver/js/ext/resources/css/theme-access/layout.css" afterPath="$PROJECT_DIR$/src/appserver/js/ext/resources/css/theme-access/layout.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/appserver/js/ext/resources/css/theme-access/list-view.css" afterPath="$PROJECT_DIR$/src/appserver/js/ext/resources/css/theme-access/list-view.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/appserver/js/ext/resources/css/theme-access/menu.css" afterPath="$PROJECT_DIR$/src/appserver/js/ext/resources/css/theme-access/menu.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/appserver/js/ext/resources/css/theme-access/panel.css" afterPath="$PROJECT_DIR$/src/appserver/js/ext/resources/css/theme-access/panel.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/appserver/js/ext/resources/css/theme-access/progress.css" afterPath="$PROJECT_DIR$/src/appserver/js/ext/resources/css/theme-access/progress.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/appserver/js/ext/resources/css/theme-access/qtips.css" afterPath="$PROJECT_DIR$/src/appserver/js/ext/resources/css/theme-access/qtips.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/appserver/js/ext/resources/css/theme-access/resizable.css" afterPath="$PROJECT_DIR$/src/appserver/js/ext/resources/css/theme-access/resizable.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/appserver/js/ext/resources/css/theme-access/slider.css" afterPath="$PROJECT_DIR$/src/appserver/js/ext/resources/css/theme-access/slider.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/appserver/js/ext/resources/css/theme-access/tabs.css" afterPath="$PROJECT_DIR$/src/appserver/js/ext/resources/css/theme-access/tabs.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/appserver/js/ext/resources/css/theme-access/toolbar.css" afterPath="$PROJECT_DIR$/src/appserver/js/ext/resources/css/theme-access/toolbar.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/appserver/js/ext/resources/css/theme-access/tree.css" afterPath="$PROJECT_DIR$/src/appserver/js/ext/resources/css/theme-access/tree.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/appserver/js/ext/resources/css/theme-access/window.css" afterPath="$PROJECT_DIR$/src/appserver/js/ext/resources/css/theme-access/window.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/appserver/js/ext/resources/css/theme-gray/borders.css" afterPath="$PROJECT_DIR$/src/appserver/js/ext/resources/css/theme-gray/borders.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/appserver/js/ext/resources/css/theme-gray/box.css" afterPath="$PROJECT_DIR$/src/appserver/js/ext/resources/css/theme-gray/box.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/appserver/js/ext/resources/css/theme-gray/button.css" afterPath="$PROJECT_DIR$/src/appserver/js/ext/resources/css/theme-gray/button.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/appserver/js/ext/resources/css/theme-gray/combo.css" afterPath="$PROJECT_DIR$/src/appserver/js/ext/resources/css/theme-gray/combo.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/appserver/js/ext/resources/css/theme-gray/core.css" afterPath="$PROJECT_DIR$/src/appserver/js/ext/resources/css/theme-gray/core.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/appserver/js/ext/resources/css/theme-gray/date-picker.css" afterPath="$PROJECT_DIR$/src/appserver/js/ext/resources/css/theme-gray/date-picker.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/appserver/js/ext/resources/css/theme-gray/dd.css" afterPath="$PROJECT_DIR$/src/appserver/js/ext/resources/css/theme-gray/dd.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/appserver/js/ext/resources/css/theme-gray/debug.css" afterPath="$PROJECT_DIR$/src/appserver/js/ext/resources/css/theme-gray/debug.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/appserver/js/ext/resources/css/theme-gray/dialog.css" afterPath="$PROJECT_DIR$/src/appserver/js/ext/resources/css/theme-gray/dialog.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/appserver/js/ext/resources/css/theme-gray/editor.css" afterPath="$PROJECT_DIR$/src/appserver/js/ext/resources/css/theme-gray/editor.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/appserver/js/ext/resources/css/theme-gray/form.css" afterPath="$PROJECT_DIR$/src/appserver/js/ext/resources/css/theme-gray/form.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/appserver/js/ext/resources/css/theme-gray/grid.css" afterPath="$PROJECT_DIR$/src/appserver/js/ext/resources/css/theme-gray/grid.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/appserver/js/ext/resources/css/theme-gray/layout.css" afterPath="$PROJECT_DIR$/src/appserver/js/ext/resources/css/theme-gray/layout.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/appserver/js/ext/resources/css/theme-gray/list-view.css" afterPath="$PROJECT_DIR$/src/appserver/js/ext/resources/css/theme-gray/list-view.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/appserver/js/ext/resources/css/theme-gray/menu.css" afterPath="$PROJECT_DIR$/src/appserver/js/ext/resources/css/theme-gray/menu.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/appserver/js/ext/resources/css/theme-gray/panel.css" afterPath="$PROJECT_DIR$/src/appserver/js/ext/resources/css/theme-gray/panel.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/appserver/js/ext/resources/css/theme-gray/progress.css" afterPath="$PROJECT_DIR$/src/appserver/js/ext/resources/css/theme-gray/progress.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/appserver/js/ext/resources/css/theme-gray/qtips.css" afterPath="$PROJECT_DIR$/src/appserver/js/ext/resources/css/theme-gray/qtips.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/appserver/js/ext/resources/css/theme-gray/resizable.css" afterPath="$PROJECT_DIR$/src/appserver/js/ext/resources/css/theme-gray/resizable.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/appserver/js/ext/resources/css/theme-gray/slider.css" afterPath="$PROJECT_DIR$/src/appserver/js/ext/resources/css/theme-gray/slider.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/appserver/js/ext/resources/css/theme-gray/tabs.css" afterPath="$PROJECT_DIR$/src/appserver/js/ext/resources/css/theme-gray/tabs.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/appserver/js/ext/resources/css/theme-gray/toolbar.css" afterPath="$PROJECT_DIR$/src/appserver/js/ext/resources/css/theme-gray/toolbar.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/appserver/js/ext/resources/css/theme-gray/tree.css" afterPath="$PROJECT_DIR$/src/appserver/js/ext/resources/css/theme-gray/tree.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/appserver/js/ext/resources/css/theme-gray/window.css" afterPath="$PROJECT_DIR$/src/appserver/js/ext/resources/css/theme-gray/window.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/appserver/js/ext/resources/css/visual/borders.css" afterPath="$PROJECT_DIR$/src/appserver/js/ext/resources/css/visual/borders.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/appserver/js/ext/resources/css/visual/box.css" afterPath="$PROJECT_DIR$/src/appserver/js/ext/resources/css/visual/box.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/appserver/js/ext/resources/css/visual/button.css" afterPath="$PROJECT_DIR$/src/appserver/js/ext/resources/css/visual/button.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/appserver/js/ext/resources/css/visual/combo.css" afterPath="$PROJECT_DIR$/src/appserver/js/ext/resources/css/visual/combo.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/appserver/js/ext/resources/css/visual/core.css" afterPath="$PROJECT_DIR$/src/appserver/js/ext/resources/css/visual/core.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/appserver/js/ext/resources/css/visual/date-picker.css" afterPath="$PROJECT_DIR$/src/appserver/js/ext/resources/css/visual/date-picker.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/appserver/js/ext/resources/css/visual/dd.css" afterPath="$PROJECT_DIR$/src/appserver/js/ext/resources/css/visual/dd.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/appserver/js/ext/resources/css/visual/debug.css" afterPath="$PROJECT_DIR$/src/appserver/js/ext/resources/css/visual/debug.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/appserver/js/ext/resources/css/visual/dialog.css" afterPath="$PROJECT_DIR$/src/appserver/js/ext/resources/css/visual/dialog.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/appserver/js/ext/resources/css/visual/editor.css" afterPath="$PROJECT_DIR$/src/appserver/js/ext/resources/css/visual/editor.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/appserver/js/ext/resources/css/visual/form.css" afterPath="$PROJECT_DIR$/src/appserver/js/ext/resources/css/visual/form.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/appserver/js/ext/resources/css/visual/grid.css" afterPath="$PROJECT_DIR$/src/appserver/js/ext/resources/css/visual/grid.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/appserver/js/ext/resources/css/visual/layout.css" afterPath="$PROJECT_DIR$/src/appserver/js/ext/resources/css/visual/layout.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/appserver/js/ext/resources/css/visual/list-view.css" afterPath="$PROJECT_DIR$/src/appserver/js/ext/resources/css/visual/list-view.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/appserver/js/ext/resources/css/visual/menu.css" afterPath="$PROJECT_DIR$/src/appserver/js/ext/resources/css/visual/menu.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/appserver/js/ext/resources/css/visual/panel.css" afterPath="$PROJECT_DIR$/src/appserver/js/ext/resources/css/visual/panel.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/appserver/js/ext/resources/css/visual/progress.css" afterPath="$PROJECT_DIR$/src/appserver/js/ext/resources/css/visual/progress.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/appserver/js/ext/resources/css/visual/qtips.css" afterPath="$PROJECT_DIR$/src/appserver/js/ext/resources/css/visual/qtips.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/appserver/js/ext/resources/css/visual/resizable.css" afterPath="$PROJECT_DIR$/src/appserver/js/ext/resources/css/visual/resizable.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/appserver/js/ext/resources/css/visual/slider.css" afterPath="$PROJECT_DIR$/src/appserver/js/ext/resources/css/visual/slider.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/appserver/js/ext/resources/css/visual/tabs.css" afterPath="$PROJECT_DIR$/src/appserver/js/ext/resources/css/visual/tabs.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/appserver/js/ext/resources/css/visual/toolbar.css" afterPath="$PROJECT_DIR$/src/appserver/js/ext/resources/css/visual/toolbar.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/appserver/js/ext/resources/css/visual/tree.css" afterPath="$PROJECT_DIR$/src/appserver/js/ext/resources/css/visual/tree.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/appserver/js/ext/resources/css/visual/window.css" afterPath="$PROJECT_DIR$/src/appserver/js/ext/resources/css/visual/window.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/appserver/js/ext/resources/css/xtheme-access.css" afterPath="$PROJECT_DIR$/src/appserver/js/ext/resources/css/xtheme-access.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/appserver/js/ext/resources/css/xtheme-blue.css" afterPath="$PROJECT_DIR$/src/appserver/js/ext/resources/css/xtheme-blue.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/appserver/js/ext/resources/css/xtheme-gray.css" afterPath="$PROJECT_DIR$/src/appserver/js/ext/resources/css/xtheme-gray.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/appserver/js/ext/resources/css/yourtheme.css" afterPath="$PROJECT_DIR$/src/appserver/js/ext/resources/css/yourtheme.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/appserver/js/ext/resources/images/yourtheme/README.txt" afterPath="$PROJECT_DIR$/src/appserver/js/ext/resources/images/yourtheme/README.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/appserver/js/ext/resources/resources.jsb" afterPath="$PROJECT_DIR$/src/appserver/js/ext/resources/resources.jsb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/appserver/js/host/manager_device.js" afterPath="$PROJECT_DIR$/src/appserver/js/host/manager_device.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/appserver/js/monitor/monitor_config.js" afterPath="$PROJECT_DIR$/src/appserver/js/monitor/monitor_config.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/appserver/js/monitor/monitor_system.js" afterPath="$PROJECT_DIR$/src/appserver/js/monitor/monitor_system.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/appserver/js/net/manager_interface.js" afterPath="$PROJECT_DIR$/src/appserver/js/net/manager_interface.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/appserver/js/net/manager_pingTelnet.js" afterPath="$PROJECT_DIR$/src/appserver/js/net/manager_pingTelnet.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/appserver/js/net/manager_router.js" afterPath="$PROJECT_DIR$/src/appserver/js/net/manager_router.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/appserver/js/net/manager_security_config.js" afterPath="$PROJECT_DIR$/src/appserver/js/net/manager_security_config.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/appserver/js/server_config/server_normal_config.js" afterPath="$PROJECT_DIR$/src/appserver/js/server_config/server_normal_config.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/appserver/js/server_config/server_trust_certificate.js" afterPath="$PROJECT_DIR$/src/appserver/js/server_config/server_trust_certificate.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/appserver/js/server_config/source_nets_config.js" afterPath="$PROJECT_DIR$/src/appserver/js/server_config/source_nets_config.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/appserver/js/server_status/server_logs.js" afterPath="$PROJECT_DIR$/src/appserver/js/server_status/server_logs.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/appserver/js/server_status/server_online.js" afterPath="$PROJECT_DIR$/src/appserver/js/server_status/server_online.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/appserver/js/server_status/server_status.js" afterPath="$PROJECT_DIR$/src/appserver/js/server_status/server_status.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/appserver/js/strategy/strategy.js" afterPath="$PROJECT_DIR$/src/appserver/js/strategy/strategy.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/appserver/js/syslog/syslog_config.js" afterPath="$PROJECT_DIR$/src/appserver/js/syslog/syslog_config.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/appserver/js/system/manager_bfhf.js" afterPath="$PROJECT_DIR$/src/appserver/js/system/manager_bfhf.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/appserver/js/system/manager_config.js" afterPath="$PROJECT_DIR$/src/appserver/js/system/manager_config.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/appserver/js/system/manager_license.js" afterPath="$PROJECT_DIR$/src/appserver/js/system/manager_license.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/appserver/js/system/manager_platform.js" afterPath="$PROJECT_DIR$/src/appserver/js/system/manager_platform.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/appserver/js/system/manager_service.js" afterPath="$PROJECT_DIR$/src/appserver/js/system/manager_service.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/appserver/js/user/role.js" afterPath="$PROJECT_DIR$/src/appserver/js/user/role.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/appserver/js/user/safePolicy.js" afterPath="$PROJECT_DIR$/src/appserver/js/user/safePolicy.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/appserver/js/user/user.js" afterPath="$PROJECT_DIR$/src/appserver/js/user/user.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/appserver/js/version/manager_client_version.js" afterPath="$PROJECT_DIR$/src/appserver/js/version/manager_client_version.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/appserver/js/version/manager_upgrade_version.js" afterPath="$PROJECT_DIR$/src/appserver/js/version/manager_upgrade_version.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/appserver/login.jsp" afterPath="$PROJECT_DIR$/src/appserver/login.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/appserver/loginError.jsp" afterPath="$PROJECT_DIR$/src/appserver/loginError.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/appserver/pages/alert/alert_device.jsp" afterPath="$PROJECT_DIR$/src/appserver/pages/alert/alert_device.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/appserver/pages/audit/audit_user.jsp" afterPath="$PROJECT_DIR$/src/appserver/pages/audit/audit_user.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/appserver/pages/audit/manager-downloadLog.jsp" afterPath="$PROJECT_DIR$/src/appserver/pages/audit/manager-downloadLog.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/appserver/pages/ccd/group_permissions.jsp" afterPath="$PROJECT_DIR$/src/appserver/pages/ccd/group_permissions.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/appserver/pages/ccd/ipp.jsp" afterPath="$PROJECT_DIR$/src/appserver/pages/ccd/ipp.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/appserver/pages/ccd/user_permissions.jsp" afterPath="$PROJECT_DIR$/src/appserver/pages/ccd/user_permissions.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/appserver/pages/config/date_time.jsp" afterPath="$PROJECT_DIR$/src/appserver/pages/config/date_time.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/appserver/pages/config/manager_equipment_backup.jsp" afterPath="$PROJECT_DIR$/src/appserver/pages/config/manager_equipment_backup.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/appserver/pages/crl/revoke_auto_list.jsp" afterPath="$PROJECT_DIR$/src/appserver/pages/crl/revoke_auto_list.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/appserver/pages/crl/revoke_certificates_list.jsp" afterPath="$PROJECT_DIR$/src/appserver/pages/crl/revoke_certificates_list.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/appserver/pages/crl/revoke_file_list.jsp" afterPath="$PROJECT_DIR$/src/appserver/pages/crl/revoke_file_list.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/appserver/pages/host/manager_device.jsp" afterPath="$PROJECT_DIR$/src/appserver/pages/host/manager_device.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/appserver/pages/monitor/monitor_system.jsp" afterPath="$PROJECT_DIR$/src/appserver/pages/monitor/monitor_system.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/appserver/pages/net/manager_interface.jsp" afterPath="$PROJECT_DIR$/src/appserver/pages/net/manager_interface.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/appserver/pages/net/manager_pingTelnet.jsp" afterPath="$PROJECT_DIR$/src/appserver/pages/net/manager_pingTelnet.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/appserver/pages/net/manager_router.jsp" afterPath="$PROJECT_DIR$/src/appserver/pages/net/manager_router.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/appserver/pages/net/manager_security_config.jsp" afterPath="$PROJECT_DIR$/src/appserver/pages/net/manager_security_config.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/appserver/pages/server_config/server_normal_config.jsp" afterPath="$PROJECT_DIR$/src/appserver/pages/server_config/server_normal_config.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/appserver/pages/server_config/server_trust_certificate.jsp" afterPath="$PROJECT_DIR$/src/appserver/pages/server_config/server_trust_certificate.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/appserver/pages/server_config/source_nets_config.jsp" afterPath="$PROJECT_DIR$/src/appserver/pages/server_config/source_nets_config.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/appserver/pages/server_status/server_logs.jsp" afterPath="$PROJECT_DIR$/src/appserver/pages/server_status/server_logs.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/appserver/pages/server_status/server_online.jsp" afterPath="$PROJECT_DIR$/src/appserver/pages/server_status/server_online.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/appserver/pages/server_status/server_status.jsp" afterPath="$PROJECT_DIR$/src/appserver/pages/server_status/server_status.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/appserver/pages/strategy/strategy.jsp" afterPath="$PROJECT_DIR$/src/appserver/pages/strategy/strategy.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/appserver/pages/syslog/syslog_config.jsp" afterPath="$PROJECT_DIR$/src/appserver/pages/syslog/syslog_config.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/appserver/pages/system/manager_bfhf.jsp" afterPath="$PROJECT_DIR$/src/appserver/pages/system/manager_bfhf.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/appserver/pages/system/manager_config.jsp" afterPath="$PROJECT_DIR$/src/appserver/pages/system/manager_config.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/appserver/pages/system/manager_license.jsp" afterPath="$PROJECT_DIR$/src/appserver/pages/system/manager_license.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/appserver/pages/system/manager_platform.jsp" afterPath="$PROJECT_DIR$/src/appserver/pages/system/manager_platform.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/appserver/pages/system/manager_service.jsp" afterPath="$PROJECT_DIR$/src/appserver/pages/system/manager_service.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/appserver/pages/user/roleIndex.jsp" afterPath="$PROJECT_DIR$/src/appserver/pages/user/roleIndex.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/appserver/pages/user/safePolicy.jsp" afterPath="$PROJECT_DIR$/src/appserver/pages/user/safePolicy.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/appserver/pages/user/userIndex.jsp" afterPath="$PROJECT_DIR$/src/appserver/pages/user/userIndex.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/appserver/pages/version/manager_client_version.jsp" afterPath="$PROJECT_DIR$/src/appserver/pages/version/manager_client_version.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/appserver/pages/version/manager_upgrade_version.jsp" afterPath="$PROJECT_DIR$/src/appserver/pages/version/manager_upgrade_version.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/appserver/pages/xml/alert-config.xml" afterPath="$PROJECT_DIR$/src/appserver/pages/xml/alert-config.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/appserver/pages/xml/alert-device.xml" afterPath="$PROJECT_DIR$/src/appserver/pages/xml/alert-device.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/appserver/pages/xml/backup-config.xml" afterPath="$PROJECT_DIR$/src/appserver/pages/xml/backup-config.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/appserver/pages/xml/db-config.xml" afterPath="$PROJECT_DIR$/src/appserver/pages/xml/db-config.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/appserver/sound/soundmanager2-min.js" afterPath="$PROJECT_DIR$/src/appserver/sound/soundmanager2-min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/appserver/sound/soundmanager2.js" afterPath="$PROJECT_DIR$/src/appserver/sound/soundmanager2.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/appserver/taglib.jsp" afterPath="$PROJECT_DIR$/src/appserver/taglib.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/constant/AppConstant.java" afterPath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/constant/AppConstant.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/constant/ServiceConstant.java" afterPath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/constant/ServiceConstant.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/dao/AccountDao.java" afterPath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/dao/AccountDao.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/dao/AccountLogDao.java" afterPath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/dao/AccountLogDao.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/dao/BackUpDao.java" afterPath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/dao/BackUpDao.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/dao/EquipmentLogDao.java" afterPath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/dao/EquipmentLogDao.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/dao/GroupDao.java" afterPath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/dao/GroupDao.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/dao/LogDao.java" afterPath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/dao/LogDao.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/dao/PermissionDao.java" afterPath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/dao/PermissionDao.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/dao/RoleDao.java" afterPath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/dao/RoleDao.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/dao/SafePolicyDao.java" afterPath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/dao/SafePolicyDao.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/dao/ServerCertificateDao.java" afterPath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/dao/ServerCertificateDao.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/dao/ServerDao.java" afterPath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/dao/ServerDao.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/dao/SourceNetDao.java" afterPath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/dao/SourceNetDao.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/dao/StaticIpDao.java" afterPath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/dao/StaticIpDao.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/dao/TrustCertificateDao.java" afterPath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/dao/TrustCertificateDao.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/dao/UserDao.java" afterPath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/dao/UserDao.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/dao/UserGpsDao.java" afterPath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/dao/UserGpsDao.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/dao/UserGroupDao.java" afterPath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/dao/UserGroupDao.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/dao/UserOperLogDao.java" afterPath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/dao/UserOperLogDao.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/dao/impl/AccountDaoImpl.java" afterPath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/dao/impl/AccountDaoImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/dao/impl/AccountLogDaoImpl.java" afterPath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/dao/impl/AccountLogDaoImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/dao/impl/BackUpDaoImpl.java" afterPath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/dao/impl/BackUpDaoImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/dao/impl/EquipmentLogDaoImpl.java" afterPath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/dao/impl/EquipmentLogDaoImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/dao/impl/GroupDaoImpl.java" afterPath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/dao/impl/GroupDaoImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/dao/impl/LogDaoImpl.java" afterPath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/dao/impl/LogDaoImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/dao/impl/PermissionDaoImpl.java" afterPath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/dao/impl/PermissionDaoImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/dao/impl/RoleDaoImpl.java" afterPath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/dao/impl/RoleDaoImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/dao/impl/SafePolicyDaoImpl.java" afterPath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/dao/impl/SafePolicyDaoImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/dao/impl/ServerCertificateDaoImpl.java" afterPath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/dao/impl/ServerCertificateDaoImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/dao/impl/ServerDaoImpl.java" afterPath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/dao/impl/ServerDaoImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/dao/impl/SourceNetDaoImpl.java" afterPath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/dao/impl/SourceNetDaoImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/dao/impl/StaticIpDaoImpl.java" afterPath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/dao/impl/StaticIpDaoImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/dao/impl/TrustCertificateDaoImpl.java" afterPath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/dao/impl/TrustCertificateDaoImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/dao/impl/UserDaoImpl.java" afterPath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/dao/impl/UserDaoImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/dao/impl/UserGpsDaoImpl.java" afterPath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/dao/impl/UserGpsDaoImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/dao/impl/UserGroupDaoImpl.java" afterPath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/dao/impl/UserGroupDaoImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/dao/impl/UserOperLogDaoImpl.java" afterPath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/dao/impl/UserOperLogDaoImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/domain/Account.java" afterPath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/domain/Account.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/domain/AccountLog.java" afterPath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/domain/AccountLog.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/domain/BackUp.java" afterPath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/domain/BackUp.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/domain/EquipmentLog.java" afterPath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/domain/EquipmentLog.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/domain/Groups.java" afterPath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/domain/Groups.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/domain/Log.java" afterPath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/domain/Log.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/domain/Permission.java" afterPath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/domain/Permission.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/domain/Role.java" afterPath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/domain/Role.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/domain/RoleUser.java" afterPath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/domain/RoleUser.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/domain/SafePolicy.java" afterPath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/domain/SafePolicy.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/domain/Server.java" afterPath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/domain/Server.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/domain/ServerCertificate.java" afterPath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/domain/ServerCertificate.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/domain/SourceNet.java" afterPath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/domain/SourceNet.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/domain/StaticIp.java" afterPath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/domain/StaticIp.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/domain/TrustCertificate.java" afterPath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/domain/TrustCertificate.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/domain/User.java" afterPath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/domain/User.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/domain/UserGps.java" afterPath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/domain/UserGps.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/domain/UserGroup.java" afterPath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/domain/UserGroup.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/domain/UserOperLog.java" afterPath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/domain/UserOperLog.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/domain/xml/Account.hbm.xml" afterPath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/domain/xml/Account.hbm.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/domain/xml/AccountLog.hbm.xml" afterPath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/domain/xml/AccountLog.hbm.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/domain/xml/BackUp.hbm.xml" afterPath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/domain/xml/BackUp.hbm.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/domain/xml/EquipmentLog.hbm.xml" afterPath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/domain/xml/EquipmentLog.hbm.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/domain/xml/Groups.hbm.xml" afterPath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/domain/xml/Groups.hbm.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/domain/xml/Log.hbm.xml" afterPath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/domain/xml/Log.hbm.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/domain/xml/Permission.hbm.xml" afterPath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/domain/xml/Permission.hbm.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/domain/xml/Role.hbm.xml" afterPath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/domain/xml/Role.hbm.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/domain/xml/RoleUser.hbm.xml" afterPath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/domain/xml/RoleUser.hbm.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/domain/xml/SafePolicy.hbm.xml" afterPath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/domain/xml/SafePolicy.hbm.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/domain/xml/Server.hbm.xml" afterPath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/domain/xml/Server.hbm.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/domain/xml/ServerCertificate.hbm.xml" afterPath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/domain/xml/ServerCertificate.hbm.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/domain/xml/SourceNet.hbm.xml" afterPath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/domain/xml/SourceNet.hbm.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/domain/xml/StaticIp.hbm.xml" afterPath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/domain/xml/StaticIp.hbm.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/domain/xml/TrustCertificate.hbm.xml" afterPath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/domain/xml/TrustCertificate.hbm.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/domain/xml/User.hbm.xml" afterPath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/domain/xml/User.hbm.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/domain/xml/UserGps.hbm.xml" afterPath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/domain/xml/UserGps.hbm.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/domain/xml/UserGroup.hbm.xml" afterPath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/domain/xml/UserGroup.hbm.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/domain/xml/UserOperLog.hbm.xml" afterPath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/domain/xml/UserOperLog.hbm.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/entity/HotBackUp.java" afterPath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/entity/HotBackUp.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/entity/IpPort.java" afterPath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/entity/IpPort.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/entity/JarBean.java" afterPath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/entity/JarBean.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/entity/LdapInfo.java" afterPath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/entity/LdapInfo.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/entity/NetInfo.java" afterPath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/entity/NetInfo.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/entity/Status.java" afterPath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/entity/Status.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/entity/StatusMsg.java" afterPath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/entity/StatusMsg.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/entity/SysInfoBean.java" afterPath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/entity/SysInfoBean.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/entity/SysLogServer.java" afterPath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/entity/SysLogServer.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/entity/Version.java" afterPath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/entity/Version.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/listener/SessionListener.java" afterPath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/listener/SessionListener.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/service/AccountService.java" afterPath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/service/AccountService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/service/AuditService.java" afterPath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/service/AuditService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/service/BackUpService.java" afterPath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/service/BackUpService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/service/LogService.java" afterPath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/service/LogService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/service/LoginService.java" afterPath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/service/LoginService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/service/RoleService.java" afterPath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/service/RoleService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/service/SafePolicyService.java" afterPath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/service/SafePolicyService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/service/UserGroupService.java" afterPath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/service/UserGroupService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/service/impl/AccountServiceImpl.java" afterPath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/service/impl/AccountServiceImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/service/impl/AuditServiceImpl.java" afterPath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/service/impl/AuditServiceImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/service/impl/BackUpServiceImpl.java" afterPath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/service/impl/BackUpServiceImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/service/impl/LogServiceImpl.java" afterPath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/service/impl/LogServiceImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/service/impl/LoginServiceImpl.java" afterPath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/service/impl/LoginServiceImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/service/impl/RoleServiceImpl.java" afterPath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/service/impl/RoleServiceImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/service/impl/SafePolicyServiceImpl.java" afterPath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/service/impl/SafePolicyServiceImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/service/impl/UserGroupServiceImpl.java" afterPath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/service/impl/UserGroupServiceImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/syslog/sender/SyslogConfigXML.java" afterPath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/syslog/sender/SyslogConfigXML.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/syslog/sender/SyslogSender.java" afterPath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/syslog/sender/SyslogSender.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/syslog/sender/SyslogSenderService.java" afterPath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/syslog/sender/SyslogSenderService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/syslog/sender/SyslogSenderTest.java" afterPath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/syslog/sender/SyslogSenderTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/utils/ByteFileUtils.java" afterPath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/utils/ByteFileUtils.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/utils/CheckTimeResult.java" afterPath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/utils/CheckTimeResult.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/utils/Configuration.java" afterPath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/utils/Configuration.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/utils/Constant.java" afterPath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/utils/Constant.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/utils/DateUtils.java" afterPath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/utils/DateUtils.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/utils/Dom4jUtil.java" afterPath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/utils/Dom4jUtil.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/utils/ExtractZip.java" afterPath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/utils/ExtractZip.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/utils/FileUtil.java" afterPath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/utils/FileUtil.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/utils/GetListNetInfo.java" afterPath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/utils/GetListNetInfo.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/utils/IPPoolUtil.java" afterPath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/utils/IPPoolUtil.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/utils/JSONUtils.java" afterPath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/utils/JSONUtils.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/utils/JavaMailUtil.java" afterPath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/utils/JavaMailUtil.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/utils/JavaShortMessageUtil.java" afterPath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/utils/JavaShortMessageUtil.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/utils/LicenseUtils.java" afterPath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/utils/LicenseUtils.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/utils/MailUtils.java" afterPath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/utils/MailUtils.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/utils/MergeFiles.java" afterPath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/utils/MergeFiles.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/utils/NetUtils.java" afterPath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/utils/NetUtils.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/utils/Nets.java" afterPath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/utils/Nets.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/utils/NetworkUtil.java" afterPath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/utils/NetworkUtil.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/utils/PageBean.java" afterPath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/utils/PageBean.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/utils/ProcessUtil.java" afterPath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/utils/ProcessUtil.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/utils/PropertiesUtil.java" afterPath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/utils/PropertiesUtil.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/utils/SendMail.java" afterPath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/utils/SendMail.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/utils/ServiceResponse.java" afterPath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/utils/ServiceResponse.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/utils/ShellUtils.java" afterPath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/utils/ShellUtils.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/utils/StringContext.java" afterPath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/utils/StringContext.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/utils/StringUtils.java" afterPath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/utils/StringUtils.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/utils/VPNConfigUtil.java" afterPath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/utils/VPNConfigUtil.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/utils/VersionUtils.java" afterPath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/utils/VersionUtils.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/utils/des/DesUtils.java" afterPath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/utils/des/DesUtils.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/utils/hardware/HardWareUtils.java" afterPath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/utils/hardware/HardWareUtils.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/utils/md5/MD5Utils.java" afterPath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/utils/md5/MD5Utils.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/web/ApplicationUtils.java" afterPath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/web/ApplicationUtils.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/web/SessionUtils.java" afterPath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/web/SessionUtils.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/web/SiteContext.java" afterPath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/web/SiteContext.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/web/action/AccountLogUtils.java" afterPath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/web/action/AccountLogUtils.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/web/action/ActionBase.java" afterPath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/web/action/ActionBase.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/web/action/CheckTimeoutAction.java" afterPath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/web/action/CheckTimeoutAction.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/web/action/alert/SystemAlertAction.java" afterPath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/web/action/alert/SystemAlertAction.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/web/action/audit/AuditAction.java" afterPath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/web/action/audit/AuditAction.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/web/action/audit/AuditFlagAction.java" afterPath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/web/action/audit/AuditFlagAction.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/web/action/boot/LoaderListener.java" afterPath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/web/action/boot/LoaderListener.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/web/action/check/CheckAction.java" afterPath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/web/action/check/CheckAction.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/web/action/config/AlertAction.java" afterPath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/web/action/config/AlertAction.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/web/action/config/AlertManagerAction.java" afterPath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/web/action/config/AlertManagerAction.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/web/action/config/HaveAlertService.java" afterPath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/web/action/config/HaveAlertService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/web/action/config/HotBackupAction.java" afterPath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/web/action/config/HotBackupAction.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/web/action/device/CpuUsage.java" afterPath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/web/action/device/CpuUsage.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/web/action/device/MemUsage.java" afterPath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/web/action/device/MemUsage.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/web/action/log/EquipmentLogAction.java" afterPath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/web/action/log/EquipmentLogAction.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/web/action/monitor/MonitorAction.java" afterPath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/web/action/monitor/MonitorAction.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/web/action/net/ConfigManagerAction.java" afterPath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/web/action/net/ConfigManagerAction.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/web/action/net/InterfaceManagerAction.java" afterPath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/web/action/net/InterfaceManagerAction.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/web/action/net/SaveInterfaceAction.java" afterPath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/web/action/net/SaveInterfaceAction.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/web/action/net/SecurityConfigAction.java" afterPath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/web/action/net/SecurityConfigAction.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/web/action/sslvpn/backup/BackUpAction.java" afterPath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/web/action/sslvpn/backup/BackUpAction.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/web/action/sslvpn/backup/BakRestoreUtils.java" afterPath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/web/action/sslvpn/backup/BakRestoreUtils.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/web/action/sslvpn/backup/GZip.java" afterPath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/web/action/sslvpn/backup/GZip.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/web/action/sslvpn/backup/TarUtils.java" afterPath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/web/action/sslvpn/backup/TarUtils.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/web/action/sslvpn/backup/mysql/MysqlBakUtils.java" afterPath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/web/action/sslvpn/backup/mysql/MysqlBakUtils.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/web/action/sslvpn/backup/mysql/MysqlProperties.java" afterPath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/web/action/sslvpn/backup/mysql/MysqlProperties.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/web/action/sslvpn/ccd/GroupPermissionAction.java" afterPath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/web/action/sslvpn/ccd/GroupPermissionAction.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/web/action/sslvpn/ccd/IppAction.java" afterPath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/web/action/sslvpn/ccd/IppAction.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/web/action/sslvpn/ccd/UserGroupAction.java" afterPath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/web/action/sslvpn/ccd/UserGroupAction.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/web/action/sslvpn/ccd/UserPermissionAction.java" afterPath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/web/action/sslvpn/ccd/UserPermissionAction.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/web/action/sslvpn/client/ClientControl.java" afterPath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/web/action/sslvpn/client/ClientControl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/web/action/sslvpn/client/ClientVersionAction.java" afterPath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/web/action/sslvpn/client/ClientVersionAction.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/web/action/sslvpn/client/strategy/ClientStrategyAction.java" afterPath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/web/action/sslvpn/client/strategy/ClientStrategyAction.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/web/action/sslvpn/client/strategy/StrategyXMLUtils.java" afterPath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/web/action/sslvpn/client/strategy/StrategyXMLUtils.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/web/action/sslvpn/crl/HttpCRLDownLoad.java" afterPath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/web/action/sslvpn/crl/HttpCRLDownLoad.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/web/action/sslvpn/crl/RevokeAction.java" afterPath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/web/action/sslvpn/crl/RevokeAction.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/web/action/sslvpn/crl/RevokeFileAction.java" afterPath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/web/action/sslvpn/crl/RevokeFileAction.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/web/action/sslvpn/datetime/DateTimeAction.java" afterPath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/web/action/sslvpn/datetime/DateTimeAction.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/web/action/sslvpn/encrypt/EncryptUtils.java" afterPath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/web/action/sslvpn/encrypt/EncryptUtils.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/web/action/sslvpn/encrypt/config/DirectoryUtils.java" afterPath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/web/action/sslvpn/encrypt/config/DirectoryUtils.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/web/action/sslvpn/encrypt/config/X509Context.java" afterPath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/web/action/sslvpn/encrypt/config/X509Context.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/web/action/sslvpn/encrypt/config/X509Entity.java" afterPath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/web/action/sslvpn/encrypt/config/X509Entity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/web/action/sslvpn/encrypt/config/X509ShellUtils.java" afterPath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/web/action/sslvpn/encrypt/config/X509ShellUtils.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/web/action/sslvpn/encrypt/config/X509UserConfigUtils.java" afterPath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/web/action/sslvpn/encrypt/config/X509UserConfigUtils.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/web/action/sslvpn/ldap/LdapCRLDownload.java" afterPath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/web/action/sslvpn/ldap/LdapCRLDownload.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/web/action/sslvpn/log/ClearTask.java" afterPath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/web/action/sslvpn/log/ClearTask.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/web/action/sslvpn/log/ClearUserLogs.java" afterPath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/web/action/sslvpn/log/ClearUserLogs.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/web/action/sslvpn/log/UserLogAction.java" afterPath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/web/action/sslvpn/log/UserLogAction.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/web/action/sslvpn/online/OnlineUserAction.java" afterPath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/web/action/sslvpn/online/OnlineUserAction.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/web/action/sslvpn/recovery/RecoveryAction.java" afterPath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/web/action/sslvpn/recovery/RecoveryAction.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/web/action/sslvpn/service/ServerStatusAction.java" afterPath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/web/action/sslvpn/service/ServerStatusAction.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/web/action/sslvpn/service/SnmpStatusAction.java" afterPath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/web/action/sslvpn/service/SnmpStatusAction.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/web/action/sslvpn/service/SshStatusAction.java" afterPath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/web/action/sslvpn/service/SshStatusAction.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/web/action/sslvpn/service/WebminStatusAction.java" afterPath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/web/action/sslvpn/service/WebminStatusAction.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/web/action/sslvpn/set/GroupSourceNetsAction.java" afterPath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/web/action/sslvpn/set/GroupSourceNetsAction.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/web/action/sslvpn/set/ServerSourceNetsAction.java" afterPath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/web/action/sslvpn/set/ServerSourceNetsAction.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/web/action/sslvpn/set/SourceNetsAction.java" afterPath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/web/action/sslvpn/set/SourceNetsAction.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/web/action/sslvpn/set/TrustCertificateAction.java" afterPath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/web/action/sslvpn/set/TrustCertificateAction.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/web/action/sslvpn/set/UserSourceNetsAction.java" afterPath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/web/action/sslvpn/set/UserSourceNetsAction.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/web/action/sslvpn/syslog/SysLogConfigAction.java" afterPath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/web/action/sslvpn/syslog/SysLogConfigAction.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/web/action/system/ConfigManagerAction.java" afterPath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/web/action/system/ConfigManagerAction.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/web/action/system/DownLoadAction.java" afterPath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/web/action/system/DownLoadAction.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/web/action/system/LicenseAction.java" afterPath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/web/action/system/LicenseAction.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/web/action/system/PlatformAction.java" afterPath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/web/action/system/PlatformAction.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/web/action/system/UpgradeAction.java" afterPath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/web/action/system/UpgradeAction.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/web/action/user/AccountAction.java" afterPath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/web/action/user/AccountAction.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/web/action/user/LoginAction.java" afterPath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/web/action/user/LoginAction.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/web/action/user/LogoutAction.java" afterPath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/web/action/user/LogoutAction.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/web/action/user/RoleAction.java" afterPath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/web/action/user/RoleAction.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/web/action/user/SafePolicyAction.java" afterPath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/web/action/user/SafePolicyAction.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/web/filter/CheckLoginFilter.java" afterPath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/web/filter/CheckLoginFilter.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/web/servlet/BackUpLog.java" afterPath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/web/servlet/BackUpLog.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/web/servlet/CRLUpdateServlet.java" afterPath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/web/servlet/CRLUpdateServlet.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/web/servlet/CRLUpdateTask.java" afterPath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/web/servlet/CRLUpdateTask.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/web/servlet/DownLoadAndroid.java" afterPath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/web/servlet/DownLoadAndroid.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/web/servlet/DownLoadWindowsX64.java" afterPath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/web/servlet/DownLoadWindowsX64.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/web/servlet/DownLoadWindowsX86.java" afterPath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/web/servlet/DownLoadWindowsX86.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/web/servlet/EquipmentLogServlet.java" afterPath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/web/servlet/EquipmentLogServlet.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/web/servlet/EquipmentLogTask.java" afterPath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/web/servlet/EquipmentLogTask.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/web/servlet/SiteContextLoaderServlet.java" afterPath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/web/servlet/SiteContextLoaderServlet.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/web/servlet/TimerCountReportServlet.java" afterPath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/web/servlet/TimerCountReportServlet.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/web/taglib/AccessControlTag.java" afterPath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/web/taglib/AccessControlTag.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/web/taglib/PageBarTag.java" afterPath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/web/taglib/PageBarTag.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/web/thread/SystemStatusService.java" afterPath="$PROJECT_DIR$/src/java/com/hzih/sslvpn/web/thread/SystemStatusService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/resources/commands/liunx/no_pass/build-again-csr.sh" afterPath="$PROJECT_DIR$/src/resources/commands/liunx/no_pass/build-again-csr.sh" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/resources/commands/liunx/no_pass/build-csr.sh" afterPath="$PROJECT_DIR$/src/resources/commands/liunx/no_pass/build-csr.sh" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/resources/commands/liunx/no_pass/build-decode-csr.sh" afterPath="$PROJECT_DIR$/src/resources/commands/liunx/no_pass/build-decode-csr.sh" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/resources/commands/liunx/no_pass/build-list-crl.sh" afterPath="$PROJECT_DIR$/src/resources/commands/liunx/no_pass/build-list-crl.sh" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/resources/commands/liunx/no_pass/build-make-crl.sh" afterPath="$PROJECT_DIR$/src/resources/commands/liunx/no_pass/build-make-crl.sh" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/resources/commands/liunx/no_pass/build-pkcs12-ca.sh" afterPath="$PROJECT_DIR$/src/resources/commands/liunx/no_pass/build-pkcs12-ca.sh" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/resources/commands/liunx/no_pass/build-pkcs12.sh" afterPath="$PROJECT_DIR$/src/resources/commands/liunx/no_pass/build-pkcs12.sh" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/resources/commands/liunx/no_pass/build-randfile.sh" afterPath="$PROJECT_DIR$/src/resources/commands/liunx/no_pass/build-randfile.sh" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/resources/commands/liunx/no_pass/build-revoke.sh" afterPath="$PROJECT_DIR$/src/resources/commands/liunx/no_pass/build-revoke.sh" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/resources/commands/liunx/no_pass/build-selfsign-ca.sh" afterPath="$PROJECT_DIR$/src/resources/commands/liunx/no_pass/build-selfsign-ca.sh" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/resources/commands/liunx/no_pass/build-sign-csr.sh" afterPath="$PROJECT_DIR$/src/resources/commands/liunx/no_pass/build-sign-csr.sh" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/resources/commands/liunx/no_pass/build-verify-crl.sh" afterPath="$PROJECT_DIR$/src/resources/commands/liunx/no_pass/build-verify-crl.sh" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/resources/commands/liunx/no_pass/build-verify.sh" afterPath="$PROJECT_DIR$/src/resources/commands/liunx/no_pass/build-verify.sh" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/resources/commands/windows/no_pass/build-again-csr.bat" afterPath="$PROJECT_DIR$/src/resources/commands/windows/no_pass/build-again-csr.bat" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/resources/commands/windows/no_pass/build-csr.bat" afterPath="$PROJECT_DIR$/src/resources/commands/windows/no_pass/build-csr.bat" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/resources/commands/windows/no_pass/build-decode-csr.bat" afterPath="$PROJECT_DIR$/src/resources/commands/windows/no_pass/build-decode-csr.bat" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/resources/commands/windows/no_pass/build-list-crl.bat" afterPath="$PROJECT_DIR$/src/resources/commands/windows/no_pass/build-list-crl.bat" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/resources/commands/windows/no_pass/build-make-crl.bat" afterPath="$PROJECT_DIR$/src/resources/commands/windows/no_pass/build-make-crl.bat" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/resources/commands/windows/no_pass/build-pkcs12-ca.bat" afterPath="$PROJECT_DIR$/src/resources/commands/windows/no_pass/build-pkcs12-ca.bat" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/resources/commands/windows/no_pass/build-pkcs12.bat" afterPath="$PROJECT_DIR$/src/resources/commands/windows/no_pass/build-pkcs12.bat" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/resources/commands/windows/no_pass/build-randfile.bat" afterPath="$PROJECT_DIR$/src/resources/commands/windows/no_pass/build-randfile.bat" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/resources/commands/windows/no_pass/build-revoke.bat" afterPath="$PROJECT_DIR$/src/resources/commands/windows/no_pass/build-revoke.bat" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/resources/commands/windows/no_pass/build-selfsign-ca.bat" afterPath="$PROJECT_DIR$/src/resources/commands/windows/no_pass/build-selfsign-ca.bat" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/resources/commands/windows/no_pass/build-sign-csr.bat" afterPath="$PROJECT_DIR$/src/resources/commands/windows/no_pass/build-sign-csr.bat" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/resources/commands/windows/no_pass/build-verify-crl.bat" afterPath="$PROJECT_DIR$/src/resources/commands/windows/no_pass/build-verify-crl.bat" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/resources/commands/windows/no_pass/build-verify.bat" afterPath="$PROJECT_DIR$/src/resources/commands/windows/no_pass/build-verify.bat" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/resources/config.properties" afterPath="$PROJECT_DIR$/src/resources/config.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/resources/hibernate.cfg.xml" afterPath="$PROJECT_DIR$/src/resources/hibernate.cfg.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/resources/log4j.properties" afterPath="$PROJECT_DIR$/src/resources/log4j.properties" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/resources/spring.xml" afterPath="$PROJECT_DIR$/src/resources/spring.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/resources/sslvpn.sql" afterPath="$PROJECT_DIR$/src/resources/sslvpn.sql" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/resources/struts.xml" afterPath="$PROJECT_DIR$/src/resources/struts.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/version/version.properties" afterPath="$PROJECT_DIR$/src/version/version.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sslvpn_sign_encrypt.iml" afterPath="$PROJECT_DIR$/sslvpn_sign_encrypt.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/java/Test.java" afterPath="$PROJECT_DIR$/test/java/Test.java" />
     </list>
     <ignored path="pubwar.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -705,7 +183,7 @@
     <favorites_list name="pubwar" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -714,6 +192,25 @@
       </list>
     </option>
   </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>r</find>
+      <find>route</find>
+      <find>route -</find>
+      <find>route -v</find>
+      <find>SysLogSend.sysLog</find>
+      <find>HotBackupAction</find>
+      <find>configServer</find>
+      <find>ServerStatu</find>
+    </findStrings>
+    <replaceStrings>
+      <replace />
+    </replaceStrings>
+    <dirStrings>
+      <dir>$PROJECT_DIR$/src/java</dir>
+      <dir>$PROJECT_DIR$/src</dir>
+    </dirStrings>
+  </component>
   <component name="FindManager">
     <FindUsagesManager>
       <setting name="OPEN_NEW_TAB" value="false" />
@@ -721,6 +218,12 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="PUSH_TAGS">
+      <GitPushTagMode />
+    </option>
+    <push-targets>
+      <push-target-info target-remote="origin" target-branch="master" repo="$PROJECT_DIR$" source="master" />
+    </push-targets>
   </component>
   <component name="GradleLocalSettings">
     <option name="externalProjectsViewState">
@@ -730,14 +233,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/java/com/hzih/sslvpn/tcp/server/TcpServerHandler.java" />
-        <option value="$PROJECT_DIR$/src/java/com/hzih/sslvpn/tls/encrypt/EncryptUtils.java" />
-        <option value="$PROJECT_DIR$/src/java/com/hzih/sslvpn/utils/ShellUtils.java" />
-        <option value="$PROJECT_DIR$/src/java/com/hzih/sslvpn/utils/StringContext.java" />
-        <option value="$PROJECT_DIR$/src/appserver/css/index.css" />
-        <option value="$PROJECT_DIR$/src/java/com/hzih/sslvpn/entity/SysInfoBean.java" />
-        <option value="$PROJECT_DIR$/src/java/com/hzih/sslvpn/web/servlet/DownLoadWindowsX86.java" />
-        <option value="$PROJECT_DIR$/src/java/com/hzih/sslvpn/web/servlet/SiteContextLoaderServlet.java" />
         <option value="$PROJECT_DIR$/src/java/com/hzih/sslvpn/utils/Configuration.java" />
         <option value="$PROJECT_DIR$/src/appserver/login.jsp" />
         <option value="$PROJECT_DIR$/src/appserver/js/server_config/source_nets_config.js" />
@@ -767,7 +262,6 @@
         <option value="$PROJECT_DIR$/src/appserver/js/user/safePolicy.js" />
         <option value="$PROJECT_DIR$/src/appserver/js/strategy/strategy.js" />
         <option value="$PROJECT_DIR$/src/version/version.properties" />
-        <option value="$PROJECT_DIR$/src/appserver/index.jsp" />
         <option value="$PROJECT_DIR$/src/appserver/js/version/manager_client_version.js" />
         <option value="$PROJECT_DIR$/src/java/com/hzih/sslvpn/web/action/sslvpn/client/ClientVersionAction.java" />
         <option value="$PROJECT_DIR$/src/java/com/hzih/sslvpn/web/action/sslvpn/syslog/SysLogConfigAction.java" />
@@ -777,10 +271,19 @@
         <option value="$PROJECT_DIR$/src/java/com/hzih/sslvpn/web/action/sslvpn/service/WebminStatusAction.java" />
         <option value="$PROJECT_DIR$/src/java/com/hzih/sslvpn/web/action/sslvpn/crl/RevokeFileAction.java" />
         <option value="$PROJECT_DIR$/src/appserver/js/ccd/user_permissions.js" />
-        <option value="$PROJECT_DIR$/src/resources/spring.xml" />
         <option value="$PROJECT_DIR$/src/java/com/hzih/sslvpn/utils/VPNConfigUtil.java" />
         <option value="$PROJECT_DIR$/src/appserver/js/ccd/group_permissions.js" />
         <option value="$PROJECT_DIR$/src/java/com/hzih/sslvpn/web/action/sslvpn/ccd/UserBatchImport.java" />
+        <option value="$PROJECT_DIR$/build/build.properties" />
+        <option value="$PROJECT_DIR$/build/build.sh" />
+        <option value="$PROJECT_DIR$/src/java/com/hzih/sslvpn/utils/GetListNetInfo.java" />
+        <option value="$PROJECT_DIR$/src/appserver/pages/config/manager_keepalived_backup.jsp" />
+        <option value="$PROJECT_DIR$/src/appserver/index.jsp" />
+        <option value="$PROJECT_DIR$/src/java/com/hzih/sslvpn/web/action/config/HotBackupKeepAlivedAction.java" />
+        <option value="$PROJECT_DIR$/src/java/com/hzih/sslvpn/utils/KeepAlivedConfigUtil.java" />
+        <option value="$PROJECT_DIR$/src/resources/spring.xml" />
+        <option value="$PROJECT_DIR$/src/appserver/js/config/manager_keepalived_backup.js" />
+        <option value="$PROJECT_DIR$/src/java/com/hzih/sslvpn/web/action/sslvpn/service/KeepAlivedServerStatusAction.java" />
       </list>
     </option>
   </component>
@@ -813,8 +316,8 @@
   </component>
   <component name="ProjectFrameBounds">
     <option name="y" value="23" />
-    <option name="width" value="1382" />
-    <option name="height" value="754" />
+    <option name="width" value="1680" />
+    <option name="height" value="969" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -862,6 +365,20 @@
     </navigator>
     <panes>
       <pane id="Scratches" />
+      <pane id="PackagesPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="openvpn" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="openvpn" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewModuleNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
       <pane id="Scope">
         <subPane subId="Project Files">
           <PATH>
@@ -884,48 +401,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sslvpn" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sslvpn_sign_encrypt" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sslvpn" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sslvpn_sign_encrypt" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="build" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-      </pane>
-      <pane id="PackagesPane">
-        <subPane>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="openvpn" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="openvpn" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewModuleNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
       <pane id="Favorites" />
@@ -934,7 +409,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="GenerateAntBuildDialog.generateIdeaHomeProperty" value="false" />
-    <property name="project.structure.last.edited" value="Libraries" />
+    <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.175" />
     <property name="OverrideImplement.combined" value="true" />
     <property name="options.splitter.main.proportions" value="0.3" />
@@ -955,7 +430,6 @@
     <property name="project.structure.side.proportion" value="0.2845138" />
     <property name="GenerateAntBuildDialog.forceTargetJdk" value="true" />
     <property name="MemberChooser.copyJavadoc" value="false" />
-    <property name="restartRequiresConfirmation" value="true" />
     <property name="GenerateAntBuildDialog.backupFiles" value="true" />
     <property name="options.searchVisible" value="true" />
     <property name="dynamic.classpath" value="false" />
@@ -976,12 +450,22 @@
       <recent name="monitor.vpngetinfo" />
       <recent name="com.hzih.pubwar.service" />
     </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/appserver/pages/config" />
+      <recent name="$PROJECT_DIR$/src/appserver/js/config" />
       <recent name="D:\fartec\ichange\sslvpn_sign_encrypt\src\appserver\pages\system" />
       <recent name="D:\fartec\ichange\sslvpn_sign_encrypt\src\appserver\js\system" />
       <recent name="D:\fartec\ichange\sslvpn_sign_encrypt\src\java\com\hzih\sslvpn\web\action\sslvpn" />
-      <recent name="D:\fartec\ichange\sslvpn_sign_encrypt\src\java\com\hzih\sslvpn\web\servlet" />
-      <recent name="D:\fartec\ichange\sslvpn_sign_encrypt\src\appserver\img" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.hzih.sslvpn.web.action.sslvpn.service" />
+      <recent name="com.hzih.sslvpn.utils" />
+      <recent name="com.hzih.sslvpn.web.action.config" />
+      <recent name="com.hzih.sslvpn.tls.encrypt" />
+      <recent name="com.hzih.sslvpn.tcp" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\fartec\ichange\sslvpn\src\appserver\js\ext" />
@@ -989,16 +473,6 @@
       <recent name="D:\fartec\ichange\sslvpn\src\appserver\pages\alert" />
       <recent name="D:\fartec\ichange\sslvpn\src\appserver\js\alert" />
       <recent name="D:\fartec\ichange\sslvpn\doc" />
-    </key>
-    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
-      <recent name="" />
-    </key>
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="com.hzih.sslvpn.utils" />
-      <recent name="com.hzih.sslvpn.tls.encrypt" />
-      <recent name="com.hzih.sslvpn.tcp" />
-      <recent name="com.hzih.sslvpn.tls.entity" />
-      <recent name="com.hzih.sslvpn.web.action.user" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -1418,13 +892,13 @@
     <configuration default="true" type="osgi.bnd.run" factoryName="Test Launcher (JUnit)">
       <method />
     </configuration>
-    <configuration default="false" name="Tomcat sslvpn_sign_encrypt" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat sslvpn_sign_encrypt" ALTERNATIVE_JRE_ENABLED="false" ALTERNATIVE_JRE_PATH="">
+    <configuration default="false" name="Tomcat sslvpn_sign_encrypt" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat sslvpn_sign_encrypt" ALTERNATIVE_JRE_ENABLED="false">
       <option name="OPEN_IN_BROWSER" value="false" />
-      <option name="COMMON_VM_ARGUMENTS" value="-Dsslvpn.home=E:/fartec/ichange/sslvpn_sign_encrypt" />
+      <option name="COMMON_VM_ARGUMENTS" value="-Dsslvpn.home=$PROJECT_DIR$/../../app/sslvpn_sign_encrypt" />
       <option name="UPDATE_ON_FRAME_DEACTIVATION" value="true" />
-      <option name="UPDATING_POLICY" value="update-resources" />
+      <option name="UPDATE_CLASSES_ON_FRAME_DEACTIVATION" value="true" />
       <deployment>
-        <artifact name="sslvpn:war exploded">
+        <artifact name="ROOT">
           <settings>
             <option name="CONTEXT_PATH" value="/" />
           </settings>
@@ -1432,6 +906,7 @@
       </deployment>
       <server-settings>
         <option name="BASE_DIRECTORY_NAME" value="Unnamed_openvpn" />
+        <option name="HTTP_PORT" value="8080" />
       </server-settings>
       <predefined_log_file id="TOMCAT_LOCALHOST_LOG_ID" enabled="true" />
       <extension name="coverage" enabled="false" merge="false" runner="idea" />
@@ -1489,7 +964,7 @@
       </ConfigurationWrapper>
       <method>
         <option name="BuildArtifacts" enabled="true">
-          <artifact name="sslvpn:war exploded" />
+          <artifact name="ROOT" />
         </option>
       </method>
     </configuration>
@@ -1977,11 +1452,21 @@
       <workItem from="1489039748958" duration="35000" />
       <workItem from="1492159539916" duration="26000" />
       <workItem from="1493015393382" duration="857000" />
+      <workItem from="1493276831583" duration="79000" />
+      <workItem from="1493436601572" duration="139000" />
+      <workItem from="1493797139662" duration="1104000" />
+      <workItem from="1493801391764" duration="42000" />
+      <workItem from="1494923489900" duration="4822000" />
+      <workItem from="1494982762371" duration="925000" />
+      <workItem from="1494984647308" duration="2870000" />
+      <workItem from="1494988311378" duration="3907000" />
+      <workItem from="1494992306811" duration="8449000" />
+      <workItem from="1495014431903" duration="327000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1516841000" />
+    <option name="totallyTimeSpent" value="1539505000" />
   </component>
   <component name="TodoView" selected-index="0">
     <todo-panel id="selected-file">
@@ -2004,7 +1489,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1382" height="754" extended-state="0" />
+    <frame x="0" y="23" width="1680" height="969" extended-state="6" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -2018,18 +1503,18 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3184569" sideWeight="0.7769517" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24969324" sideWeight="0.65525115" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.6571429" sideWeight="0.6257631" order="3" side_tool="true" content_ui="tabs" x="21" y="311" width="1638" height="398" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.7977011" sideWeight="0.6257631" order="3" side_tool="true" content_ui="tabs" x="21" y="311" width="1638" height="398" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32733223" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.6672269" sideWeight="0.37423688" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.66705203" sideWeight="0.37423688" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Persistence" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28880596" sideWeight="0.68907565" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25396827" sideWeight="0.68907565" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3134441" sideWeight="0.31092438" order="5" side_tool="true" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.34214503" sideWeight="0.47342995" order="3" side_tool="true" content_ui="tabs" />
@@ -2042,13 +1527,13 @@
       <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.72" sideWeight="0.43162394" order="13" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.71954024" sideWeight="0.43162394" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Data Sources" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="13" side_tool="true" content_ui="tabs" />
       <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="15" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.68907565" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.68850577" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -2103,6 +1588,8 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
+    <MESSAGE value="加入双机热备相关配置界面" />
+    <option name="LAST_COMMIT_MESSAGE" value="加入双机热备相关配置界面" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="true" />
   </component>
   <component name="VssConfiguration">
@@ -2148,6 +1635,12 @@
           <properties />
           <option name="timeStamp" value="340" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/java/com/hzih/sslvpn/web/action/config/HotBackupKeepAlivedAction.java</url>
+          <line>83</line>
+          <properties />
+          <option name="timeStamp" value="354" />
+        </line-breakpoint>
       </breakpoints>
       <breakpoints-dialog>
         <breakpoints-dialog>
@@ -2156,7 +1649,7 @@
           </selected-grouping-rules>
         </breakpoints-dialog>
       </breakpoints-dialog>
-      <option name="time" value="352" />
+      <option name="time" value="355" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -2165,139 +1658,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/java/com/hzih/sslvpn/dao/impl/SafePolicyDaoImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="26" column="0" lean-forward="false" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/java/com/hzih/sslvpn/service/impl/SafePolicyServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="38" column="5" lean-forward="false" selection-start-line="38" selection-start-column="5" selection-end-line="38" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/java/com/hzih/sslvpn/web/action/user/LoginAction.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="197" column="57" lean-forward="false" selection-start-line="197" selection-start-column="57" selection-end-line="197" selection-end-column="57" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/java/com/hzih/sslvpn/listener/SessionListener.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="12" column="13" lean-forward="false" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/appserver/WEB-INF/web.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="157" column="22" lean-forward="false" selection-start-line="157" selection-start-column="22" selection-end-line="157" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/appserver/login.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="83" column="89" lean-forward="false" selection-start-line="83" selection-start-column="89" selection-end-line="83" selection-end-column="89" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/appserver/pages/system/manager_service.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/appserver/pages/system/manager_platform.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/java/com/hzih/sslvpn/web/action/system/PlatformAction.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="25" column="13" lean-forward="false" selection-start-line="25" selection-start-column="13" selection-end-line="25" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/java/com/hzih/sslvpn/web/action/sslvpn/recovery/RecoveryAction.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="23" column="13" lean-forward="false" selection-start-line="23" selection-start-column="13" selection-end-line="23" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/appserver/js/system/manager_platform.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="57" column="42" lean-forward="false" selection-start-line="57" selection-start-column="28" selection-end-line="57" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/appserver/js/user/safePolicy.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="15" column="41" lean-forward="false" selection-start-line="15" selection-start-column="41" selection-end-line="15" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/appserver/js/strategy/strategy.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="44" column="0" lean-forward="false" selection-start-line="44" selection-start-column="0" selection-end-line="44" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/version/version.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="2" column="22" lean-forward="false" selection-start-line="2" selection-start-column="8" selection-end-line="2" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/appserver/index.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="820" column="17" lean-forward="false" selection-start-line="820" selection-start-column="17" selection-end-line="820" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/java/com/hzih/sslvpn/entity/Version.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="5" column="13" lean-forward="false" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/java/com/hzih/sslvpn/dao/impl/AccountLogDaoImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="30" column="54" lean-forward="false" selection-start-line="30" selection-start-column="54" selection-end-line="30" selection-end-column="54" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/java/com/hzih/sslvpn/dao/impl/UserOperLogDaoImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="48" column="47" lean-forward="false" selection-start-line="48" selection-start-column="47" selection-end-line="48" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/java/com/hzih/sslvpn/web/action/sslvpn/client/strategy/ClientStrategyAction.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="121" column="17" lean-forward="false" selection-start-line="121" selection-start-column="17" selection-end-line="121" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/appserver/pages/server_config/server_normal_config.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -2439,13 +1799,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/resources/spring.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="291">
-          <caret line="607" column="66" lean-forward="false" selection-start-line="607" selection-start-column="66" selection-end-line="607" selection-end-column="66" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/appserver/js/ccd/user_permissions.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="528">
@@ -2474,13 +1827,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/java/com/hzih/sslvpn/utils/VPNConfigUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-335">
-          <caret line="281" column="23" lean-forward="false" selection-start-line="281" selection-start-column="23" selection-end-line="281" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/java/com/hzih/sslvpn/web/action/sslvpn/ccd/UserBatchImport.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="281">
@@ -2492,15 +1838,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
           <caret line="37" column="4" lean-forward="false" selection-start-line="37" selection-start-column="4" selection-end-line="53" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/build/build.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2508,14 +1845,218 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-4490">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/build/build.sh">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="220">
+          <caret line="54" column="0" lean-forward="false" selection-start-line="54" selection-start-column="0" selection-end-line="54" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build/build.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="13" column="63" lean-forward="false" selection-start-line="13" selection-start-column="63" selection-end-line="13" selection-end-column="63" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/doc/sslvpn_server.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-297">
+          <caret line="18" column="21" lean-forward="false" selection-start-line="18" selection-start-column="21" selection-end-line="18" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/java/com/hzih/sslvpn/domain/Server.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="492">
+          <caret line="224" column="15" lean-forward="false" selection-start-line="224" selection-start-column="15" selection-end-line="224" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/java/com/hzih/sslvpn/utils/GetListNetInfo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1340">
+          <caret line="602" column="52" lean-forward="true" selection-start-line="602" selection-start-column="52" selection-end-line="602" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/appserver/index.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2670">
+          <caret line="178" column="15" lean-forward="false" selection-start-line="178" selection-start-column="15" selection-end-line="178" selection-end-column="15" />
+          <folding>
+            <marker date="1494924378000" expanded="true" signature="22325:22331" ph="&amp;nbsp;" />
+            <marker date="1494924378000" expanded="true" signature="22331:22337" ph="&amp;nbsp;" />
+            <marker date="1494924378000" expanded="true" signature="22337:22343" ph="&amp;nbsp;" />
+            <marker date="1494924378000" expanded="true" signature="22405:22411" ph="&amp;nbsp;" />
+            <marker date="1494924378000" expanded="true" signature="22411:22417" ph="&amp;nbsp;" />
+            <marker date="1494924378000" expanded="true" signature="22417:22423" ph="&amp;nbsp;" />
+            <marker date="1494924378000" expanded="true" signature="23012:23121" ph="..." />
+            <marker date="1494924378000" expanded="true" signature="23156:23273" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/appserver/pages/config/manager_equipment_backup.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="106" lean-forward="false" selection-start-line="3" selection-start-column="106" selection-end-line="3" selection-end-column="106" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/appserver/js/server_config/source_nets_config.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1545">
+          <caret line="103" column="0" lean-forward="false" selection-start-line="103" selection-start-column="0" selection-end-line="366" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/java/com/hzih/sslvpn/utils/Dom4jUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="29" column="25" lean-forward="false" selection-start-line="29" selection-start-column="25" selection-end-line="29" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/appserver/js/config/manager_equipment_backup.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3825">
+          <caret line="257" column="19" lean-forward="false" selection-start-line="257" selection-start-column="19" selection-end-line="257" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/../sharelib/dom4j/dom4j.jar!/org/dom4j/Node.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="930">
+          <caret line="63" column="18" lean-forward="false" selection-start-line="63" selection-start-column="14" selection-end-line="63" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/../sharelib/dom4j/dom4j.jar!/org/dom4j/Element.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="480">
+          <caret line="33" column="22" lean-forward="false" selection-start-line="33" selection-start-column="22" selection-end-line="33" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/java/com/hzih/sslvpn/web/action/sslvpn/set/SourceNetsAction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="795">
+          <caret line="204" column="10" lean-forward="false" selection-start-line="204" selection-start-column="10" selection-end-line="225" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/appserver/js/host/manager_device.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="282">
+          <caret line="33" column="7" lean-forward="true" selection-start-line="33" selection-start-column="7" selection-end-line="33" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/appserver/pages/config/manager_keepalived_backup.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="98" lean-forward="false" selection-start-line="3" selection-start-column="98" selection-end-line="3" selection-end-column="98" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/java/com/hzih/sslvpn/web/action/config/HotBackupKeepAlivedAction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="41">
+          <caret line="87" column="0" lean-forward="false" selection-start-line="87" selection-start-column="0" selection-end-line="87" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/java/com/hzih/sslvpn/utils/KeepAlivedConfigUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1590">
+          <caret line="106" column="5" lean-forward="false" selection-start-line="106" selection-start-column="5" selection-end-line="106" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/java/com/hzih/sslvpn/utils/VPNConfigUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2250">
+          <caret line="160" column="51" lean-forward="true" selection-start-line="160" selection-start-column="51" selection-end-line="160" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/appserver/js/server_status/server_status.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="663">
+          <caret line="338" column="0" lean-forward="false" selection-start-line="338" selection-start-column="0" selection-end-line="428" selection-end-column="0" />
+          <folding>
+            <element signature="n#!!block;n#reloadServer#0" expanded="false" />
+            <element signature="n#!!block;n#closeServer#0" expanded="false" />
+            <element signature="n#!!block;n#openServer#0" expanded="false" />
+            <marker date="1465890337000" expanded="true" signature="4459:4470" ph="..." />
+            <marker date="1465890337000" expanded="true" signature="7783:7794" ph="..." />
+            <marker date="1465890337000" expanded="true" signature="8076:8087" ph="..." />
+            <marker date="1465890337000" expanded="true" signature="10429:10440" ph="..." />
+            <marker date="1465890337000" expanded="true" signature="11961:11972" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/appserver/pages/server_status/server_status.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="100" lean-forward="false" selection-start-line="3" selection-start-column="100" selection-end-line="3" selection-end-column="100" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/appserver/js/config/manager_keepalived_backup.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="385">
+          <caret line="41" column="41" lean-forward="false" selection-start-line="41" selection-start-column="41" selection-end-line="41" selection-end-column="41" />
+          <folding>
+            <element signature="n#!!block;n#closeServer#0" expanded="false" />
+            <element signature="n#!!block;n#openServer#0" expanded="false" />
+            <element signature="n#!!block;n#telnet_win#0" expanded="false" />
+            <marker date="1495004824000" expanded="true" signature="1393:1404" ph="..." />
+            <marker date="1495004824000" expanded="true" signature="6121:6132" ph="..." />
+            <marker date="1495004824000" expanded="true" signature="6414:6425" ph="..." />
+            <marker date="1495004824000" expanded="true" signature="7209:7220" ph="..." />
+            <marker date="1495004824000" expanded="true" signature="8741:8752" ph="..." />
+            <marker date="1495004824000" expanded="true" signature="13428:13441" ph="..." />
+            <marker date="1495004824000" expanded="true" signature="13449:13455" ph="&amp;nbsp;" />
+            <marker date="1495004824000" expanded="true" signature="13455:13461" ph="&amp;nbsp;" />
+            <marker date="1495004824000" expanded="true" signature="13461:13467" ph="&amp;nbsp;" />
+            <marker date="1495004824000" expanded="true" signature="13582:13595" ph="..." />
+            <marker date="1495004824000" expanded="true" signature="13603:13609" ph="&amp;nbsp;" />
+            <marker date="1495004824000" expanded="true" signature="13609:13615" ph="&amp;nbsp;" />
+            <marker date="1495004824000" expanded="true" signature="13615:13621" ph="&amp;nbsp;" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/java/com/hzih/sslvpn/web/action/sslvpn/service/KeepAlivedServerStatusAction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="77" column="49" lean-forward="true" selection-start-line="77" selection-start-column="49" selection-end-line="77" selection-end-column="49" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#834#835#0" expanded="true" />
+            <element signature="e#878#879#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/resources/spring.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="385" column="0" lean-forward="true" selection-start-line="385" selection-start-column="0" selection-end-line="385" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -2606,7 +2147,7 @@
       </state>
       <state key="JdkListConfigurable.UI">
         <settings>
-          <last-edited>1.7</last-edited>
+          <last-edited>1.8</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
@@ -2623,7 +2164,6 @@
             <option name="proportions">
               <list>
                 <option value="0.2845138" />
-                <option value="0.6" />
               </list>
             </option>
           </splitter-proportions>

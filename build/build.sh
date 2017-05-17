@@ -57,8 +57,10 @@ BUILD_TYPE=${BUILD_TYPE:-debug}
 BUILDROOT=$BASE
 BUILDDEST=$BASE/temp
 BUILDFILE=$HERE/build.xml
-BUILDTOOLS=d:/fartec/ichange/tools
-BUILDTP=d:/fartec/ichange/sharelib
+#BUILDTOOLS=d:/fartec/ichange/tools
+BUILDTOOLS=/Users/huanghengmin/work/fartec/ichange/tools
+#BUILDTP=d:/fartec/ichange/sharelib
+BUILDTP=/Users/huanghengmin/work/fartec/ichange/sharelib
 
 
 # Prepare OS specific variables

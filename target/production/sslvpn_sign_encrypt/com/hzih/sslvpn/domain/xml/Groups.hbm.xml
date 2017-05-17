@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class table="groups" name="com.hzih.sslvpn.domain.Groups">
+        <id access="field" name="id" type="int" column="id" length="11">
+            <generator class="increment"/>
+        </id>
+
+        <set cascade="save-update" name="userSet" table="user_group" lazy="false" inverse="false">
+            <key>
+                <column name="group_id" not-null="true"/>
+            </key>
+            <many-to-many entity-name="com.hzih.sslvpn.domain.User">
+                <column name="user_id" not-null="true"/>
+            </many-to-many>
+        </set>
+
+        <set cascade="save-update" name="sourceNets" table="group_source_nets" lazy="false" inverse="false">
+            <key>
+                <column name="group_id" not-null="true"/>
+            </key>
+            <many-to-many entity-name="com.hzih.sslvpn.domain.SourceNet">
+                <column name="source_net_id"/>
+            </many-to-many>
+        </set>
+
+        <property name="deny_access" length="4" access="field" type="int"/>
+        <property name="group_name" length="50"  access="field" type="string"/>
+        <!--<property name="group_code" length="50" column="group_code" access="field" type="string"/>-->
+        <!--<property name="assign_nets" length="200" column="assign_nets" access="field" type="string"/>-->
+        <!--<property name="dynamic_ip_range" length="100" column="dynamic_ip_range" access="field" type="string"/>-->
+        <!--<property name="allow_group_ids" length="100" column="allow_group_ids" access="field" type="string"/>-->
+        <property name="group_desc" length="100" access="field" type="string"/>
+        <!--<property name="level" column="level" access="field" type="int"/>-->
+    </class>
+</hibernate-mapping>

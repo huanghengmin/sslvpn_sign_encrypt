@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+  <class table="equipment_log" name="com.hzih.sslvpn.domain.EquipmentLog">
+    <id access="field" name="id" type="int" column="id">
+      <generator class="increment"/>
+    </id>
+    <property name="log_time" column="log_time" access="field" type="java.util.Date"/>
+    <property name="level" column="level" access="field" type="java.lang.String"/>
+    <property name="equipment_name" column="equipment_name" access="field" type="java.lang.String"/>
+    <property name="log_info" column="log_info" access="field" type="java.lang.String"/>
+  </class>
+</hibernate-mapping>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+  <class table="role" name="com.hzih.sslvpn.domain.Role">
+    <id access="field" name="id" type="long" column="id">
+      <generator class="increment"/>
+    </id>
+    <property name="name" length="30" access="field" type="string"/>
+    <property name="description" length="50" access="field" type="string"/>
+    <property name="createdTime" access="field" type="java.util.Date"/>
+    <property name="modifiedTime" access="field" type="java.util.Date"/>
+    <set cascade="save-update" access="field" inverse="false" lazy="false" table="role_permission" name="permissions">
+      <key column="role_id"/>
+      <many-to-many class="com.hzih.sslvpn.domain.Permission" column="permission_id"/>
+    </set>
+  </class>
+</hibernate-mapping>

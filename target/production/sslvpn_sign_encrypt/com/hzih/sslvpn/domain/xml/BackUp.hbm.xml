@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class table="backup" name="com.hzih.sslvpn.domain.BackUp">
+        <id access="field" name="id" type="int" column="id" length="10">
+            <generator class="increment"/>
+        </id>
+        <property name="backup_account_id" column="backup_account_id" access="field" type="long"/>
+        <property name="backup_all" access="field" type="int"/>
+        <property name="backup_pki" access="field" type="int"/>
+        <property name="backup_server" access="field" type="int"/>
+        <property name="backup_net" access="field" type="int"/>
+        <property name="backup_desc" length="50" column="backup_desc" access="field" type="string"/>
+        <property name="backup_file" length="50" column="backup_file" access="field" type="string"/>
+        <property name="backup_time" length="50" column="backup_time" access="field" type="string"/>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class table="trust_certificate" name="com.hzih.sslvpn.domain.TrustCertificate">
+        <id access="field" name="id" type="int" column="id" length="10">
+            <generator class="increment"/>
+        </id>
+        <property name="name" length="50" unique="true" column="name" access="field" type="string"/>
+        <property name="file" length="50" column="file" access="field" type="string"/>
+        <property name="status"  length="11" column="status" access="field" type="int"/>
+        <property name="subject" length="200" column="subject" access="field" type="string"/>
+        <property name="notAfter" length="50" column="notbefore" access="field" type="string"/>
+        <property name="notBefore" length="50" column="notafter" access="field" type="string"/>
+    </class>
+</hibernate-mapping>

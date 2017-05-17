@@ -1,14 +1,13 @@
 <component name="ArtifactManager">
-  <artifact type="war" name="ROOT">
-    <output-path>E:/fartec/ichange/sslvpn_sign_encrypt/tomcat/webapps</output-path>
-    <root id="archive" name="ROOT.war">
+  <artifact type="exploded-war" name="ROOT">
+    <output-path>$PROJECT_DIR$/../../app/sslvpn_sign_encrypt/tomcat/webapps</output-path>
+    <root id="root">
       <element id="directory" name="WEB-INF">
         <element id="directory" name="classes">
           <element id="module-output" name="sslvpn_sign_encrypt" />
         </element>
         <element id="directory" name="lib">
           <element id="library" level="project" name="shared" />
-          <element id="library" level="project" name="servlet" />
           <element id="library" level="project" name="sslvpn_sign_encrypt" />
           <element id="library" level="project" name="snmp" />
           <element id="library" level="project" name="ssh2" />

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts> 
+	<constant name="struts.convention.result.path" value="/"/>
+	<!--<constant name="struts.i18n.encoding" value="utf-8"/>-->
+    <!--<constant name="struts.serve.static.browserCache" value="false"/>-->
+    <!--<constant name="struts.configuration.xml.reload" value="true"/>-->
+    <!--<constant name="struts.devMode" value="true"/>-->
+    <!--<constant name="struts.objectFactory" value="spring"/>-->
+	<!--<constant name="struts.ognl.allowStaticMethodAccess" value="true" /> 2.1.2-->
+
+    <constant name="struts.multipart.maxSize" value="52428800" />
+    <constant name="struts.multipart.saveDir" value="/temp"/>
+    <package name="sslvpn" extends="json-default">
+
+		<action name="login" class="loginAction">
+			<result name="success" type="redirect">/</result>
+			<result name="failure">/loginError.jsp</result>
+			<result name="clear">/login.jsp</result>
+		</action>
+
+        <action name="logout" class="logoutAction">
+			<result name="success">/login.jsp</result>
+		</action>
+
+        <action name="checkTimeout" class="checkTimeoutAction">
+			<result name="success" type="json"/>
+		</action>
+
+        <action name="*_*" class="{1}" method= "{2} ">
+            <result name="{2}" type="json"/>
+        </action>
+
+        <!-- add jsp -->
+
+    </package>
+</struts>

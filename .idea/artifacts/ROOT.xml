@@ -1,6 +1,6 @@
 <component name="ArtifactManager">
   <artifact type="exploded-war" name="ROOT">
-    <output-path>$PROJECT_DIR$/../../app/sslvpn_sign_encrypt/tomcat/webapps</output-path>
+    <output-path>$PROJECT_DIR$/../../app/sslvpn_sign_encrypt/tomcat/webapps/ROOT</output-path>
     <root id="root">
       <element id="directory" name="WEB-INF">
         <element id="directory" name="classes">

@@ -41,13 +41,14 @@ public class KeepAlivedConfigUtil {
 
                 if (device_type_element.equals("1")) {
                     sb.append("    state MASTER\n");
+                    sb.append("    priority 100\n" );
                 } else {
                     sb.append("    state BACKUP\n");
+                    sb.append("    priority 99\n" );
                 }
 
-                sb.append("    interface "+back_inet+"\n" +
+                sb.append("  interface "+back_inet+"\n" +
                         "    virtual_router_id 51\n" +
-                        "    priority 100\n" +
                         "    advert_int 1\n" +
                         "    authentication {\n" +
                         "        auth_type PASS\n" +
@@ -75,11 +76,10 @@ public class KeepAlivedConfigUtil {
                             String v_ip = element.attributeValue("v_ip");
                             String v_port = element.attributeValue("v_port");
                             if (ip != null && port != null && v_ip != null && v_port != null) {
-
                                 sb.append(" virtual_server "+v_ip+" "+v_port+" {\n" +
                                         "     delay_loop 2\n" +
-                                        "     lb_algo wrr\n" +
-                                        "     lb_kind DR\n" +
+                                        "     lb_algo rr\n" +
+                                        "     lb_kind NAT\n" +
                                         "     persistence_timeout 60\n" +
                                         "     protocol TCP\n" +
                                         "     real_server "+ip+" "+port+" {\n" +
@@ -89,7 +89,7 @@ public class KeepAlivedConfigUtil {
                                         "             connect_timeout 10\n" +
                                         "             nb_get_retry 3\n" +
                                         "             delay_before_retry 3\n" +
-                                        "             connect_port 3306\n" +
+                                        "             connect_port "+port+"\n" +
                                         "         } \n" +
                                         "     }\n" +
                                         "} \n");

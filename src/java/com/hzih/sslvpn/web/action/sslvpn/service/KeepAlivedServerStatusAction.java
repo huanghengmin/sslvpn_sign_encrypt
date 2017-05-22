@@ -43,6 +43,7 @@ public class KeepAlivedServerStatusAction extends ActionSupport {
             Thread.sleep(1000 * 2);
             proc.exec("netstat -an | grep 112 |wc -l");
             String msg_on = proc.getOutput();
+            logger.info(msg_on);
 //            if (msg_on.contains("is running")) {
             //if (msg_on.contains("running")) {
             if (Integer.parseInt(msg_on)>0) {

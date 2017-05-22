@@ -8,17 +8,15 @@ import com.hzih.sslvpn.web.SessionUtils;
 import com.hzih.sslvpn.web.action.ActionBase;
 import com.hzih.sslvpn.web.action.audit.AuditFlagAction;
 import com.opensymphony.xwork2.ActionSupport;
+import org.apache.log4j.Logger;
 import org.apache.struts2.ServletActionContext;
 import org.dom4j.Document;
 import org.dom4j.DocumentHelper;
 import org.dom4j.Element;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.util.Date;
 import java.util.Iterator;
 import java.util.List;
 
@@ -31,7 +29,7 @@ import java.util.List;
  */
 public class HotBackupKeepAlivedAction extends ActionSupport {
 
-    private static final Logger logger = LoggerFactory.getLogger(HotBackupKeepAlivedAction.class);
+    private static final Logger logger = Logger.getLogger(HotBackupKeepAlivedAction.class);
     public static final String keepalived_xml = StringContext.config_path + "/keepalived.xml";
     private static final String keepalived_config = StringContext.config_path + "/keepalived.conf";
     private LogService logService;

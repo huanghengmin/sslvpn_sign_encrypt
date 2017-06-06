@@ -51,12 +51,13 @@
         <property name="acquireIncrement" value="3"/>
         <property name="maxStatements" value="0"/>
         <property name="initialPoolSize" value="3"/>
+        <property name="acquireRetryDelay" value="100"/>
         <!--每60秒检查所有连接池中的空闲连接。Default: 0 -->
         <property name="idleConnectionTestPeriod" value="60"/>
         <!--定义在从数据库获取新连接失败后重复尝试的次数。Default: 30 -->
         <property name="acquireRetryAttempts" value="30"/>
-        <property name="breakAfterAcquireFailure" value="true"/>
-        <property name="testConnectionOnCheckout" value="false"/>
+        <property name="breakAfterAcquireFailure" value="false"/>
+        <property name="testConnectionOnCheckout" value="true"/>
     </bean>
 
 

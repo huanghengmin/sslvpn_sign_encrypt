@@ -176,7 +176,7 @@ function setWidth(){
 
 function checkServerStatus() {
     Ext.Ajax.request({
-        url: '../../ServerStatusAction_checkServerStatus.action',
+        url: '../../KeepAlivedServerStatusAction_checkServerStatus.action',
         success: function (response, result) {
             var reText = Ext.util.JSON.decode(response.responseText);
             if ("0" == reText.msg) {
@@ -197,86 +197,42 @@ function closeServer() {
     });
     myMask.show();
     Ext.Ajax.request({
-        url: '../../ServerStatusAction_closeServer.action',
+        url: '../../KeepAlivedServerStatusAction_closeServer.action',
         success: function (response, result) {
             myMask.hide();
             var reText = Ext.util.JSON.decode(response.responseText);
             if ("0" == reText.msg) {
                 Ext.getCmp("serverstatus").setValue("[<font color='red'>未启动</font>] [<a href='javascript;' style='color:blue;' onclick='openServer()'>启动</a>]");
-                Ext.Msg.alert('提示', "停止VPN服务成功");
+                Ext.Msg.alert('提示', "停止热备服务成功");
             } else {
-                Ext.Msg.alert('提示', "停止VPN服务失败");
+                Ext.Msg.alert('提示', "停止热备服务失败");
             }
             checkServerStatus();
         },
         failure: function (form, action) {
             myMask.hide();
-            Ext.Msg.alert('提示', "停止VPN服务失败");
+            Ext.Msg.alert('提示', "停止热备服务失败");
         }
     });
 }
 
 function openServer() {
-    Ext.MessageBox.show({
-        title: '开启VPN服务....',
-        msg: '正在执行系统检测,请稍后...',
-        progressText: '检测中...',
-        width: 300,
-        progress: true,
-        closable: false
-    });
-    Ext.MessageBox.updateProgress(1/4,"系统检测","正在执行系统检测,请稍后...");
     Ext.Ajax.request({
-        url: '../../CheckAction_check.action',
-        method: "POST",
+        url: '../../KeepAlivedServerStatusAction_openServer.action',
         success: function (response, result) {
-            var reText = Ext.util.JSON.decode(response.responseText);
-            if(reText.flag){
-                Ext.MessageBox.updateProgress(2/4,"系统检测",reText.msg);
-                Ext.MessageBox.updateProgress(3/4,"开启VPN服务","正在开启VPN服务......");
-                Ext.Ajax.request({
-                    url: '../../ServerStatusAction_openServer.action',
-                    success: function (response, result) {
-                        Ext.MessageBox.hide();
-                        var reText = Ext.util.JSON.decode(response.responseText);
-                        if ("1" == reText.msg) {
-                            Ext.getCmp("serverstatus").setValue("[<font color='green'>已启动</font>] [<font color='#ff4500'><a href='javascript:;' style='color:blue;' onclick='closeServer()'>停止</a></font>]");
-                            Ext.Msg.alert('提示', "开启VPN服务成功");
-                        } else {
-                            Ext.Msg.alert('提示', "开启VPN服务失败");
-                        }
-                        checkServerStatus();
-                    },
-                    failure: function (form, action) {
-                        Ext.MessageBox.hide();
-                        Ext.Msg.alert('提示', "开启VPN服务失败");
-                    }
-                });
-            }else{
-                Ext.MessageBox.updateProgress(2/4,"系统检测",reText.msg);
-                Ext.MessageBox.hide();
-                Ext.MessageBox.show({
-                    title: '信息',
-                    width: 250,
-                    msg: reText.msg,
-                    buttons: {'ok': '确定'},
-                    icon: Ext.MessageBox.INFO,
-                    closable: false
-                });
-            }
-        },
-        failure: function (response, result) {
-            var reText = Ext.util.JSON.decode(response.responseText);
-            Ext.MessageBox.updateProgress(2/4,"系统检测",reText.msg);
             Ext.MessageBox.hide();
-            Ext.MessageBox.show({
-                title: '信息',
-                width: 250,
-                msg: reText.msg,
-                buttons: {'ok': '确定'},
-                icon: Ext.MessageBox.INFO,
-                closable: false
-            });
+            var reText = Ext.util.JSON.decode(response.responseText);
+            if ("1" == reText.msg) {
+                Ext.getCmp("serverstatus").setValue("[<font color='green'>已启动</font>] [<font color='#ff4500'><a href='javascript:;' style='color:blue;' onclick='closeServer()'>停止</a></font>]");
+                Ext.Msg.alert('提示', "开启热备服务成功");
+            } else {
+                Ext.Msg.alert('提示', "开启热备服务失败");
+            }
+            checkServerStatus();
+        },
+        failure: function (form, action) {
+            Ext.MessageBox.hide();
+            Ext.Msg.alert('提示', "开启热备服务失败");
         }
     });
 }

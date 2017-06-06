@@ -9,7 +9,9 @@ import org.apache.struts2.ServletActionContext;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.InputStreamReader;
 
 /**
  * Created by IntelliJ IDEA.
@@ -31,6 +33,25 @@ public class KeepAlivedServerStatusAction extends ActionSupport {
         return logService;
     }
 
+
+    public String getLinuxCommandResultLine(String[] command ) {
+        try {
+            Process process = Runtime.getRuntime().exec(command);
+            BufferedReader brs = new BufferedReader(new InputStreamReader(process.getInputStream()));
+            while(true){
+                String line = brs.readLine();
+                if(line==null){
+                    break;
+                }else {
+                    return line;
+                }
+            }
+        } catch (IOException e) {
+            logger.error("getLinuxCommandResultLine exec error",e);
+        }
+        return null;
+    }
+
     public String openServer() throws Exception {
         HttpServletRequest request = ServletActionContext.getRequest();
         HttpServletResponse response = ServletActionContext.getResponse();
@@ -41,9 +62,18 @@ public class KeepAlivedServerStatusAction extends ActionSupport {
             Proc proc = new Proc();
             proc.exec("service keepalived start");
             Thread.sleep(1000 * 2);
-            proc.exec("netstat -an | grep 112 |wc -l");
-            String msg_on = proc.getOutput();
-            logger.info(msg_on);
+            //proc.exec("\"ps -fe|grep keepalived |grep -v grep|wc -l\"");
+            String[] cmd = {
+                    "/bin/sh",
+                    "-c",
+                    "ps -fe|grep keepalived |grep -v grep|wc -l"
+            };
+            String msg_on = getLinuxCommandResultLine(cmd);
+           /* logger.info("result_code:"+proc.getResultCode());
+            String msg_on = proc.getOutput();*/
+            logger.info("msg:"+msg_on);
+            //String error_msg = proc.getErrorOutput();
+            //logger.info("error_msg:"+error_msg);
 //            if (msg_on.contains("is running")) {
             //if (msg_on.contains("running")) {
             if (Integer.parseInt(msg_on)>0) {
@@ -72,8 +102,18 @@ public class KeepAlivedServerStatusAction extends ActionSupport {
             proc.exec("service keepalived stop");
             Thread.sleep(1000 * 2);
             //proc.exec("service keepalived status");
-            proc.exec("netstat -an | grep 112 |wc -l");
-            String msg_on = proc.getOutput();
+            //proc.exec("\"ps -fe|grep keepalived |grep -v grep|wc -l\"");
+            String[] cmd = {
+                    "/bin/sh",
+                    "-c",
+                    "ps -fe|grep keepalived |grep -v grep|wc -l"
+            };
+            String msg_on = getLinuxCommandResultLine(cmd);
+           /* logger.info("result_code:"+proc.getResultCode());
+            String msg_on = proc.getOutput();*/
+            logger.info("msg:"+msg_on);
+            //String error_msg = proc.getErrorOutput();
+            //logger.info("error_msg:"+error_msg);
 //            if (msg_on.contains("is running")) {
                 //if (msg_on.contains("running")) {
                 if (Integer.parseInt(msg_on)>0) {
@@ -98,10 +138,19 @@ public class KeepAlivedServerStatusAction extends ActionSupport {
         String result = actionBase.actionBegin(request);
         String msg = "0";
         try {
-            Proc proc = new Proc();
-            proc.exec("netstat -an | grep 112 |wc -l");
-            String msg_on = proc.getOutput();
-            logger.info(msg_on);
+            //Proc proc = new Proc();
+            //proc.exec("\"ps -fe|grep keepalived |grep -v grep|wc -l\"");
+            String[] cmd = {
+                    "/bin/sh",
+                    "-c",
+                    "ps -fe|grep keepalived |grep -v grep|wc -l"
+            };
+            String msg_on = getLinuxCommandResultLine(cmd);
+           /* logger.info("result_code:"+proc.getResultCode());
+            String msg_on = proc.getOutput();*/
+            logger.info("msg:"+msg_on);
+            //String error_msg = proc.getErrorOutput();
+            //logger.info("error_msg:"+error_msg);
 //            if (msg_on.contains("is running")) {
             //if (msg_on.contains("running")) {
             if (Integer.parseInt(msg_on)>0) {
@@ -117,5 +166,10 @@ public class KeepAlivedServerStatusAction extends ActionSupport {
         String json = "{success:true,msg:'" + msg + "'}";
         actionBase.actionEnd(response, json, result);
         return null;
+    }
+
+    public static void main(String args[])throws Exception{
+        String ss ="0";
+        System.out.print(Integer.parseInt(ss));
     }
 }

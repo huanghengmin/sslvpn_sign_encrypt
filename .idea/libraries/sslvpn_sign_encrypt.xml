@@ -13,7 +13,6 @@
       <root url="jar://$PROJECT_DIR$/../sharelib/dom4j/dom4j.jar!/" />
       <root url="jar://$PROJECT_DIR$/../sharelib/jakarta/jaxen/jaxen.jar!/" />
       <root url="jar://$PROJECT_DIR$/../sharelib/jakarta/commons-collections/commons-collections.jar!/" />
-      <root url="jar://$PROJECT_DIR$/../sharelib/jakarta/commons-dbcp/commons-dbcp1.2.jar!/" />
       <root url="jar://$PROJECT_DIR$/../sharelib/jakarta/commons-httpclient/commons-httpclient.jar!/" />
       <root url="jar://$PROJECT_DIR$/../sharelib/jakarta/commons-lang/commons-lang.jar!/" />
       <root url="jar://$PROJECT_DIR$/../sharelib/jakarta/commons-validator/commons-validator.jar!/" />

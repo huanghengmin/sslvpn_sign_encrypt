@@ -6,7 +6,6 @@ import com.hzih.sslvpn.utils.KeepAlivedConfigUtil;
 import com.hzih.sslvpn.utils.StringContext;
 import com.hzih.sslvpn.web.SessionUtils;
 import com.hzih.sslvpn.web.action.ActionBase;
-import com.hzih.sslvpn.web.action.audit.AuditFlagAction;
 import com.opensymphony.xwork2.ActionSupport;
 import org.apache.log4j.Logger;
 import org.apache.struts2.ServletActionContext;
@@ -17,6 +16,7 @@ import org.dom4j.Element;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.Date;
 import java.util.Iterator;
 import java.util.List;
 
@@ -29,9 +29,9 @@ import java.util.List;
  */
 public class HotBackupKeepAlivedAction extends ActionSupport {
 
-    private static final Logger logger = Logger.getLogger(HotBackupKeepAlivedAction.class);
+    private Logger logger = Logger.getLogger(HotBackupKeepAlivedAction.class);
     public static final String keepalived_xml = StringContext.config_path + "/keepalived.xml";
-    private static final String keepalived_config = StringContext.config_path + "/keepalived.conf";
+    private static final String keepalived_config =  "/etc/keepalived/keepalived.conf";
     private LogService logService;
 
     public String find() throws Exception {
@@ -47,6 +47,9 @@ public class HotBackupKeepAlivedAction extends ActionSupport {
                 Element del_url = (Element) doc.selectSingleNode("/config");
                 if(del_url!=null) {
                     Element device_type_element = del_url.element("device_type");
+                    String device_type =null;
+                    if(device_type_element!=null)
+                        device_type_element.getText();
                     Element listen_inet_element = del_url.element("listen_inet");
                     Element back_inet_element = del_url.element("back_inet");
                     Element virt_ip_element = del_url.element("virt_ip");
@@ -55,18 +58,18 @@ public class HotBackupKeepAlivedAction extends ActionSupport {
                             "',listen_inet:'" + listen_inet_element.getText() +
                             "',back_inet:'" + back_inet_element.getText() +
                             "',virt_ip:'" + virt_ip_element.getText() + "'}]}";
-                    if (AuditFlagAction.getAuditFlag()) {
+                    //if (AuditFlagAction.getAuditFlag()) {
                         logService.newLog("info", SessionUtils.getAccount(request).getUserName(), "双击热备", "用户查找双机热备配置信息成功");
-                    }
+                    //}
                 }
             }
         } catch (Exception e) {
             logger.info(e.getMessage(), e);
             msg = "用户查找双机热备配置信息失败";
-            if (AuditFlagAction.getAuditFlag()) {
+           // if (AuditFlagAction.getAuditFlag()) {
                 logger.error(msg, e);
                 logService.newLog("error", SessionUtils.getAccount(request).getUserName(), "双击热备", msg);
-            }
+            //}
             json = "{success:true,total:0,rows:[]}";
         }
         actionBase.actionEnd(response, json, result);
@@ -88,16 +91,25 @@ public class HotBackupKeepAlivedAction extends ActionSupport {
             Element del_url = (Element) doc.selectSingleNode("/config");
             try {
                 Element device_type_element = del_url.element("device_type");
+                if(device_type_element==null)
+                    device_type_element = del_url.addElement("device_type");
                 device_type_element.setText(device_type);
                 Element listen_inet_element = del_url.element("listen_inet");
+                if(listen_inet_element==null)
+                    listen_inet_element = del_url.addElement("listen_inet");
                 listen_inet_element.setText(listen_inet);
                 Element virt_ip_element = del_url.element("virt_ip");
+                if(virt_ip_element==null)
+                    virt_ip_element = del_url.addElement("virt_ip");
                 virt_ip_element.setText(virt_ip);
                 Element back_inet_element = del_url.element("back_inet");
+                if(back_inet_element==null)
+                    back_inet_element = del_url.addElement("back_inet");
                 back_inet_element.setText(back_inet);
                 Dom4jUtil.writeDocumentToFile(doc, keepalived_xml);
                 KeepAlivedConfigUtil.configServer(keepalived_config);
                 msg ="用户更新双机热备配置信息成功";
+                logger.info(msg+",时间："+new Date());
                 logService.newLog("INFO", SessionUtils.getAccount(request).getUserName(), "双击热备", "用户更新双机热备配置信息成功!");
             } catch (Exception e) {
                 logger.info(e.getMessage(), e);
@@ -124,6 +136,7 @@ public class HotBackupKeepAlivedAction extends ActionSupport {
                 Dom4jUtil.writeDocumentToFile(document,keepalived_xml);
                 KeepAlivedConfigUtil.configServer(keepalived_config);
                 msg ="用户更新双机热备配置信息成功";
+                logger.info(msg+",时间："+new Date());
                 logService.newLog("INFO", SessionUtils.getAccount(request).getUserName(), "双击热备", "用户更新双机热备配置信息成功!");
             } catch (IOException e) {
                 msg ="用户更新双机热备配置信息失败";
@@ -150,6 +163,7 @@ public class HotBackupKeepAlivedAction extends ActionSupport {
             try {
                 if(del_url!=null){
                     msg = "监控服务已存在,示允许再次添加";
+                    logger.info(msg+",时间："+new Date());
                     actionBase.actionEnd(response, "{success:false,msg:'" + msg + "'}", result);
                 }else {
                     Element config_el = (Element) doc.selectSingleNode("/config");
@@ -167,11 +181,12 @@ public class HotBackupKeepAlivedAction extends ActionSupport {
                     Dom4jUtil.writeDocumentToFile(doc, keepalived_xml);
                     KeepAlivedConfigUtil.configServer(keepalived_config);
                     msg = "用户添加监控服务信息成功";
+                    logger.info(msg+",时间："+new Date());
                     logService.newLog("INFO", SessionUtils.getAccount(request).getUserName(), "双击热备", "用户添加监控服务信息成功!");
                 }
 
             } catch (Exception e) {
-                logger.info(e.getMessage(), e);
+                //logger.info(e.getMessage(), e);
                 msg = "用户添加监控服务配置信息失败";
                 //if (AuditFlagAction.getAuditFlag()) {
                 logger.error(msg, e);
@@ -199,6 +214,7 @@ public class HotBackupKeepAlivedAction extends ActionSupport {
                 Dom4jUtil.writeDocumentToFile(document,keepalived_xml);
                 KeepAlivedConfigUtil.configServer(keepalived_config);
                 msg ="用户更新双机热备配置信息成功";
+                logger.info(msg+",时间："+new Date());
                 logService.newLog("INFO", SessionUtils.getAccount(request).getUserName(), "双击热备", "用户更新双机热备配置信息成功!");
             } catch (IOException e) {
                 msg ="用户更新双机热备配置信息失败";
@@ -228,9 +244,10 @@ public class HotBackupKeepAlivedAction extends ActionSupport {
                 Dom4jUtil.writeDocumentToFile(doc, keepalived_xml);
                 KeepAlivedConfigUtil.configServer(keepalived_config);
                 msg = "用户更新监控服务信息成功";
+                logger.info(msg+",时间："+new Date());
                 logService.newLog("INFO", SessionUtils.getAccount(request).getUserName(), "双击热备", "用户更新监控服务信息成功!");
             } catch (Exception e) {
-                logger.info(e.getMessage(), e);
+                //logger.info(e.getMessage(), e);
                 msg = "用户更新监控服务配置信息失败";
                 //if (AuditFlagAction.getAuditFlag()) {
                 logger.error(msg, e);
@@ -262,9 +279,10 @@ public class HotBackupKeepAlivedAction extends ActionSupport {
                 Dom4jUtil.writeDocumentToFile(doc, keepalived_xml);
                 KeepAlivedConfigUtil.configServer(keepalived_config);
                 msg = "用户删除监控服务信息成功";
+                logger.info(msg+",时间："+new Date());
                 logService.newLog("INFO", SessionUtils.getAccount(request).getUserName(), "双击热备", "用户删除监控服务信息成功!");
             } catch (Exception e) {
-                logger.info(e.getMessage(), e);
+                //logger.info(e.getMessage(), e);
                 msg = "用户删除监控服务配置信息失败";
                 //if (AuditFlagAction.getAuditFlag()) {
                 logger.error(msg, e);
@@ -313,12 +331,12 @@ public class HotBackupKeepAlivedAction extends ActionSupport {
                 actionBase.actionEnd(response, json, result);
             }
         } catch (Exception e) {
-            logger.info(e.getMessage(), e);
+            //logger.info(e.getMessage(), e);
             msg = "用户查找双机热备配置信息失败";
-            if (AuditFlagAction.getAuditFlag()) {
+            //if (AuditFlagAction.getAuditFlag()) {
                 logger.error(msg, e);
                 logService.newLog("error", SessionUtils.getAccount(request).getUserName(), "双击热备", msg);
-            }
+           // }
             json = "{success:true,total:0,rows:[]}";
         }
         actionBase.actionEnd(response, json, result);
@@ -327,5 +345,9 @@ public class HotBackupKeepAlivedAction extends ActionSupport {
 
     public void setLogService(LogService logService) {
         this.logService = logService;
+    }
+
+    public LogService getLogService() {
+        return logService;
     }
 }

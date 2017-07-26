@@ -36,18 +36,28 @@ public class KeepAlivedConfigUtil {
                 sb.append("! Configuration File for keepalived\n" +
                         "global_defs {\n" +
                         "   router_id HA_SSLVPN\n" +
-                        " }\n" +
-                        "vrrp_instance VI_1 {\n");
+                        " }\n");
+
+                sb.append("vrrp_script chk_tomcat {\n" +
+                        "    script \"/etc/keepalived/tomcat_check.sh\"\n" +
+                        "    interval 15\n" +
+                        "    weight -5\n" +
+                        "    fall 3  \n" +
+                        "    rise 2\n" +
+                        "}\n");
+
+
+                sb.append("vrrp_instance VI_1 {\n");
 
                 if (device_type_element.equals("1")) {
                     sb.append("    state MASTER\n");
-                    sb.append("    priority 100\n" );
+                    sb.append("    priority 100\n");
                 } else {
                     sb.append("    state BACKUP\n");
-                    sb.append("    priority 99\n" );
+                    sb.append("    priority 99\n");
                 }
 
-                sb.append("  interface "+back_inet+"\n" +
+                sb.append("  interface " + back_inet + "\n" +
                         "    virtual_router_id 51\n" +
                         "    advert_int 1\n" +
                         "    authentication {\n" +
@@ -57,13 +67,22 @@ public class KeepAlivedConfigUtil {
                         "    virtual_ipaddress {\n");
                 sb.append(virt_ip_element).append("\n");
 
-                sb.append("    }\n" +
-                        "    track_interface {\n");
+                sb.append("    }\n");
+
+
+                sb.append("    track_interface {\n");
                 String[] strings = listen_inet_element.split(",");
                 for (String s : strings) {
                     sb.append(s).append("\n");
                 }
-                sb.append("     }\n" +
+                sb.append("     }\n");
+
+                sb.append("  track_script {\n" +
+                        "       chk_tomcat\n" +
+                        "    }\n" +
+                        "    notify_master /etc/keepalived/to_master.sh\n" +
+                        "    notify_backup /etc/keepalived/to_backup.sh\n" +
+
                         "}\n");
 
                 Element virtservers_el = del_url.element("virtservers");
@@ -76,20 +95,20 @@ public class KeepAlivedConfigUtil {
                             String v_ip = element.attributeValue("v_ip");
                             String v_port = element.attributeValue("v_port");
                             if (ip != null && port != null && v_ip != null && v_port != null) {
-                                sb.append(" virtual_server "+v_ip+" "+v_port+" {\n" +
+                                sb.append(" virtual_server " + v_ip + " " + v_port + " {\n" +
                                         "     delay_loop 2\n" +
                                         "     lb_algo rr\n" +
                                         "     lb_kind NAT\n" +
                                         "     persistence_timeout 60\n" +
                                         "     protocol TCP\n" +
-                                        "     real_server "+ip+" "+port+" {\n" +
+                                        "     real_server " + ip + " " + port + " {\n" +
                                         "         weight 3\n" +
-                                        "         notify_down "+StringContext.script_path+"/keepalived_stop.sh"+"\n" +
+                                        "         notify_down " + StringContext.script_path + "/keepalived_stop.sh" + "\n" +
                                         "         TCP_CHECK {\n" +
                                         "             connect_timeout 10\n" +
                                         "             nb_get_retry 3\n" +
                                         "             delay_before_retry 3\n" +
-                                        "             connect_port "+port+"\n" +
+                                        "             connect_port " + port + "\n" +
                                         "         } \n" +
                                         "     }\n" +
                                         "} \n");

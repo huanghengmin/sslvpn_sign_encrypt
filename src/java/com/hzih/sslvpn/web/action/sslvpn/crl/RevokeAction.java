@@ -3,6 +3,7 @@ package com.hzih.sslvpn.web.action.sslvpn.crl;
 import com.hzih.sslvpn.service.LogService;
 import com.hzih.sslvpn.utils.Dom4jUtil;
 import com.hzih.sslvpn.utils.FileUtil;
+import com.hzih.sslvpn.utils.MergeFiles;
 import com.hzih.sslvpn.utils.StringContext;
 import com.hzih.sslvpn.web.SessionUtils;
 import com.hzih.sslvpn.web.action.AccountLogUtils;
@@ -148,6 +149,14 @@ public class RevokeAction extends ActionSupport {
             if (crlFlag) {
                 msg = "上传CRL列表成功";
                 json = "{success:true,msg:'" + msg + "'}";
+
+             /*   File file = new File(StringContext.crl_path + "/" + crlFileFileName);
+                if(file.exists()&&file.length()>0){
+                    MergeFiles.appendMergeFiles(StringContext.crl_file, new String[]{StringContext.crl_path + "/" + crlFileFileName});
+                }*/
+
+                MergeFiles.mergeFiles(StringContext.crl_file,StringContext.crl_path);
+
                 if(AuditFlagAction.getAuditFlag()) {
                     logger.info("管理员" + SessionUtils.getAccount(request).getUserName() + ",操作时间:" + new Date() + ",操作信息:" + msg);
                     logService.newLog("INFO", SessionUtils.getAccount(request).getUserName(), "吊销管理", msg);
@@ -890,6 +899,10 @@ public class RevokeAction extends ActionSupport {
                             out.flush();
                             out.close();
                             msg = "下载成功";
+                            /*File file = new File(StringContext.crl_path + "/" + name + ".crl");
+                            if(file.exists()&&file.length()>0){
+                                MergeFiles.appendMergeFiles(StringContext.crl_file, new String[]{StringContext.crl_path + "/" + name + ".crl"});
+                            }*/
                             json = "{success:true,msg:'" + msg + "'}";
                             if(AuditFlagAction.getAuditFlag()) {
 

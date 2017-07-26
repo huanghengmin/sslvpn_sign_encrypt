@@ -47,7 +47,6 @@ public class HotBackupKeepAlivedAction extends ActionSupport {
                 Element del_url = (Element) doc.selectSingleNode("/config");
                 if(del_url!=null) {
                     Element device_type_element = del_url.element("device_type");
-                    String device_type =null;
                     if(device_type_element!=null)
                         device_type_element.getText();
                     Element listen_inet_element = del_url.element("listen_inet");

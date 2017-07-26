@@ -10,12 +10,12 @@
                            http://www.springframework.org/schema/tx 
                            http://www.springframework.org/schema/tx/spring-tx-2.0.xsd ">
     <!-- load properties from file -->
-    <bean id="propertyConfigurer" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+    <!--<bean id="propertyConfigurer" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
         <property name="ignoreUnresolvablePlaceholders" value="true" />
         <property name="location">
             <value>classpath:/config.properties</value>
         </property>
-    </bean>
+    </bean>-->
 
     <!-- ///////////////// 数据库持久层配置 /////////////////// -->
     <!--<bean id="dataSource" class="org.springframework.jndi.JndiObjectFactoryBean">-->
@@ -30,16 +30,16 @@
           class="com.mchange.v2.c3p0.ComboPooledDataSource"
           destroy-method="close">
         <property name="driverClass">
-            <value>${jdbc.driverClass}</value>
+            <value>com.mysql.jdbc.Driver</value>
         </property>
         <property name="jdbcUrl">
-            <value>${jdbc.url}</value>
+            <value>jdbc:mysql://localhost:3306/sslvpn?characterEncoding=utf-8</value>
         </property>
         <property name="user">
-            <value>${jdbc.user}</value>
+            <value>root</value>
         </property>
         <property name="password">
-            <value>${jdbc.password}</value>
+            <value>123456</value>
         </property>
         <!--连接池中保留的最小连接数。-->
         <property name="minPoolSize" value="10"/>

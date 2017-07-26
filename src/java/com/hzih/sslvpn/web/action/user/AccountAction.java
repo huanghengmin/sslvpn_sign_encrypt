@@ -307,22 +307,33 @@ public class AccountAction extends ActionSupport{
         try {
             Account a = SessionUtils.getAccount(request);
             String pwd = request.getParameter("newpwd");
-            if(checkPassword(pwd)){
-                long[] rIds = {};
-                DesEncrypterAsPassword deap = new DesEncrypterAsPassword(Constant.S_PWD_ENCRYPT_CODE);
-                String password = new String(deap.encrypt(pwd.getBytes()));
-                a.setPassword(password);
-                msg = accountService.update(a,rIds);
-                if(AuditFlagAction.getAuditFlag()) {
-                    logService.newLog("INFO", SessionUtils.getAccount(request).getUserName(), "修改密码", "用户修改密码成功");
-                    String log = AccountLogUtils.getResult(SessionUtils.getAccount(request).getUserName(), "用户修改密码成功", "用户管理", "info", "004", "1", new Date());
-                    SiteContextLoaderServlet.sysLogService.offer(log);
+            String oldPwd = request.getParameter("pwd");
+            DesEncrypterAsPassword deap = new DesEncrypterAsPassword(Constant.S_PWD_ENCRYPT_CODE);
+            String old_password = new String(deap.encrypt(oldPwd.getBytes()));
+            if(a.getPassword().equals(old_password)) {
+                if (checkPassword(pwd)) {
+                    long[] rIds = {};
+                    String password = new String(deap.encrypt(pwd.getBytes()));
+                    a.setPassword(password);
+                    msg = accountService.update(a, rIds);
+                    if (AuditFlagAction.getAuditFlag()) {
+                        logService.newLog("INFO", SessionUtils.getAccount(request).getUserName(), "修改密码", "用户修改密码成功");
+                        String log = AccountLogUtils.getResult(SessionUtils.getAccount(request).getUserName(), "用户修改密码成功", "用户管理", "info", "004", "1", new Date());
+                        SiteContextLoaderServlet.sysLogService.offer(log);
+                    }
+                } else {
+                    msg = "<font color=\"red\">修改失败,密码不符合规则,请查看安全策略相关规则！</font>";
+                    if (AuditFlagAction.getAuditFlag()) {
+                        logService.newLog("WARN", SessionUtils.getAccount(request).getUserName(), "用户管理", "用户用户修改密码不符合规则");
+                        String log = AccountLogUtils.getResult(SessionUtils.getAccount(request).getUserName(), "用户用户修改密码不符合规则", "用户管理", "info", "004", "0", new Date());
+                        SiteContextLoaderServlet.sysLogService.offer(log);
+                    }
                 }
-            }  else {
-                msg = "<font color=\"red\">修改失败,密码不符合规则</font>";
-                if(AuditFlagAction.getAuditFlag()) {
-                    logService.newLog("WARN", SessionUtils.getAccount(request).getUserName(), "用户管理", "用户用户修改密码不符合规则");
-                    String log = AccountLogUtils.getResult(SessionUtils.getAccount(request).getUserName(), "用户用户修改密码不符合规则", "用户管理", "info", "004", "0", new Date());
+            }else {
+                msg = "<font color=\"red\">修改失败,旧密码错误！</font>";
+                if (AuditFlagAction.getAuditFlag()) {
+                    logService.newLog("WARN", SessionUtils.getAccount(request).getUserName(), "用户管理", "用户用户修改密码旧密码错误");
+                    String log = AccountLogUtils.getResult(SessionUtils.getAccount(request).getUserName(), "用户用户修改密码旧密码错误", "用户管理", "info", "004", "0", new Date());
                     SiteContextLoaderServlet.sysLogService.offer(log);
                 }
             }

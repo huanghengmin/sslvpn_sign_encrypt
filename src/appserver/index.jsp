@@ -32,6 +32,8 @@
 <DIV>
     <script type="text/javascript">
         var centerPanel;
+        var titleText = "中盾安全接入网关系统";
+
         Ext.onReady(function () {
             Ext.QuickTips.init();
             Ext.form.Field.prototype.msgTarget = 'side';
@@ -639,7 +641,7 @@
                                 height: 150,
                                 modal: true,
                                 items: [{
-                                    html: '&nbsp;&nbsp;&nbsp;系统名称:安全接入网关系统<br>' +
+                                    html: '&nbsp;&nbsp;&nbsp;系统名称:<br>&nbsp;&nbsp;&nbsp;' +titleText+
                                     '<br>&nbsp;&nbsp;&nbsp;版本号：V2.6.0.20160225 <br>'
                                 }]
                             }).show();
@@ -657,8 +659,10 @@
                 border: false, 				//是否显示边框
                 collapsible: false, 		//是否可以收缩,默认不可以收缩，即不显示收缩箭头
                 height: 86,
-                html:'<div id="top" style="border:1px solid #564b47;background-color:#fff;height:55;width:100%;background-image: url(img/topVPN_ZD.jpg);">' +
-                '<div style="height:55;border:0 solid #564b47;float:right;width:400px;margin:0px 0px 0px 0px;background-image: url(img/top_1.png);">' +
+                html:'<div id="top" style="border:1px solid #564b47;background-color:#fff;height:55;background-image: url(img/top.jpg);">' +
+                '<div id="text" style="position: relative; top: 10px; left: -450px;">' +
+                '<p style="color: #ffffff;font-size:25px;text-align: center">'+titleText+'</p></div>' +
+                /*'<div style="height:100;border:0 solid #564b47;float:right;width:400px;margin:0px 0px 0px 0px;background-image: url(img/top_1.png);">' +*/
                 '</div>' +
                 '</div>',
                 bbar: northBar

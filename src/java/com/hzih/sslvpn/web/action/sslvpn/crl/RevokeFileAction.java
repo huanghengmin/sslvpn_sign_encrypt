@@ -279,7 +279,6 @@ public class RevokeFileAction extends ActionSupport {
         return null;
     }
 
-
     public String del()throws Exception{
         HttpServletRequest request = ServletActionContext.getRequest();
         HttpServletResponse response = ServletActionContext.getResponse();

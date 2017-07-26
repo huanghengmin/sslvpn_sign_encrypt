@@ -1,6 +1,7 @@
 package com.hzih.sslvpn.web.servlet;
 
 import com.hzih.sslvpn.utils.Dom4jUtil;
+import com.hzih.sslvpn.utils.MergeFiles;
 import com.hzih.sslvpn.utils.StringContext;
 import com.hzih.sslvpn.web.action.sslvpn.crl.HttpCRLDownLoad;
 import com.hzih.sslvpn.web.action.sslvpn.ldap.LdapCRLDownload;
@@ -42,6 +43,11 @@ public class CRLUpdateTask extends TimerTask {
                             in.close();
                             out.flush();
                             out.close();
+                           /* File file = new File(StringContext.crl_path + "/" + name + ".crl");
+                            if(file.exists()&&file.length()>0){
+                                MergeFiles.appendMergeFiles(StringContext.crl_file, new String[]{StringContext.crl_path + "/" + name + ".crl"});
+                            }*/
+                            MergeFiles.mergeFiles(StringContext.crl_file,StringContext.crl_path);
                             String msg = "下载CRL http下载点" + name + "成功";
                             logger.info("时间:" + new Date() + ",信息:" + msg);
                         } catch (Exception e) {
@@ -72,6 +78,7 @@ public class CRLUpdateTask extends TimerTask {
                             outputFileStream.write(bytes);
                             outputFileStream.flush();
                             outputFileStream.close();
+                            MergeFiles.mergeFiles(StringContext.crl_file,StringContext.crl_path);
                             String msg = "下载CRL LDAP下载点" + name + "成功";
                             logger.info("时间:" + new Date() + ",信息:" + msg);
                         } catch (IOException e) {

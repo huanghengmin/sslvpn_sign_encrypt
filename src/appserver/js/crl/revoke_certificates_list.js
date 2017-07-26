@@ -1057,6 +1057,7 @@ function addHttpPoint(store) {
             }),
             new Ext.form.TextField({
                 fieldLabel: 'HTTP URL地址',
+                value:'http://CA_IP/CRL_crl_down.action',
                 name: 'url',
                 allowBlank: false,
                 blankText: "不能为空，请正确填写"

@@ -19,7 +19,7 @@ Ext.onReady(function () {
                 handler: function () {
                     updateCRL(store);
                 }
-            },
+            }/*,
             {
                 xtype: 'button',
                 text: '黑名单校验配置',
@@ -28,7 +28,7 @@ Ext.onReady(function () {
                 handler: function () {
                     check_crl(grid_panel, store);
                 }
-            }
+            }*/
         ]
     });
     var record = new Ext.data.Record.create([

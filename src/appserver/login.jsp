@@ -49,6 +49,21 @@
             document.getElementById('downAndroid').href = "<c:url value="/DownLoadAndroid"/>";
         }
 
+        function setTitle(){
+            var pic = document.getElementById('pic');
+            var text_1 = '中盾安全接入网关系统';
+            var text_2 = '';//字母符号数字
+            var text = text_1 + text_2; // 注意组合的前后顺序
+            var len = text_1.length * 40 + text_2.length * 20;//字母符号为中文的一半
+            var pLeft = (pic.clientWidth - len)/2;
+            if(pLeft < 300){
+                pLeft = 300;
+            }
+            var p = document.getElementById('text');
+            p.style.cssText='float:left;position: relative; top: 50px; left: '+pLeft+'px;';
+            p.innerHTML = '<p id="ptext" style="color: #27b1f1;font-size:40px;text-align: center">'+text+'</p>';
+        }
+
     </script>
 
 
@@ -56,16 +71,19 @@
 </head>
 
 
-<body style="background-color: #2e394b;text-align: center">
+<body style="background-color: #2e394b;text-align: center" onload="setTitle()">
 
 <%--<div style=" vertical-align: middle; width: 800px; height: 450px; border: 0px solid #000000;
     margin-left:auto;margin-right:auto;margin-top: 8%;
     background: url(img/login.png) no-repeat;">--%>
-<div style="width: 800px; height: 450px; border: 1px solid #01162b;
+<div id="pic" style="position: relative;width: 800px; height: 450px; border: 1px solid #01162b;
             margin-left:auto;margin-right:auto;margin-top: 5%;
-            background: url(img/loginVPN_ZD.jpg) no-repeat;"
+            background: url(img/login.jpg) no-repeat;"
         >
-    <div style="margin-left:auto;margin-right:auto;margin-top:220px;border: 0px solid #acd67a;
+    <div id="text" style="float:left;position: relative;">
+    </div>
+
+    <div  style="margin-left:auto;margin-right:auto;margin-top:220px;border: 0px solid #acd67a;
                 /*width: 400px;*/
                 /*padding: 100px 0 0 350px;*/">
         <form name="loginForm" action="login.action" method="post" onsubmit="return checkForm();">
@@ -100,6 +118,9 @@
                 </tr>
             </table>
         </form>
+    </div>
+    <div id="text_bottom" style="float:left;position: relative; bottom: -25px; left: 500px;">
+        <p style="color: #27b1f1;font-size:15px;text-align: center">版权所有 北京中盾安全技术开发有限公司</p>
     </div>
 </div>
 </body>

@@ -13,7 +13,7 @@
 	<!--<constant name="struts.ognl.allowStaticMethodAccess" value="true" /> 2.1.2-->
 
     <constant name="struts.multipart.maxSize" value="52428800" />
-    <constant name="struts.multipart.saveDir" value="/temp"/>
+    <!--<constant name="struts.multipart.saveDir" value="/temp"/>-->
     <package name="sslvpn" extends="json-default">
 
 		<action name="login" class="loginAction">
